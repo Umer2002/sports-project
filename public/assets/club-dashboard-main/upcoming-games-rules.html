@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Referee Dashboard Modal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8fafc; }
+    .modal-content { border-radius: 1rem; padding: 1rem; }
+    .dashboard-title { font-weight: 500; color: #4b5563; font-size: 0.95rem; }
+    .alert-claimed {
+      background: #f9fafb; border: 1px solid #e5e7eb;
+      border-radius: 0.5rem; padding: 0.75rem 1rem;
+      font-size: 0.9rem; margin-bottom: 1rem;
+    }
+    .status-available { color: green; font-weight: 500; }
+    .status-preview, .status-restricted, .status-full { color: gray; font-weight: 500; }
+    .btn-gradient {
+      background: linear-gradient(90deg, #4f46e5, #3b82f6);
+      border: none; color: #fff;
+    }
+    .btn-gradient:hover { opacity: 0.9; }
+    .tag {
+      font-size: 0.85rem; padding: 0.25rem 0.6rem;
+      border-radius: 0.5rem; display: inline-block; margin-right: 0.3rem;
+    }
+    .tag-blue { background-color: #e0f2fe; color: #0369a1; }
+    .tag-purple { background-color: #ede9fe; color: #6d28d9; }
+    .tag-red { background-color: #fee2e2; color: #b91c1c; }
+    .tag-orange { background-color: #fff7ed; color: #c2410c; }
+    .small-note { font-size: 0.8rem; color: #6b7280; }
+    .games-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 1rem;
+      background: white;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+<div class="container py-5 text-center">
+  <!-- Trigger Button -->
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dashboardModal">
+    Open Referee Dashboard
+  </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="dashboardModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Referee Dashboard</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Banner -->
+        <div class="alert-claimed">
+          Game claimed. This slot is now hidden from others.
+        </div>
+
+        <!-- Card -->
+        <div class="games-card">
+
+          <!-- Card Header -->
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+            <h5 class="mb-2">Upcoming Games</h5>
+            <div id="tags"></div>
+          </div>
+
+          <!-- Table -->
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th>Date</th>
+                  <th>Teams</th>
+                  <th>Location</th>
+                  <th>Pay</th>
+                  <th>Cert</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="gamesTable"></tbody>
+            </table>
+          </div>
+
+          <!-- Footer -->
+          <p class="mt-2 small-note">
+            Optional fairness rules: daily claim limit, early preview for high-rated refs,
+            waitlist, certification requirements, and cancellation cooldowns.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Dynamic tags
+  const tags = [
+    { text: "First-come, first-serve", class: "tag-blue" },
+    { text: "Claims today: 1/2", class: "tag-purple" },
+    { text: "Cooldown: 22h left", class: "tag-red" },
+    { text: "Your rating: ★★★★☆", class: "tag-orange" },
+  ];
+
+  // Dynamic games
+  const games = [
+    {
+      date: "Sat Aug 24, 7:30 PM",
+      teams: "Lions vs Hawks",
+      location: "Falcon Field, Ottawa ON",
+      pay: "$85",
+      cert: "—",
+      status: "Available",
+      action: "Claim",
+      note: "",
+      type: "available"
+    },
+    {
+      date: "Sun Aug 25, 2:00 PM",
+      teams: "Titans vs Wolves",
+      location: "Riverside Park, Kanata ON",
+      pay: "$90",
+      cert: "—",
+      status: "Preview",
+      action: "Opens Soon",
+      note: "• Early access: ★★★★☆ refs",
+      type: "preview"
+    },
+    {
+      date: "Tue Aug 27, 6:15 PM",
+      teams: "Eagles vs Bears",
+      location: "Maple Dome, Nepean ON",
+      pay: "$80",
+      cert: "Lv2",
+      status: "Restricted",
+      action: "Cert Required",
+      note: "• Requires Certification Lv2",
+      type: "restricted"
+    },
+    {
+      date: "Wed Aug 28, 8:45 PM",
+      teams: "Panthers vs Sharks",
+      location: "Queensway Turf — Field 2",
+      pay: "$95",
+      cert: "—",
+      status: "Full",
+      action: "Join Waitlist",
+      note: "• 3 ahead in queue",
+      type: "full"
+    }
+  ];
+
+  // Render tags
+  const tagContainer = document.getElementById("tags");
+  tags.forEach(tag => {
+    const span = document.createElement("span");
+    span.className = `tag ${tag.class}`;
+    span.innerText = tag.text;
+    tagContainer.appendChild(span);
+  });
+
+  // Render games
+  const table = document.getElementById("gamesTable");
+  games.forEach(game => {
+    const tr = document.createElement("tr");
+
+    tr.innerHTML = `
+      <td>${game.date}</td>
+      <td>${game.teams}</td>
+      <td>${game.location}</td>
+      <td class="text-success fw-bold">${game.pay}</td>
+      <td>${game.cert}</td>
+      <td class="status-${game.type}">${game.status}</td>
+      <td>
+        ${game.type === "available" 
+          ? `<button class="btn btn-gradient btn-sm">${game.action}</button>`
+          : game.type === "full"
+            ? `<button class="btn btn-gradient btn-sm">${game.action}</button><div class="small-note">${game.note}</div>`
+            : `<button class="btn btn-outline-secondary btn-sm" disabled>${game.action}</button><div class="small-note">${game.note}</div>`
+        }
+      </td>
+    `;
+
+    table.appendChild(tr);
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

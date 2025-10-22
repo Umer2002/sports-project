@@ -1,0 +1,133 @@
+<div class="modal fade" id="assignAward" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body assign-award-modal rounded-4 ==">
+        <button class="btn-close-ghost" aria-label="Close" data-bs-dismiss="modal">&times;</button>
+        <div class="modal-title-block p-4">
+          <div class="brand-dot rounded-4"></div>
+          <div>
+            <div class="popup-title-color">Assign Award</div>
+            <div class="popup-sub-color">COACH / CLUB • SELECT AWARD AND PLAYERS</div>
+          </div>
+        </div>
+
+        <div class="d-flex gap-4 flex-column flex-md-row px-4">
+          <div class="flex-1 gap-2 d-flex flex-column">
+            <div class="assign-award-card flex-1 rounded-4 p-3">
+              <label class="form-label">Award</label>
+              <select class="form-select">
+                <option selected>New Recruit</option>
+              </select>
+
+              <div class="left-split mt-3">
+                <div>
+                  <label for="fileInput" class="upload-box">
+                  <p class="mb-0 small-font">Award image</p>
+                </label>
+                <input type="file" id="fileInput" hidden accept="image/*">
+                </div>
+
+                <div>
+                  <label class="form-label small-font">DESCRIPTION</label>
+                  <textarea class="form-select"
+                    rows="6">“Welcome to the team! This badge celebrates the first step in your journey.”</textarea>
+                  <div class="mt-2">
+                    <button class="p-1 form-select">Auto from catalog</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-3 mt-3">
+                <div class="col-12 col-lg-6">
+                  <label class="form-label small-font">Requirements</label>
+                  <textarea class="form-select"
+                    rows="2">• Complete profile • Join first club</textarea>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <label class="form-label small-font">Rewards</label>
+                  <textarea class="form-select"
+                    rows="2">• +250 XP • Frame • Feed highlight</textarea>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <label class="form-label small-font">Other Awards</label>
+                <div class="d-flex align-items-center">
+                  <span class="swatch primary"></span>
+                  <span class="swatch mid"></span>
+                  <span class="swatch light"></span>
+                  <span class="swatch light"></span>
+                  <span class="swatch light"></span>
+                  <span class="swatch light"></span>
+                </div>
+              </div>
+            </div>
+            <div class="flex-1 d-flex gap-3 d-flex d-md-none">
+              <button class="popup-btn py-1 px-4">Cancel</button>
+              <button class="popup-btn popup-btn-active py-1 px-4">Assign Award</button>
+            </div>
+          </div>
+          <div class="flex-1 gap-2 d-flex flex-column">
+            <div class="assign-award-card flex-1 rounded-4 p-3">
+              <label class="form-label">Assign to</label>
+              <div class="assign-row">
+                <input class="form-select" placeholder="Search players" />
+                <button class="btn-grad small-font ">Select All</button>
+              </div>
+
+              <div class="mt-2 d-flex flex-wrap gap-2 w-100">
+                <div class="form-select w-auto d-flex gap-1 align-items-center h-42 m-w-200"><div class="chip-badge">VP</div><div>Vincent Porter</div></div>
+                <div class="form-select w-auto d-flex gap-1 align-items-center h-42 m-w-200"><div class="chip-badge">AC</div><div>Aiden Chavez</div></div>
+                <div class="form-select w-auto d-flex gap-1 align-items-center h-42 m-w-200"><div class="chip-badge">MT</div><div>Mike Thomas</div></div>
+                <div class="form-select w-auto d-flex gap-1 align-items-center h-42 m-w-200"><div class="chip-badge">EH</div><div>Erika Hughes</div></div>
+                <div class="form-select w-auto d-flex gap-1 align-items-center h-42 m-w-200"><div class="chip-badge">GJ</div><div>Ginger Johnston</div></div>
+                <div class="form-select w-auto d-flex gap-1 align-items-center h-42 m-w-200"><div class="chip-badge">TC</div><div>Tracy Carpenter</div></div>
+              </div>
+
+              <div class="two-col mt-3 d-flex flex-column">
+                <div>
+                  <label class="form-label small-font">Date Awarded</label>
+                  <input class="form-select" value="Now" />
+                </div>
+                <div class="">
+                  <label class="form-label small-font">Visibility</label>
+                  <div class="form-select d-flex justify-content-between gap-2">
+                    <div class="popup-btn popup-btn-active flex-1">Public</div>
+                    <div class="popup-btn flex-1">Team only</div>
+                    <div class="popup-btn flex-1">Private</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <label class="form-label small-font">Coach Note (optional)</label>
+                <textarea class="form-select" rows="5"
+                  placeholder="Write a short message to appear with the award..."></textarea>
+              </div>
+
+              <div class="action-trio mt-3">
+                <button class="form-select">Notify player</button>
+                <button class="form-select">Post to team feed</button>
+                <button class="form-select">Add to profile</button>
+              </div>
+            </div>
+            <div class="flex-1 d-flex gap-3 d-flex d-md-none">
+              <button class="popup-btn py-2 px-4">Save Draft</button>
+              <button class="popup-btn popup-btn-active py-1 px-4">View Log</button>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex gap-4 flex-column flex-md-row  mt-4 p-2">
+          <div class="flex-1 d-flex gap-3 d-none d-md-flex">
+            <button class="popup-btn py-1 px-4">Cancel</button>
+            <button class="popup-btn popup-btn-active py-1 px-4">Assign Award</button>
+          </div>
+          <div class="flex-1 d-flex gap-3 d-none d-md-flex">
+            <button class="popup-btn py-2 px-4">Save Draft</button>
+            <button class="popup-btn popup-btn-active py-1 px-4">View Log</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

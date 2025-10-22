@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claim Game Modal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8fafc;}
+    .modal-content { border-radius: 1rem; padding: 1.5rem; background: #fff; }
+    .modal-title { font-weight: 600; }
+    .subtitle { font-size: 0.9rem; color: #5A6B88; margin-bottom: 1rem; }
+    .section-box {
+      border: 1px solid #d1d5db;
+      border-radius: .75rem;
+      padding: 1rem;
+      background: #f9fafb;
+      font-size: 0.9rem;
+    }
+    .form-select, .form-control {
+      border-radius: .6rem;
+      border: 1px solid #d1d5db;
+      font-size: 0.95rem;
+    }
+    .btn-gradient {
+      background: linear-gradient(90deg, #4f46e5, #3b82f6);
+      border: none;
+      color: #fff;
+      font-weight: 500;
+      min-width: 150px;
+      border-radius: .6rem;
+    }
+    .btn-gradient:hover { opacity: 0.9; }
+    .btn-outline-custom {
+      border: 1px solid #d1d5db;
+      background: #fff;
+      font-weight: 500;
+      min-width: 120px;
+      border-radius: .6rem;
+    }
+    .btn-outline-custom:hover {
+      border-color: #3b82f6;
+      color: #1e40af;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-5 text-center">
+  <!-- Trigger Button -->
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#claimModal" onclick="loadClaimData()">
+    Open Claim Game Popup
+  </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="claimModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Header -->
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title">Claim Game</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body pt-2">
+        <p class="subtitle">Confirm details and complete the form</p>
+
+        <!-- Game Details -->
+        <div class="section-box mb-4">
+          <div id="gameTitle" class="fw-bold"></div>
+          <div id="gameInfo" class="mt-1 text-secondary small"></div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-4">
+            <label class="subtitle small">Your role</label>
+            <select id="roleSelect" class="form-select">
+              <option>Center Referee (CR)</option>
+              <option>Assistant Referee (AR)</option>
+              <option>Fourth Official</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="subtitle small">Arrival time</label>
+            <select id="arrivalSelect" class="form-select">
+              <option>15 min early</option>
+              <option>30 min early</option>
+              <option selected>45 min early</option>
+              <option>1 hr early</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="subtitle small">Travel mode</label>
+            <select id="travelSelect" class="form-select">
+              <option selected>Drive</option>
+              <option>Public Transit</option>
+              <option>Bike</option>
+              <option>Walk</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="mb-3">
+          <label class="form-label small">Notes to assignor (optional)</label>
+          <textarea id="notesInput" class="form-control" rows="2" placeholder="Any constraints, mentorship needs, or questions..."></textarea>
+        </div>
+
+        <!-- Attestations -->
+        <div class="section-box">
+          <label class="subtitle d-block mb-2 fw-bold small">Attestations</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="attest1">
+            <label class="form-check-label small" for="attest1">I have no conflict with either team/coach</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="attest2">
+            <label class="form-check-label small" for="attest2">I meet the certification/age requirements</label>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-end flex-wrap gap-2 mt-4">
+          <button class="btn btn-outline-custom" data-bs-dismiss="modal">Cancel</button>
+          <button class="btn btn-gradient">Claim Game</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // Example dynamic data object
+  const claimData = {
+    title: "Soccer • EOSL U16 Regional • Sat Aug 24, 7:30 PM",
+    info: "Kanata Wolves U16 vs Ottawa South United U16 — Falcon Field (Field 1), Ottawa, ON<br> Crew: CR×1, AR×2 • Pay: CR $85, AR $60 (CAD) • Eligibility: Lv2+"
+  };
+
+  function loadClaimData() {
+    document.getElementById("gameTitle").innerHTML = claimData.title;
+    document.getElementById("gameInfo").innerHTML = claimData.info;
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

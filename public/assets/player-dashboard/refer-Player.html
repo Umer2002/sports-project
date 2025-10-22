@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Soccer Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="refer-card">
+      <div class="container py-5">
+        <div class="refer-card w-100 panel-soft mb-3">
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-start"
+          >
+            <div class="eyebrow align-items-center">
+              <span class="pe-3"><i>Invite & Earn $10 </i></span>
+            </div>
+            <div class="sub">
+              Get $10 for each friend who joins and completes signup.
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="panel mb-3">
+          <div class="row g-3">
+            <div class="col-md-12 club-div">
+              <div>
+                <div class="label">Club name</div>
+                <span class="eyebrow pe-3"><i>PLAY1234</i></span>
+              </div>
+              <button class="btn btn-primary ms-auto" id="copyLinkTop">
+                Copy Link
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACTS -->
+        <div class="row g-3 align-items-start mb-3">
+          <div class="col-lg-9">
+            <div class="label">Invite by email or phone</div>
+            <div class="token-input">
+              <span class="token">
+                manager@falcons.ca
+                <button class="x" type="button" aria-label="Remove">
+                  &times;
+                </button>
+              </span>
+              <span class="token">
+                +1 613 555 0199
+                <button class="x" type="button" aria-label="Remove">
+                  &times;
+                </button>
+              </span>
+              <span class="token">
+                president@falcons.ca
+                <button class="x" type="button" aria-label="Remove">
+                  &times;
+                </button>
+              </span>
+              <input
+                type="text"
+                placeholder="Type and press Enter"
+                id="tokenInput"
+              />
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="d-flex gap-2 mt-lg-4 pt-lg-2 mt-3">
+              <button class="btn-outline-soft w-100">
+                <i>Add from Contacts</i>
+              </button>
+              <button class="btn-outline-soft w-100"><i>Paste List</i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEXTAREAS -->
+        <div class="row g-3 mt-1 mb-3">
+          <div class="col-lg-9">
+            <div class="label">
+              Paste multiple (comma, space, or newline separated)
+            </div>
+            <textarea
+              class="form-control"
+              rows="3"
+              placeholder="e.g. sam@example.com, +16135550199, jordan@club.ca"
+            ></textarea>
+          </div>
+          <div class="col-lg-3">
+            <button class="btn-outline-soft px-3 mt-4">
+              <i>Upload CSV</i>
+            </button>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class="label mt-3">
+          You’ll earn $10 for each verified signup. They’ll also get $10 off.
+        </div>
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap"
+        >
+          <div class="d-flex flex-wrap gap-2 mb-2">
+            <button class="btn btn-primary send-invitations-btn">Send Invitations</button>
+            <button class="btn-muted send-invitations-btn">Preview Message</button>
+            <div class="ms-auto d-flex align-items-center sub">
+              Or share directly
+            </div>
+          </div>
+          <div class="share-mini mt-2">
+            <div class="item" role="button" id="copyLinkBottom">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M10 13a5 5 0 0 0 7.07 0l1.77-1.77a5 5 0 1 0-7.07-7.07L10 5"
+                ></path>
+                <path
+                  d="M14 11a5 5 0 0 0-7.07 0L5.16 12.8a5 5 0 0 0 7.07 7.07L14 19"
+                ></path>
+              </svg>
+              Copy Link
+            </div>
+            <div class="item" role="button" id="copyLinkBottom">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M10 13a5 5 0 0 0 7.07 0l1.77-1.77a5 5 0 1 0-7.07-7.07L10 5"
+                ></path>
+                <path
+                  d="M14 11a5 5 0 0 0-7.07 0L5.16 12.8a5 5 0 0 0 7.07 7.07L14 19"
+                ></path>
+              </svg>
+              WhatsApp
+            </div>
+            <div class="item" role="button" id="copyLinkBottom">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M10 13a5 5 0 0 0 7.07 0l1.77-1.77a5 5 0 1 0-7.07-7.07L10 5"
+                ></path>
+                <path
+                  d="M14 11a5 5 0 0 0-7.07 0L5.16 12.8a5 5 0 0 0 7.07 7.07L14 19"
+                ></path>
+              </svg>
+              SMS
+            </div>
+            <div class="item" role="button" id="copyLinkBottom">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M10 13a5 5 0 0 0 7.07 0l1.77-1.77a5 5 0 1 0-7.07-7.07L10 5"
+                ></path>
+                <path
+                  d="M14 11a5 5 0 0 0-7.07 0L5.16 12.8a5 5 0 0 0 7.07 7.07L14 19"
+                ></path>
+              </svg>
+              Email
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        // Theme Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check for saved theme preference or default to 'light'
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            // Create theme toggle button if it doesn't exist
+            if (!document.querySelector('.theme-toggle')) {
+                const themeToggle = document.createElement('button');
+                themeToggle.className = 'theme-toggle';
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                document.body.appendChild(themeToggle);
+
+                // Update icon based on current theme
+                updateThemeIcon(currentTheme, themeToggle);
+
+                // Add click event listener
+                themeToggle.addEventListener('click', function () {
+                    const theme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = theme === 'light' ? 'dark' : 'light';
+
+                    // Update theme
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+
+                    // Update icon
+                    updateThemeIcon(newTheme, themeToggle);
+                });
+            }
+
+            function updateThemeIcon(theme, button) {
+                const icon = button.querySelector('i');
+                if (theme === 'dark') {
+                    icon.className = 'fas fa-sun';
+                } else {
+                    icon.className = 'fas fa-moon';
+                }
+            }
+
+            // Add Font Awesome for icons if not already included
+            if (!document.querySelector('link[href*="font-awesome"]')) {
+                const fontAwesome = document.createElement('link');
+                fontAwesome.rel = 'stylesheet';
+                fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+                document.head.appendChild(fontAwesome);
+            }
+        });
+    </script>
+  </body>
+</html>

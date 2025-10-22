@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Soccer Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  
+  <body>
+    <div class="m-4">
+    <div class="transfer-card">
+    <!-- Header -->
+    <div class="transfer-header">
+      <i class="bi bi-arrow-left-right me-2"></i>🔄 Request Transfer
+    </div>
+
+    <!-- Body -->
+    <div class="p-4">
+      <!-- Select Sport -->
+      <div class="mb-4">
+        <label class="form-label lable-module">Select Sport</label>
+        <select class="form-select defolt-selected">
+          <option selected>⚽ Choose sport</option>
+          <option>Football</option>
+          <option>Basketball</option>
+          <option>Hockey</option>
+        </select>
+      </div>
+
+      <!-- Select Club -->
+      <div class="mb-4">
+        <label class="form-label lable-module">Select Club to Transfer To</label>
+        <select class="form-select defolt-selected">
+          <option selected>🏟️ Choose club</option>
+          <option>Lions FC</option>
+          <option>Eagles Club</option>
+          <option>Warriors United</option>
+        </select>
+      </div>
+
+      <!-- Player Box -->
+      <div class="player-box mb-4 d-flex justify-content-between align-items-center bg-jhon">
+        <strong>John Smith</strong>
+        <span class="text-muted">Forward | Tigers FC</span>
+      </div>
+
+      <!-- Submit -->
+       <div class="submit-main">
+      <button class="submit-btns">Submit Transfer</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+    <script src="js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    
+    <script>
+        // Theme Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check for saved theme preference or default to 'light'
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            // Create theme toggle button if it doesn't exist
+            if (!document.querySelector('.theme-toggle')) {
+                const themeToggle = document.createElement('button');
+                themeToggle.className = 'theme-toggle';
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                document.body.appendChild(themeToggle);
+
+                // Update icon based on current theme
+                updateThemeIcon(currentTheme, themeToggle);
+
+                // Add click event listener
+                themeToggle.addEventListener('click', function () {
+                    const theme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = theme === 'light' ? 'dark' : 'light';
+
+                    // Update theme
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+
+                    // Update icon
+                    updateThemeIcon(newTheme, themeToggle);
+                });
+            }
+
+            function updateThemeIcon(theme, button) {
+                const icon = button.querySelector('i');
+                if (theme === 'dark') {
+                    icon.className = 'fas fa-sun';
+                } else {
+                    icon.className = 'fas fa-moon';
+                }
+            }
+
+            // Add Font Awesome for icons if not already included
+            if (!document.querySelector('link[href*="font-awesome"]')) {
+                const fontAwesome = document.createElement('link');
+                fontAwesome.rel = 'stylesheet';
+                fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+                document.head.appendChild(fontAwesome);
+            }
+        });
+    </script>
+  </body>
+</html>

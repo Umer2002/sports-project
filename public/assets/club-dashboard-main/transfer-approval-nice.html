@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Incoming Transfer Request</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background:#f8fafc;">
+
+<div class="container py-5 text-center">
+  <!-- Trigger Button -->
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#transferModal" onclick="loadTransferData()">
+    Open Transfer Request
+  </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="transferModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:16px; overflow:hidden; border:1px solid #e5e7eb;">
+
+      <!-- Header -->
+      <div style="background:#22c55e; color:#fff; font-weight:600; font-size:1.05rem; padding:10px 15px;">
+        📩 Incoming Transfer Request
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body" style="padding:20px;">
+        <div style="background:#f3f4f6; border:1px solid #e5e7eb; border-radius:12px; padding:15px;">
+          <div class="d-flex justify-content-between">
+            <div>
+              <p id="playerName" style="margin:0; font-weight:600;"></p>
+              <p id="playerDetails" style="margin:0; color:#374151; font-size:0.9rem;"></p>
+            </div>
+            <div>
+              <p id="transferInfo" style="margin:0; font-size:0.9rem; color:#111827;"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer d-flex justify-content-center gap-3" style="border:0; padding-bottom:20px;">
+        <button onclick="handleAccept()" 
+                style="background:#22c55e; border:none; color:#fff; font-weight:500; padding:8px 24px; border-radius:50px;">
+          ✔ Accept
+        </button>
+        <button onclick="handleDecline()" 
+                style="background:#ef4444; border:none; color:#fff; font-weight:500; padding:8px 24px; border-radius:50px;">
+          ✖ Decline
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // Example dynamic data
+  const transferData = {
+    name: "John Smith",
+    details: "Forward, Age 17",
+    from: "Tigers FC",
+    to: "Lions FC"
+  };
+
+  function loadTransferData() {
+    document.getElementById("playerName").textContent = transferData.name;
+    document.getElementById("playerDetails").textContent = transferData.details;
+    document.getElementById("transferInfo").textContent = `From: ${transferData.from} → To: ${transferData.to}`;
+  }
+
+  function handleAccept() {
+    alert(`${transferData.name} transfer accepted ✅`);
+  }
+
+  function handleDecline() {
+    alert(`${transferData.name} transfer declined ❌`);
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

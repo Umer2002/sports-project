@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/hockey.css" />
+    <link rel="stylesheet" href="assets/css/font.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <title>Hockey Player Profile</title>
+</head>
+
+<body>
+    <div class="main">
+        <!-- header start  -->
+        <header class="header">
+            <div class="container p-0 px-sm-2">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid align-items-center">
+                        <div class="d-flex g-2">
+                            <!-- Logo -->
+                            <a class="navbar-brand" href="#">
+                                <img src="assets/image/logo.png" alt="Logo" />
+                            </a>
+                            <!-- Language Selector -->
+                            <div class="lang-dropdown d-flex align-items-center gap-2">
+                                EN
+                                <span class="d-inline-block"><i class="fa-solid fa-angle-down"></i></span>
+                            </div>
+                        </div>
+                        <!-- Hamburger -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarContent">
+                            <div class="navbar-toggle">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </button>
+                        <!-- Navbar content -->
+                        <div class="collapse navbar-collapse" id="navbarContent">
+                            <!-- Nav links -->
+                            <ul class="navbar-nav mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="#">Club</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Teams</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Awards</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#">Bio</a></li>
+                            </ul>
+                            <!-- Search + Login -->
+                            <div class="d-flex align-items-center gap-3 flex-wrap">
+                                <div class="position-relative search-wrapper">
+                                    <input type="text" class="search-box" placeholder="Search Here..." />
+                                    <img src="assets/image/search.svg" class="search-icon" alt="icon" />
+                                </div>
+                                <button class="login-btn">LOGIN</button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- header end -->
+
+        <!-- hero section start -->
+        <section class="hero pb-5">
+            <img src="assets/image/bg-hockey.png" alt="hockey puck" class="hero-hockey" />
+            <div class="container">
+                <div class="row">
+                    <div class="profile-container py-1 py-lg-5 pb-0">
+                        <div class="number-bg d-none d-lg-block" style="font-weight: 900;">09</div>
+                        <div class="soccer-text d-none d-lg-block">HOCKEY</div>
+                        <div class="row">
+                            <div class="col-12 col-lg-4 col-xl-3 px-1 text-center text-lg-start">
+                                <div class="social-icons d-lg-none">
+                                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+                                    <a href="#" class="social-icon snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+                                    <a href="#" class="social-icon pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                    <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-icon reddit"><i class="fab fa-reddit-alien"></i></a>
+                                    <a href="#" class="social-icon twitter"><i class="fab fa-x-twitter"></i></a>
+                                    <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                                </div>
+                                <h1 class="player-name text-center text-lg-start text-capitalize">Jack<br />eichel</h1>
+                                <div class="position-badges">
+                                    <span class="position-badge">
+                                        <img src="./assets/image/Sport-Runner.svg" alt=""> Forward
+                                    </span>
+                                    <span class="position-badge">
+                                        <img src="./assets/image/Hand-Stop.svg" alt=""> Shot-Right
+                                    </span>
+                                </div>
+                                <button class="donate-btn">MAKE A DONATION</button>
+                                <div class="year-text mt-4 mt-lg-5">
+                                    <span class="h5">INTL CAREER - 2013 - 2024</span>
+                                </div>
+                                <p class="d-lg-none mb-0 mt-1 jn">JERSEY NUMBER - 9</p>
+                                <div class="mt-3 mar-left d-none d-lg-block">
+                                    <h6>Share Profile</h6>
+                                    <div class="social-icons">
+                                        <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+                                        <a href="#" class="social-icon snapchat"><i
+                                                class="fab fa-snapchat-ghost"></i></a>
+                                        <a href="#" class="social-icon pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                        <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#" class="social-icon reddit"><i class="fab fa-reddit-alien"></i></a>
+                                        <a href="#" class="social-icon twitter"><i class="fab fa-x-twitter"></i></a>
+                                        <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                </div>
+                                <div class="row d-none d-lg-block">
+                                    <div class="col-md-12">
+                                        <div class="info-box mar-left">
+                                            <div class="info-content">
+                                                <div class="info-label">BORN</div>
+                                                <div class="info-value">28-10-1996</div>
+                                            </div>
+                                            <div class="info-content">
+                                                <div class="info-label">AGE</div>
+                                                <div class="info-value">28 YEARS</div>
+                                            </div>
+                                            <div class="info-content">
+                                                <div class="info-label">NATIONALITY</div>
+                                                <div class="info-value">USA</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-xl-4 d-none d-lg-block">
+                                <div class="player-image">
+                                    <img src="assets/image/player-hockey.png" alt="jack eichel"
+                                        class="img-fluid w-100 h-100 object-fit-contain" />
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-xl-3">
+                                <div class="row flex-column gap-xl-4">
+                                    <div class="stats-container mb-xl-4 mb-lg-4 pt-lg-2">
+                                        <div class="stats-label">Stats</div>
+                                        <div class="stats-box">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <div class="stats-title">Point</div>
+                                                    <div class="stats-value">102</div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="stats-title">GOAL</div>
+                                                    <div class="stats-value">32</div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="stats-title">ASSIST</div>
+                                                    <div class="stats-value">56</div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="stats-title">Save</div>
+                                                    <div class="stats-value">45%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="team-logos mt-3 mb-3 mb-xl-1 mt-xl-4 mt-lg-1">
+                                        <div class="d-flex align-items-center me-4">
+                                            <div class="team-logo">
+                                                <img src="assets/image/Juventus.png" alt="Vegas Golden Knights"
+                                                    class="img-fluid" />
+                                            </div>
+                                            <span class="team-name">Vegas Golden Knights</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="team-logo">
+                                                <img src="assets/image/image.png" alt="Buffalo Sabres"
+                                                    class="img-fluid" />
+                                            </div>
+                                            <span class="team-name">Buffalo Sabres</span>
+                                        </div>
+                                    </div>
+                                    <p class="d-none d-lg-block d-xl-none mb-0 mt-5">JERSEY NUMBER - 9</p>
+                                    <div class="col-md-12 mt-md-5 mt-lg-1 mt-xl-5 mt-lg-5 offset-lg-2">
+                                        <div class="info-box mt-4">
+                                            <div class="info-content d-lg-none">
+                                                <div class="info-label">BORN</div>
+                                                <div class="info-value">16-02-1977</div>
+                                            </div>
+                                            <div class="info-content d-lg-none">
+                                                <div class="info-label">AGE</div>
+                                                <div class="info-value">47 YEARS</div>
+                                            </div>
+                                            <div class="info-content d-lg-none">
+                                                <div class="info-label">NATIONALITY</div>
+                                                <div class="info-value">RUSSIA</div>
+                                            </div>
+                                            <div class="info-content">
+                                                <div class="info-label">HEIGHT</div>
+                                                <div class="info-value">1.87 M</div>
+                                            </div>
+                                            <div class="info-content">
+                                                <div class="info-label">WEIGHT</div>
+                                                <div class="info-value">92 KG</div>
+                                            </div>
+                                            <div class="info-content">
+                                                <div class="info-label">DEBUT</div>
+                                                <div class="info-value">1995</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-xl-6 d-block d-lg-none">
+                                <div class="mobile-player-image position-relative">
+                                    <div class="palyer-bg-number d-sm-none">9</div>
+                                    <img src="assets/image/player-hockey-mobile.png" alt="jack eichel"
+                                        class="img-fluid w-100 h-100 object-fit-contain text-capitalize" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hero section end -->
+    </div>
+
+
+    <!-- tab-content start -->
+    <section class="tab-content about-content">
+        <div class="container">
+            <input type="radio" name="css-tabs" id="tab-donation" class="css-tab-input" checked>
+            <input type="radio" name="css-tabs" id="tab-bio" class="css-tab-input">
+            <input type="radio" name="css-tabs" id="tab-club" class="css-tab-input">
+            <input type="radio" name="css-tabs" id="tab-teams" class="css-tab-input">
+            <input type="radio" name="css-tabs" id="tab-awards" class="css-tab-input">
+            <input type="radio" name="css-tabs" id="tab-posts" class="css-tab-input">
+
+            <div class="row justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="menu-bar">
+                        <label for="tab-donation" class="css-tab-label">Donation</label>
+                        <label for="tab-bio" class="css-tab-label">Bio</label>
+                        <label for="tab-club" class="css-tab-label">Club</label>
+                        <label for="tab-teams" class="css-tab-label">Teams</label>
+                        <label for="tab-awards" class="css-tab-label">Awards</label>
+                        <label for="tab-posts" class="css-tab-label">Posts</label>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-5">
+                    <div class="tab-wrapper">
+                        <div class="tab-pane" id="donation" role="tabpanel">
+                            <div class="row align-items-center">
+                                <div class=" man col-12 col-md-6">
+                                    <div class="donation-content">
+                                        <h2 class="heading">Donate us</h2>
+                                        <div class="club-divider"></div>
+                                        <p class="para">
+                                            Support the next generation of hockey stars! Your donation helps provide
+                                            equipment, training, and opportunities for young players to excel in the
+                                            sport.
+                                        </p>
+                                        <a href="#" class="btn">MAKE A DONATION </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="donation-img text-end">
+                                        <div class="player-card">
+                                            <!-- Card background -->
+                                            <div class="card-background">
+                                                <img src="assets/image/Base.png" alt="Card Background"
+                                                    class="card-bg-img" />
+                                                <!-- Left sidebar -->
+                                                <div class="sidebar">
+                                                    <!-- Flag -->
+                                                    <div class="h25-donation"></div>
+                                                    <div class="flag-container">
+                                                        <div class="flag">
+                                                            <img src="assets/image/flag.jpeg" alt="flag"
+                                                                class="img-fluid" />
+                                                            <div class="flag-blue"></div>
+                                                            <div class="flag-white"></div>
+                                                            <div class="flag-red"></div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Jersey number -->
+                                                    <div class="jersey-number">
+                                                        <h3>JERSEY - 9</h3>
+                                                    </div>
+                                                    <!-- Achievement badges -->
+                                                    <div class="badges">
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-1.png" alt="Top Scorer"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-2.png" alt="Team Leader"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-3.png" alt="MVP"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-4.png" alt="All-Star"
+                                                                class="badge-img" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Main content -->
+                                                <div class="main-content">
+                                                    <!-- Player image -->
+                                                    <div class="player-image-on-card">
+                                                        <img src="assets/image/player-hockey-card.png" alt="jack eichel"
+                                                            class="img-fluid-card" />
+                                                    </div>
+                                                    <!-- Player name -->
+                                                    <div class="player-name player-name-on-card text-capitalize">
+                                                        <h2>jack eichel</h2>
+                                                    </div>
+                                                    <!-- Stats section -->
+                                                    <div class="stats-section">
+                                                        <div class="stats-header">
+                                                            <div class="row g-0 text-center">
+                                                                <div class="col">MATCH</div>
+                                                                <div class="col">MINUTE</div>
+                                                                <div class="col">GOALS</div>
+                                                                <div class="col">ASSISTS</div>
+                                                                <div class="col">PENALTY</div>
+                                                                <div class="col">SHOTS</div>
+                                                                <div class="col">HITS</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stats-values">
+                                                            <div class="row g-0 text-center">
+                                                                <div class="col">850</div>
+                                                                <div class="col">18000</div>
+                                                                <div class="col">320</div>
+                                                                <div class="col">410</div>
+                                                                <div class="col">120</div>
+                                                                <div class="col">2500</div>
+                                                                <div class="col">900</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="bio" role="tabpanel">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-6">
+                                    <div class="bio-content">
+                                        <h2 class="heading">Player Biography</h2>
+                                        <div class="club-divider"></div>
+                                        <p class="para">
+                                            Jack Eichel, born October 28, 1996, is an American professional ice hockey
+                                            center and captain of the Vegas Golden Knights of the National Hockey League
+                                            (NHL). Eichel was selected second overall in the 2015 NHL Entry Draft by the
+                                            Buffalo Sabres.
+                                        </p>
+                                        <p class="para">
+                                            Before the draft, he was described as a "new-generation power forward,
+                                            combining size, speed, and skill." He is known for his incredible
+                                            puck-handling skills and a powerful shot.
+                                        </p>
+                                        <a href="#" class="btn">Read More </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="donation-img text-end">
+                                        <div class="player-card">
+                                            <!-- Card background -->
+                                            <div class="card-background">
+                                                <img src="assets/image/Base.png" alt="Card Background"
+                                                    class="card-bg-img" />
+                                                <!-- Left sidebar -->
+                                                <div class="sidebar">
+                                                    <!-- Flag -->
+                                                    <div class="h25-donation"></div>
+                                                    <div class="flag-container">
+                                                        <div class="flag">
+                                                            <img src="assets/image/flag.jpeg" alt="flag"
+                                                                class="img-fluid" />
+                                                            <div class="flag-blue"></div>
+                                                            <div class="flag-white"></div>
+                                                            <div class="flag-red"></div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Jersey number -->
+                                                    <div class="jersey-number">
+                                                        <h3>JERSEY - 9</h3>
+                                                    </div>
+                                                    <!-- Achievement badges -->
+                                                    <div class="badges">
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-1.png" alt="Top Scorer"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-2.png" alt="Team Leader"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-3.png" alt="MVP"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-4.png" alt="All-Star"
+                                                                class="badge-img" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Main content -->
+                                                <div class="main-content">
+                                                    <!-- Player image -->
+                                                    <div class="player-image-on-card">
+                                                        <img src="assets/image/player-hockey-card.png" alt="jack eichel"
+                                                            class="img-fluid-card" />
+                                                    </div>
+                                                    <!-- Player name -->
+                                                    <div class="player-name player-name-on-card text-capitalize">
+                                                        <h2>jack eichel</h2>
+                                                    </div>
+                                                    <!-- Stats section -->
+                                                    <div class="stats-section">
+                                                        <div class="stats-header">
+                                                            <div class="row g-0 text-center">
+                                                                <div class="col">MATCH</div>
+                                                                <div class="col">MINUTE</div>
+                                                                <div class="col">GOALS</div>
+                                                                <div class="col">ASSISTS</div>
+                                                                <div class="col">PENALTY</div>
+                                                                <div class="col">SHOTS</div>
+                                                                <div class="col">HITS</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stats-values">
+                                                            <div class="row g-0 text-center">
+                                                                <div class="col">850</div>
+                                                                <div class="col">18000</div>
+                                                                <div class="col">320</div>
+                                                                <div class="col">410</div>
+                                                                <div class="col">120</div>
+                                                                <div class="col">2500</div>
+                                                                <div class="col">900</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="club" role="tabpanel">
+                            <div class="row justify-content-center text-center">
+                                <div class="col-12">
+                                    <div class="definition-list-container">
+                                        <h2 class="heading">Club</h2>
+                                        <dl class="club-definition-list">
+                                            <div>
+                                                <dt>2010 - 2011</dt>
+                                                <dd>Boston Jr. Bruins</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2011 - 2012</dt>
+                                                <dd>Boston Jr. Bruins</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2012 - 2013</dt>
+                                                <dd>USNTDP Juniors</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2013 - 2014</dt>
+                                                <dd>USNTDP Juniors</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2014 - 2015</dt>
+                                                <dd>Boston Univ.</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2015 - 2016</dt>
+                                                <dd>Buffalo Sabres</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2016 - 2017</dt>
+                                                <dd>Buffalo Sabres</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2017 - 2018</dt>
+                                                <dd>Buffalo Sabres"A"</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2018 - 2019</dt>
+                                                <dd>Buffalo Sabres"C"</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2019 - 2020</dt>
+                                                <dd>Buffalo Sabres"C"</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2020 - 2021</dt>
+                                                <dd>Buffalo Sabres"C"</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2021 - 2022</dt>
+                                                <dd>Vegas Golden Knights</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2022 - 2023</dt>
+                                                <dd>Vegas Golden Knights</dd>
+                                            </div>
+                                            <div>
+                                                <dt>2023 - 2024</dt>
+                                                <dd>Vegas Golden Knights"A"</dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="teams" role="tabpanel">
+                            <h2 class="heading text-center">Previous Teams</h2>
+                            <div class="club-divider mx-auto"></div>
+                            <div class="row justify-content-center g-4 mt-3">
+                                <div class="col-4">
+                                    <div class="donation-img text-end">
+                                        <div class="player-card">
+                                            <!-- Card background -->
+                                            <div class="card-background">
+                                                <img src="assets/image/Base.png" alt="Card Background"
+                                                    class="card-bg-img" />
+                                                <!-- Left sidebar -->
+                                                <div class="sidebar">
+                                                    <!-- Flag -->
+                                                    <div class="h25-donation"></div>
+                                                    <div class="flag-container">
+                                                        <div class="flag">
+                                                            <img src="assets/image/flag.jpeg" alt="flag"
+                                                                class="img-fluid" />
+                                                            <div class="flag-blue"></div>
+                                                            <div class="flag-white"></div>
+                                                            <div class="flag-red"></div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Jersey number -->
+                                                    <div class="jersey-number">
+                                                        <h3>JERSEY - 9</h3>
+                                                    </div>
+                                                    <!-- Achievement badges -->
+                                                    <div class="badges">
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-1.png" alt="Top Scorer"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-2.png" alt="Team Leader"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-3.png" alt="MVP"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-4.png" alt="All-Star"
+                                                                class="badge-img" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Main content -->
+                                                <div class="main-content">
+                                                    <!-- Player image -->
+                                                    <div class="player-image-on-card">
+                                                        <img src="assets/image/player-hockey-card.png" alt="jack eichel"
+                                                            class="img-fluid-card" />
+                                                    </div>
+                                                    <!-- Player name -->
+                                                    <div class="player-name player-name-on-card text-capitalize">
+                                                        <h2>jack eichel</h2>
+                                                    </div>
+                                                    <!-- Stats section -->
+                                                    <div class="stats-section">
+                                                        <div class="stats-header">
+                                                            <div class="row g-0 text-center">
+                                                                <div class="col">MATCH</div>
+                                                                <div class="col">MINUTE</div>
+                                                                <div class="col">GOALS</div>
+                                                                <div class="col">ASSISTS</div>
+                                                                <div class="col">PENALTY</div>
+                                                                <div class="col">SHOTS</div>
+                                                                <div class="col">HITS</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stats-values">
+                                                            <div class="row g-0 text-center">
+                                                                <div class="col">850</div>
+                                                                <div class="col">18000</div>
+                                                                <div class="col">320</div>
+                                                                <div class="col">410</div>
+                                                                <div class="col">120</div>
+                                                                <div class="col">2500</div>
+                                                                <div class="col">900</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="donation-img text-end">
+                                        <div class="player-card">
+                                            <!-- Card background -->
+                                            <div class="card-background">
+                                                <img src="assets/image/Base.png" alt="Card Background"
+                                                    class="card-bg-img" />
+                                                <!-- Left sidebar -->
+                                                <div class="sidebar">
+                                                    <!-- Flag -->
+                                                    <div class="h25-donation"></div>
+                                                    <div class="flag-container">
+                                                        <div class="flag">
+                                                            <img src="assets/image/flag.jpeg" alt="flag"
+                                                                class="img-fluid" />
+                                                            <div class="flag-blue"></div>
+                                                            <div class="flag-white"></div>
+                                                            <div class="flag-red"></div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Jersey number -->
+                                                    <div class="jersey-number">
+                                                        <h3>JERSEY - 9</h3>
+                                                    </div>
+                                                    <!-- Achievement badges -->
+                                                    <div class="badges">
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-1.png" alt="Top Scorer"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-2.png" alt="Team Leader"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-3.png" alt="MVP"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-4.png" alt="All-Star"
+                                                                class="badge-img" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Main content -->
+                                                <div class="main-content">
+                                                    <!-- Player image -->
+                                                    <div class="player-image-on-card">
+                                                        <img src="assets/image/player-hockey-card.png" alt="jack eichel"
+                                                            class="img-fluid-card" />
+                                                    </div>
+                                                    <!-- Player name -->
+                                                    <div class="player-name player-name-on-card text-capitalize">
+                                                        <h2>jack eichel</h2>
+                                                    </div>
+                                                    <!-- Stats section -->
+                                                    <div class="stats-section">
+                                                        <div class="stats-header">
+                                                            <div class="row g-0 text-center">
+                                                                <div class="col">MATCH</div>
+                                                                <div class="col">MINUTE</div>
+                                                                <div class="col">GOALS</div>
+                                                                <div class="col">ASSISTS</div>
+                                                                <div class="col">PENALTY</div>
+                                                                <div class="col">SHOTS</div>
+                                                                <div class="col">HITS</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stats-values">
+                                                            <div class="row g-0 text-center">
+                                                                <div class="col">850</div>
+                                                                <div class="col">18000</div>
+                                                                <div class="col">320</div>
+                                                                <div class="col">410</div>
+                                                                <div class="col">120</div>
+                                                                <div class="col">2500</div>
+                                                                <div class="col">900</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="donation-img text-end">
+                                        <div class="player-card">
+                                            <!-- Card background -->
+                                            <div class="card-background">
+                                                <img src="assets/image/Base.png" alt="Card Background"
+                                                    class="card-bg-img" />
+                                                <!-- Left sidebar -->
+                                                <div class="sidebar">
+                                                    <!-- Flag -->
+                                                    <div class="h25-donation"></div>
+                                                    <div class="flag-container">
+                                                        <div class="flag">
+                                                            <img src="assets/image/flag.jpeg" alt="flag"
+                                                                class="img-fluid" />
+                                                            <div class="flag-blue"></div>
+                                                            <div class="flag-white"></div>
+                                                            <div class="flag-red"></div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Jersey number -->
+                                                    <div class="jersey-number">
+                                                        <h3>JERSEY - 9</h3>
+                                                    </div>
+                                                    <!-- Achievement badges -->
+                                                    <div class="badges">
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-1.png" alt="Top Scorer"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-2.png" alt="Team Leader"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-3.png" alt="MVP"
+                                                                class="badge-img" />
+                                                        </div>
+                                                        <div class="badge-item">
+                                                            <img src="assets/image/player-tag-4.png" alt="All-Star"
+                                                                class="badge-img" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Main content -->
+                                                <div class="main-content">
+                                                    <!-- Player image -->
+                                                    <div class="player-image-on-card">
+                                                        <img src="assets/image/player-hockey-card.png" alt="jack eichel"
+                                                            class="img-fluid-card" />
+                                                    </div>
+                                                    <!-- Player name -->
+                                                    <div class="player-name player-name-on-card text-capitalize">
+                                                        <h2>jack eichel</h2>
+                                                    </div>
+                                                    <!-- Stats section -->
+                                                    <div class="stats-section">
+                                                        <div class="stats-header">
+                                                            <div class="row g-0 text-center">
+                                                                <div class="col">MATCH</div>
+                                                                <div class="col">MINUTE</div>
+                                                                <div class="col">GOALS</div>
+                                                                <div class="col">ASSISTS</div>
+                                                                <div class="col">PENALTY</div>
+                                                                <div class="col">SHOTS</div>
+                                                                <div class="col">HITS</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stats-values">
+                                                            <div class="row g-0 text-center">
+                                                                <div class="col">850</div>
+                                                                <div class="col">18000</div>
+                                                                <div class="col">320</div>
+                                                                <div class="col">410</div>
+                                                                <div class="col">120</div>
+                                                                <div class="col">2500</div>
+                                                                <div class="col">900</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="awards" role="tabpanel">
+                            <div class="awards-container">
+                                <h2 class="heading">Awards</h2>
+
+                                <div class="awards-grid">
+
+                                    <div class="award-item">
+                                        <img src="assets/image/award-1.png" alt="Assist Queen Award">
+                                    </div>
+
+                                    <div class="award-item">
+                                        <img src="assets/image/award-2.png" alt="Dedicated Player Award">
+                                    </div>
+
+                                    <div class="award-item">
+                                        <img src="assets/image/award-3.png" alt="Loyal Player Award">
+                                    </div>
+
+                                    <div class="award-item">
+                                        <img src="assets/image/award-4.png" alt="Rising Star Award">
+                                    </div>
+
+                                    <div class="award-item">
+                                        <img src="assets/image/award-5.png" alt="Milestone Achiever Award">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="posts" role="tabpanel">
+                            <div class="posts-container">
+                                <div class="post-card">
+
+                                    <div class="post-header">
+                                        <img src="assets/image/avatar.jpg" alt="User Avatar" class="post-avatar">
+                                        <div class="post-user-info">
+                                            <strong>Vancouver heights</strong>
+                                            <small>Just now</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="post-body">
+                                        <p>
+                                            Zinedine Yazid Zidane, popularly known as Zizou, is a French professional
+                                            football manager and former player who played as an attacking midfielder. He
+                                            most recently coached La Liga club Real Madrid and is one of the most
+                                            successful coaches in the world.
+                                        </p>
+                                        <p>
+                                            See my my portfolio at: <a href="#">www.xyz.com</a>
+                                        </p>
+                                    </div>
+
+                                    <div class="post-media">
+                                        <img src="assets/image/badminton-post.jpg" alt="Player playing badminton">
+                                    </div>
+
+                                    <div class="post-actions">
+                                        <div class="action-button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                                height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z" />
+                                            </svg>
+                                            <span>Like</span>
+                                        </div>
+                                        <div class="action-button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                                height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M7.291 20.824L2 22l1.178-5.291A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.956 9.956 0 0 1-4.709-1.176z" />
+                                            </svg>
+                                            <span>Comment</span>
+                                        </div>
+                                        <div class="action-button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                                height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M13.12 17.522a4.5 4.5 0 1 1-1.24-6.044l4.25-4.25a4.5 4.5 0 1 1 1.414 1.414l-4.25 4.25a4.509 4.509 0 0 1-1.414 3.197z" />
+                                            </svg>
+                                            <span>Share</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- tab-content end -->
+
+    <!-- news letter section start -->
+    <section class="news-letter">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="cta-title">Join our online community today</h1>
+                    <p class="cta-subtitle">
+                        Create a profile that showcases your child's talent.
+                    </p>
+                    <form class="cta-form" role="form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email Here..." required />
+                            <button class="btn btn-subscribe" type="submit">
+                                SUBSCRIBE
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- news letter section end -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <div class="overlap-group-1 position-relative">
+                        <div class="rectangle-36"></div>
+                        <img src="assets/image/footer-img.png" alt="P2ES logo 1" class="img-fluid" />
+                    </div>
+                </div>
+                <div class="col-12 col-md-5">
+                    <div class="mail-content">
+                        info@play2earnsports.com, 223-23EARN-60
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-btn">
+                        <a href="#" class="btn sign-up-now" style="margin: auto;">SIGN UP NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Tournament</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0f1419;
+      font-family: Inter, sans-serif;
+    }
+    .modal-content {
+      background: #363B48;
+      border-radius: 12px;
+      border: 1.7px solid #1F1F23;
+      
+    }
+    .modal-header {
+      border-bottom: none;
+      background: #2F323C;
+      border-radius: 12px 12px 0 0;
+    }
+    .modal-title {
+      font-size: 18.8px;
+      font-weight: 700;
+      font-style: italic;
+    }
+    .modal-footer {
+      border-top: none;
+    }
+    .section-card {
+      background-color: #2a2f3a;
+      border-radius: 12px;
+      border: none;
+      margin-bottom: 18px;
+      padding: 15px;
+    }
+    .section-title {
+      font-family: Inter, sans-serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 13.7px;
+      margin-bottom: 12px;
+    }
+    
+    .form-control, .form-select, textarea {
+      background-color: #373c49;
+      border: none;
+      border-radius: 8px;
+
+    }
+    .form-control:focus, .form-select:focus, textarea:focus {
+      border: 1px solid #6c63ff;
+      box-shadow: none;
+    }
+    
+    .form-label ,
+    .form-check-label {
+  font-family: Inter, sans-serif;
+  font-weight: 400;     /* Regular */
+  font-style: normal;   /* not italic */
+  font-size: 11.96px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color:  #C9CBD1;
+    /* light gray text */
+  margin-bottom: 0;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+::placeholder {
+  font-family: Inter, sans-serif;
+  font-weight: 400;     /* Regular */
+  font-style: normal;
+  font-size: 11.96px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color:  #9EA0A6;
+     
+  opacity: 1;           /* ensure full visibility */
+}
+.form-select {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11.96px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #9EA0A6;
+  background-color: #373c49;
+  border: none;
+  border-radius: 8px;
+}
+ .form-control,
+.form-select,
+textarea,
+input[type="date"],
+input[type="time"] {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11.96px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #9EA0A6;
+ background-color: #373c49;
+  border: none;
+  border-radius: 8px;
+  height: 31px;           /* consistent with your design */
+}
+/* placeholder style inside select */
+.form-select option[disabled] {
+  color: #9ca3af;  /* lighter gray like input placeholder */
+}
+.btn-secondary {
+  background: #2D2D32;
+  border:none;
+  width: 136.6666717529297;
+height: 41;
+opacity: 1;
+top: 847.08px;
+left: 34.17px;
+
+} 
+.btn-gradient {
+  background: linear-gradient(90deg, #7C3AED 0%, #EC4899 50%, #F59E0B 100%);
+  width: 187.9166717529297;
+height: 41;
+opacity: 1;
+top: 847.08px;
+left: 597.92px;
+
+}
+
+
+  </style>
+</head>
+<body class="bg-dark">
+
+<!-- Button to Open Modal -->
+<div class="container text-center py-5">
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tournamentModal">
+    Create Tournament
+  </button>
+</div>
+
+<!-- Tournament Modal -->
+<div class="modal fade" id="tournamentModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Create Tournament</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Basic Info -->
+         <div class="section-title">Basic Info</div>
+        <div class="card section-card ">
+          <div class="row g-3 align-items-center mb-3 overflow-hidden">
+            <div class="col-md-1"><label class="form-label mb-0">Title</label></div>
+            <div class="col-md-5"><input type="text" class="form-control" placeholder="Tournament Title"></div>
+          </div>
+          <div class="row g-3 align-items-center overflow-hidden">
+            <div class="col-md-1"><label class="form-label mb-0">Type</label></div>
+            <div class="col-md-3"><select class="form-select"><option>Tournament</option><option>League</option></select></div>
+            <div class="col-md-1"><label class="form-label mb-0">Sport</label></div>
+            <div class="col-md-3"><select class="form-select"><option>Soccer</option><option>Basketball</option></select></div>
+            <div class="col-md-1"><label class="form-label mb-0">Division</label></div>
+            <div class="col-md-2"><select class="form-select"><option>U15</option><option>U18</option></select></div>
+          </div>
+        </div>
+
+        <!-- Schedule -->
+         <div class="section-title">Schedule</div>
+        <div class="card section-card">
+          <div class="row g-3 align-items-center overflow-hidden">
+            <div class="col-md-1"><label class="form-label mb-0">Date</label></div>
+            <div class="col-md-4"><input type="date" class="form-control"></div>
+            <div class="col-md-1"><label class="form-label mb-0">Time</label></div>
+            <div class="col-md-3"><input type="time" class="form-control"></div>
+            <div class="col-md-1 d-flex align-items-center">
+              <div class="form-check mb-0">
+                <input class="form-check-input" type="checkbox" id="recurringCheck">
+                <label class="form-check-label" for="recurringCheck">Recurring?</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location -->
+         <div class="section-title">Location</div>
+        <div class="card section-card">
+  <!-- Venue row -->
+  <div class="row g-3 align-items-center mb-3">
+    <div class="col-md-1">
+      <label class="form-label mb-0">Venue</label>
+    </div>
+    <div class="col-md-5">
+      <input type="text" class="form-control" placeholder="Riverside Sports Complex">
+    </div>
+  </div>
+
+  <!-- Surface row -->
+  <div class="row g-3 align-items-center">
+    <div class="col-md-1">
+      <label class="form-label mb-0">Surface</label>
+    </div>
+    <div class="col-md-3">
+      <select class="form-select">
+        <option>Outdoor</option>
+        <option>Indoor</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+        <!-- Teams -->
+         <div class="section-title">Teams</div>
+        <div class="card section-card">
+          <div class="row g-3 align-items-center overflow-hidden">
+            <div class="col-md-2"><label class="form-label mb-0">Max Teams</label></div>
+            <div class="col-md-2"><input type="number" class="form-control" placeholder="16"></div>
+            <div class="col-md-1"><label class="form-label mb-0">Fee</label></div>
+            <div class="col-md-2"><input type="text" class="form-control" placeholder="$250"></div>
+          </div>
+        </div>
+
+        <!-- Additional Settings -->
+         <div class="section-title">Additional Settings</div>
+        <div class="card section-card">
+          <div class="row g-3 align-items-center overflow-hidden">
+            <div class="col-md-1"><label class="form-label mb-0">Notes</label></div>
+            <div class="col-md-10"><textarea class="form-control" rows="3" placeholder="Arrive 45 minutes early. Bring both kits."></textarea></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Save Draft</button>
+        <button type="button" class="btn btn-gradient">Publish Tournament</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

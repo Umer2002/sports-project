@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Soccer Dashboard</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <div class="payout-container">
+    <div class="payout-header">📊 Club Enrollment Bonus Payouts</div>
+    <div class="table-responsive">
+      <table class="table mb-0 align-start">
+        <thead>
+          <tr>
+            <th>Club</th>
+            <th>Sport</th>
+            <th>Players Enrolled</th>
+            <th>Bonus/Player</th>
+            <th>Total Earned</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody class="enrollment-table">
+          <tr>
+            <td>Tigers FC</td>
+            <td>Soccer</td>
+            <td>45</td>
+            <td>$5</td>
+            <td>$225</td>
+            <td><span class="status-badge status-pending">Pending</span></td>
+            <td><button class="btn-action btn-pay">Pay Now</button></td>
+          </tr>
+          <tr>
+            <td>Lions FC</td>
+            <td>Hockey</td>
+            <td>30</td>
+            <td>$5</td>
+            <td>$150</td>
+            <td><span class="status-badge status-paid">Paid</span></td>
+            <td><button class="btn-action btn-receipt">View Receipt</button></td>
+          </tr>
+          <tr>
+            <td>Raptors FC</td>
+            <td>Basketball</td>
+            <td>60</td>
+            <td>$5</td>
+            <td>$300</td>
+            <td><span class="status-badge status-pending">Pending</span></td>
+            <td><button class="btn-action btn-pay">Pay Now</button></td>
+          </tr>
+          <tr>
+            <td>Sharks FC</td>
+            <td>Volleyball</td>
+            <td>25</td>
+            <td>$5</td>
+            <td>$125</td>
+            <td><span class="status-badge status-pending">Pending</span></td>
+            <td><button class="btn-action btn-pay">Pay Now</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="total-section">
+        <td><strong>TOTALS</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><strong>$800</strong></td>
+        <td></td>
+        <td class="pay-all">
+          <button class="btn btn-primary pay-all">Pay All Pending</button>
+        </td>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+      
+    </script>
+</body>
+
+</html>

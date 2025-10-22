@@ -1,0 +1,284 @@
+<div class="modal fade" id="modal4" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="popup create-match-event">
+          <div class="popup-header flex-column flex-md-row gap-2">
+            <div class="order-2 order-md-1">
+              <div class="popup-title">Create Match Event</div>
+              <div class="popup-subtitle">
+                Set up a game with opponent, venue, dates, reminders - and
+                players!
+              </div>
+            </div>
+            <div class="header-buttons order-1 order-md-2">
+              <button class="btn btn-primary">Publish Event</button>
+              <button class="btn btn-secondary">Save as Draft</button>
+              <button class="btn btn-close">×</button>
+            </div>
+          </div>
+
+          <div class="popup-content">
+            <div class="left-column">
+              <!-- Basic Info Section -->
+              <div class="section">
+                <div class="section-title">BASIC INFO</div>
+                <div class="form-group">
+                  <label class="form-label">EVENT TITLE</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    value="League Match vs. Wolves"
+                  />
+                </div>
+                <div class="d-flex justify-content-between gap-3">
+                  <div class="form-group w-100">
+                    <label class="form-label">OPPONENT</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      value="Wolves United"
+                    />
+                  </div>
+                  <div class="form-group w-100">
+                    <label class="form-label">MATCH TYPE</label>
+                    <!-- <div class="match-type-toggle">
+                      <button class="toggle-option">League</button>
+                      <button class="toggle-option active">Tournament</button>
+                    </div> -->
+                    <input
+                      type="text"
+                      class="form-input"
+                      value="League"
+                    />
+                  </div>
+                  <div class="form-group w-100">
+                    <label class="form-label">HOME / AWAY</label>
+                    <div class="home-away-selector">
+                      <button class="home-away-btn active">Home</button>
+                      <button class="home-away-btn">Away</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Date & Time Section -->
+              <div class="section">
+                <div class="section-title">DATE & TIME</div>
+                <div class="form-group">
+                  <label class="form-label">DATE</label>
+                  <input type="text" class="form-input" value="Sat, Sep 28" />
+                </div>
+                <div class="form-row-triple">
+                  <div class="form-group">
+                    <label class="form-label">KICKOFF</label>
+                    <input type="text" class="form-input" value="3:30 PM" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">ARRIVAL</label>
+                    <input type="text" class="form-input" value="2:45 PM" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">END</label>
+                    <input type="text" class="form-input" value="4:45 PM" />
+                  </div>
+                </div>
+
+                <!-- Repeat Section -->
+                <div style="margin-top: 16px">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    <span class="form-label">REPEAT</span>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-row-triple">
+                    <div class="form-group">
+                      <label class="form-label">FREQUENCY</label>
+                      <select class="form-input">
+                        <option>Weekly</option>
+                        <option>Daily</option>
+                        <option>Monthly</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">EVERY</label>
+                      <input type="text" class="form-input" value="1 week" />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">AT</label>
+                      <input type="text" class="form-input" value="3:30 PM" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">ENDS</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      value="After 6 occurrences"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">DAYS</label>
+                    <div class="days-selector">
+                      <button class="day-btn">SU</button>
+                      <button class="day-btn">MO</button>
+                      <button class="day-btn active">TU</button>
+                      <button class="day-btn">WE</button>
+                      <button class="day-btn">TH</button>
+                      <button class="day-btn">FR</button>
+                      <button class="day-btn">SA</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Locations -->
+                <div style="margin-top: 16px">
+                  <label class="form-label">LOCATIONS</label>
+                  <button
+                    class="btn"
+                    style="background: #7c4dff; color: white; padding: 8px 16px"
+                  >
+                    Add date
+                  </button>
+                </div>
+
+                <div class="summary-text">
+                  Summary: Happens weekly on Tue at 3:30 PM | Every 1 week |
+                  Ends after 6 occurrences
+                </div>
+              </div>
+
+              <!-- Venue & Map Section -->
+              <div class="section">
+                <div class="section-title">VENUE & MAP</div>
+                <div class="form-group">
+                  <label class="form-label">VENUE</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    value="Riverside Sports Complex — Pitch 2"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">ADDRESS</label>
+                  <div class="venue-input-group">
+                    <input
+                      type="text"
+                      class="form-input venue-input"
+                      value="120 Riverside Ave, Ottawa, CA"
+                    />
+                    <button class="map-btn">Open in Maps</button>
+                  </div>
+                </div>
+                <div style="color: #888; font-size: 11px; margin-top: 8px">
+                  Map preview: replace with embed in code!
+                </div>
+              </div>
+            </div>
+
+            <div class="right-column">
+              <!-- Roster Section -->
+              <div class="section">
+                <div class="section-title">ROSTER</div>
+                <div class="form-group">
+                  <label class="form-label">TEAM</label>
+                  <select class="form-input">
+                    <option>U17 — Premier</option>
+                  </select>
+                </div>
+
+                <div class="roster-grid">
+                  <div class="roster-header">Player</div>
+                  <div class="roster-header">Chavez</div>
+                  <div class="roster-header">Thomas</div>
+                  <div class="roster-header">Chavez</div>
+
+                  <div class="roster-item">
+                    <button class="roster-btn active">Taylor</button>
+                    <button class="roster-btn">Chavez</button>
+                    <button class="roster-btn">Thomas</button>
+                    <button class="roster-btn">Chavez</button>
+                  </div>
+
+                  <div class="roster-item">
+                    <button class="roster-btn active">Taylor</button>
+                    <button class="roster-btn">Chavez</button>
+                    <button class="roster-btn">Thomas</button>
+                    <button class="roster-btn">Chavez</button>
+                  </div>
+
+                  <div class="roster-item">
+                    <button class="roster-btn active">Taylor</button>
+                    <button class="roster-btn">Chavez</button>
+                    <button class="roster-btn">Thomas</button>
+                    <button class="roster-btn">Chavez</button>
+                  </div>
+
+                  <div class="roster-item">
+                    <button class="roster-btn active">Taylor</button>
+                    <button class="roster-btn">Chavez</button>
+                    <button class="roster-btn">Thomas</button>
+                    <button class="roster-btn">Chavez</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Attendance Section -->
+              <div class="section">
+                <div class="section-title">ATTENDANCE</div>
+                <div class="attendance-toggle">
+                  <button class="attendance-btn active">RSVP</button>
+                  <button class="attendance-btn">No RSVP</button>
+                </div>
+                <div class="attendance-note">
+                  Players will be asked "Yes / Maybe / No"
+                </div>
+              </div>
+
+              <!-- Attachments Section -->
+              <div class="section">
+                <div class="section-title">ATTACHMENTS</div>
+                <div style="color: #888; font-size: 11px; margin-bottom: 12px">
+                  Drag & drop or click to upload
+                </div>
+                <div class="upload-area">
+                  <div>📎</div>
+                  <button class="upload-btn">Upload</button>
+                </div>
+              </div>
+
+              <!-- Notifications Section -->
+              <div class="section">
+                <div class="section-title">NOTIFICATIONS</div>
+                <div class="notification-row gap-2">
+                  <span class="notification-row-btn">24h before</span>
+                  <span class="notification-row-btn">2h</span>
+                  <span class="notification-row-btn">30 mins</span>
+                </div>
+              </div>
+
+              <button class="create-event-btn">Create Event</button>
+            </div>
+          </div>
+
+          <div class="footer-buttons">
+            <button class="btn-cancel">Cancel</button>
+            <button class="btn-preview">Preview Event</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Training Card</title>
+    <style>
+      body {
+        background: #1e1f26;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        padding: 12px;
+      }
+
+      .training-card {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          180deg,
+          #272a31 0%,
+          rgba(39, 42, 49, 0.49) 100%
+        );
+        border-radius: 16px;
+        width: 100%;
+        max-width: 1120px;
+        padding: 16px;
+        color: white;
+        gap: 20px;
+      }
+
+      /* Left Image Box */
+      .image-box {
+        width: 340px;
+        height: 304px;
+        background: #5f6061;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #7f8ea5;
+        font-size: 14px;
+        position: relative;
+        border: 1px solid #203040;
+      }
+
+      .tag {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background: linear-gradient(135deg, #12e0b0 0%, #39a2ff 100%);
+        color: #0a1117;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      /* Right Content */
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .section-title {
+        font-size: 12px;
+        font-weight: 400;
+        margin-bottom: 18px;
+        color: #9bb3cc;
+      }
+
+      .main-title {
+        font-size: 12px;
+        font-weight: 400;
+        margin-bottom: 12px;
+        color: #e9edf3;
+      }
+
+      .description {
+        font-size: 12px;
+        color: #dde6f2;
+        margin-bottom: 18px;
+        line-height: 100%;
+      }
+
+      /* Pills */
+      .pills {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+
+      .pill {
+        background: #ffffff0f;
+        color: #eaf2f8;
+        padding: 7px 34px;
+        border-radius: 24px;
+        font-size: 12px;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .pill.purple {
+        background: linear-gradient(90deg, #7c3aed 0%, #39a2ff 100%);
+        color: #0a1117;
+      }
+
+      .timing,
+      .location {
+        color: #91a3b8;
+        margin-bottom: 12px;
+      }
+      .location {
+        color: #91a3b8;
+      }
+
+      /* Footer */
+      .footer {
+        display: flex;
+        align-items: start;
+        gap: 92px;
+        margin-bottom: 20px;
+      }
+
+      .price {
+        font-size: 12px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 12px;
+      }
+
+      .btn {
+        padding: 15px 47px;
+        border: none;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        color: #07131b;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+      }
+
+      .btn-blue {
+        background: linear-gradient(135deg, #12e0b0 0%, #39a2ff 100%);
+      }
+
+      .btn-orange {
+        background: linear-gradient(90deg, #f59e0b 0%, #f97316 100%);
+      }
+
+      .location {
+        margin-top: 8px;
+        font-size: 13px;
+        color: #bbb;
+      }
+
+      @media (max-width: 640px) {
+        .training-card {
+          flex-direction: column;
+        }
+        .image-box {
+          width: 100%;
+        }
+        .footer {
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="training-card">
+      <!-- Left -->
+      <div class="image-box">
+        <div class="tag">1-on-1</div>
+        Drop coach/photo or session image
+      </div>
+
+      <!-- Right -->
+      <div class="content">
+        <div class="section-title">PERSONAL TRAINING</div>
+        <div class="main-title">Elite Striker Finishing with Coach Rivera</div>
+        <div class="description">
+          High-intensity finishing reps: movement, first-touch, body shape, and
+          calm in the box. Video breakdown and feedback included.
+        </div>
+
+        <div class="pills">
+          <div class="pill purple">Striker</div>
+          <div class="pill">Ages 13-18</div>
+          <div class="pill">All Positions</div>
+        </div>
+
+        <div class="timing">Sat & Wed • 60 min • Max 6 players</div>
+
+        <div>
+          <div class="footer">
+            <div class="price">$45</div>
+            <div class="buttons">
+              <button class="btn btn-blue">Book Now</button>
+              <button class="btn btn-orange">Message Coach</button>
+            </div>
+          </div>
+          <div class="location">
+            Riverside Sports Complex - Pitch 2 • Ottawa, CA
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

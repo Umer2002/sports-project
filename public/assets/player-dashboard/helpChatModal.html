@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Soccer Dashboard</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="registration-payment-main m-4">
+      <h2 class="registration-text">🏆 Club Registration — Payment Setup</h2>
+      <p class="subtitle-text">Payments go directly to the club’s PayPal (not the platform).</p>
+
+      <div class="form-grid">
+        <!-- Left Section -->
+        <div class="left-section left-section-one">
+          <label>Club Name</label>
+          <input class="input-buton-text" type="text" placeholder="Enter club name" />
+
+          <label>PayPal Email (Club)</label>
+          <input class="input-buton-text" type="email" placeholder="name@club.com" />
+
+          <label>Currency</label>
+          <select class="left-section-one select-button">
+            <option>USD</option>
+            <option>EUR</option>
+            <option>GBP</option>
+          </select>
+
+          <label>Registration Window</label>
+          <div class="date-row">
+            <input class="input-buton-text" type="date" placeholder="Start date" />
+            <input class="input-buton-text" type="date" placeholder="End date" />
+          </div>
+
+          <label>Description (public)</label>
+          <textarea class="textarea-btn" placeholder="Short blurb shown on checkout..."></textarea>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section left-section-one">
+          <label>Registration Tiers</label>
+          <div class="tier-row">
+            <input class="input-buton-text" type="text" value="Youth Player" readonly />
+            <input class="input-buton-text" type="number" value="50" readonly />
+          </div>
+          <div class="tier-row">
+            <input class="input-buton-text" type="text" value="Adult Player" readonly />
+            <input class="input-buton-text" type="number" value="80" readonly />
+          </div>
+          <div class="tier-row">
+            <input class="input-buton-text" type="text" value="Team Registration" readonly />
+            <input class="input-buton-text" type="number" value="300" readonly />
+          </div>
+
+          <button class="add-tier add-tier-two">+ Add Tier</button>
+
+          <div><label>Upload Images (logo, banner, ad)</label></div>
+          <div class="upload-box">Drag & drop or click to upload</div>
+
+          <label>External Links (ad, policy, waiver)</label>
+          <div class="external-links">
+            <input class="input-buton-text" type="url" placeholder="https://..." />
+            <button class="add-link add-tier-two">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Buttons -->
+      <div class="button-row">
+        <button class="save-draft add-tier-two">Save Draft</button>
+        <button class="save-preview add-tier-two">Save & Preview</button>
+        <button class="publish add-tier-two">Publish</button>
+      </div>
+
+      <p class="note note-1">
+        Payments are processed by PayPal and deposited to the club’s PayPal account. Platform does not custody funds.
+      </p>
+    </div>
+  </div>
+  <script>
+        // Theme Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check for saved theme preference or default to 'light'
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            // Create theme toggle button if it doesn't exist
+            if (!document.querySelector('.theme-toggle')) {
+                const themeToggle = document.createElement('button');
+                themeToggle.className = 'theme-toggle';
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                document.body.appendChild(themeToggle);
+
+                // Update icon based on current theme
+                updateThemeIcon(currentTheme, themeToggle);
+
+                // Add click event listener
+                themeToggle.addEventListener('click', function () {
+                    const theme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = theme === 'light' ? 'dark' : 'light';
+
+                    // Update theme
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+
+                    // Update icon
+                    updateThemeIcon(newTheme, themeToggle);
+                });
+            }
+
+            function updateThemeIcon(theme, button) {
+                const icon = button.querySelector('i');
+                if (theme === 'dark') {
+                    icon.className = 'fas fa-sun';
+                } else {
+                    icon.className = 'fas fa-moon';
+                }
+            }
+
+            // Add Font Awesome for icons if not already included
+            if (!document.querySelector('link[href*="font-awesome"]')) {
+                const fontAwesome = document.createElement('link');
+                fontAwesome.rel = 'stylesheet';
+                fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+                document.head.appendChild(fontAwesome);
+            }
+        });
+    </script>
+</body>
+
+</html>

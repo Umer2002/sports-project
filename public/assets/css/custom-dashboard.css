@@ -1,0 +1,201 @@
+/* === Global Dashboard Layout Enhancements === */
+body {
+    background-color: #12121c;
+    color: #ccc;
+    font-family: 'Poppins', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #444 #222;
+}
+
+/* Container Centering */
+.content-body {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+/* === Dashboard Cards === */
+.dashboard-card {
+    background: #1f1f2e;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+.dashboard-box {
+    background: rgba(10, 10, 10, 0.85);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 80px auto;
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-card h5 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* === Buttons === */
+.btn-custom {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #00c9a7;
+    border: none;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background: #00a98e;
+}
+
+.btn-light {
+    background: #2d2d3f;
+    color: #ccc;
+    border: 1px solid #444;
+}
+
+/* === Bootstrap Modal Enhancements === */
+.modal-content {
+    background-color: #2a2a3c;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+.modal-header,
+.modal-footer {
+    border-color: #444;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* === Tabbed Section Styling === */
+.tab-section {
+    background: #1d1d2c;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.nav-tabs .nav-link {
+    background: transparent;
+    color: #ccc;
+    border: none;
+    padding: 10px 15px;
+}
+
+.nav-tabs .nav-link.active {
+    color: #00c9a7;
+    border-bottom: 2px solid #00c9a7;
+}
+
+/* === Sidebar Styling (Optional) === */
+.sidebar {
+    background: #181828;
+}
+
+.sidebar a {
+    color: #ccc;
+    padding: 12px 20px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar .active > a {
+    background: #00c9a7;
+    color: #000;
+    border-radius: 6px;
+}
+
+/* === List Group Polishing === */
+.list-group-item {
+    background: transparent;
+    color: #ccc;
+    border: 1px solid #2e2e3e;
+}
+
+/* === Summernote Dark Mode === */
+body.dark-mode .note-editor.note-frame {
+    background-color: #2c2f3a;
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-mode .note-editor.note-frame .note-editing-area .note-editable {
+    background-color: #2c2f3a;
+    color: #ffffff;
+}
+
+body.dark-mode .note-editor.note-frame .note-toolbar {
+    background-color: #1f2230;
+    border-color: #444;
+}
+
+body.dark-mode .note-editor.note-frame .dropdown-menu {
+    background-color: #2c2f3a;
+    color: #fff;
+}
+
+body.dark-mode .note-editor.note-frame .dropdown-menu .dropdown-item {
+    color: #fff;
+}
+
+body.dark-mode .note-editor.note-frame .dropdown-menu .dropdown-item:hover {
+    background-color: #444;
+}
+
+/* === Helper Spacing Utilities === */
+.mt-4 { margin-top: 1.5rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.p-3 { padding: 1rem !important; }
+.px-4 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+
+/* === Light theme overrides (works with theme toggle setting data-theme="light") === */
+[data-theme='light'] body {
+    background-color: #f8fafc !important;
+    color: #0f172a;
+    scrollbar-color: #cbd5e1 #e2e8f0;
+}
+[data-theme='light'] .dashboard-card {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+/*
+
+[data-theme='light'] .dashboard-box { background: #ffffff; color: #0f172a; }
+[data-theme='light'] .dashboard-card h5 { color: #0f172a; }
+[data-theme='light'] .btn-light { background: #f1f5f9; color: #0f172a; border: 1px solid #e2e8f0; }
+[data-theme='light'] .modal-content { background-color: #ffffff; color: #0f172a; box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12); }
+[data-theme='light'] .modal-header, [data-theme='light'] .modal-footer { border-color: #e2e8f0; }
+[data-theme='light'] .tab-section { background: #ffffff; }
+[data-theme='light'] .nav-tabs .nav-link { color: #475569; }
+[data-theme='light'] .nav-tabs .nav-link.active { color: #0ea5e9; border-bottom-color: #0ea5e9; }
+[data-theme='light'] .sidebar { background: #ffffff; }
+[data-theme='light'] .sidebar a { color: #0f172a; }
+[data-theme='light'] .sidebar a:hover, [data-theme='light'] .sidebar .active > a { background: #e2e8f0; color: #0f172a; }
+[data-theme='light'] .list-group-item { background: #ffffff; color: #0f172a; border-color: #e2e8f0; }
+[data-theme='light'] .logo-black .navbar-header { background-color: #ffffff; }
+[data-theme='light'] .logo-black .navbar-brand { color: #0f172a; }
+[data-theme='light'] .logo-black .navbar-brand:hover { color: #0ea5e9; }
+[data-theme='light'] #navbar-collapse-toggle { color: #0f172a; }
+[data-theme='light'] #navbar-collapse-toggle:hover { color: #0ea5e9; }
+[data-theme='light'] .note-editor.note-frame { background-color: #ffffff; color: #0f172a; border-color: #e2e8f0; }
+[data-theme='light'] .note-editor.note-frame .note-editing-area .note-editable { background-color: #ffffff; color: #0f172a; }
+[data-theme='light'] .sidebar a { color: #000000; }
+*/

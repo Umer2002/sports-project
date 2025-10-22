@@ -1,0 +1,254 @@
+<div class="modal fade" id="createMatchEvent" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body container-box">
+        <div class="backdrop"></div>
+        <div class="modal" id="eventModal">
+          <!-- Header row -->
+          <div class="modal-topbar">
+            <div class="title-wrap">
+              <h3>Create Match Event</h3>
+              <p class="subtitle">Set up a game with opponent, venue, roster, reminders — and repeats.</p>
+            </div>
+
+            <div class="actions">
+              <button class="btn btn-gradient" id="btnPublish">Publish Event</button>
+              <button class="btn btn-gradient purple" id="btnDraft">Save as Draft</button>
+
+              <button id="themeToggle" class="btn btn-outline icon">
+                <span class="theme-icon" id="themeIcon">🌙</span>
+              </button>
+
+              <button id="closeModal" class="btn btn-icon close-x" aria-label="Close">✕</button>
+            </div>
+          </div>
+
+          <!-- Body two-column layout -->
+          <div class="modal-body">
+            <!-- LEFT COLUMN -->
+            <div class="col-left">
+              <!-- BASIC INFO -->
+              <section class="card">
+                <h6>BASIC INFO</h6>
+                <div class="field">
+                  <label>EVENT TITLE</label>
+                  <input type="text" value="League Match vs. Wolves" />
+                </div>
+
+                <div class="grid g3 g-gap">
+                  <div class="field">
+                    <label>OPPONENT</label>
+                    <input type="text" value="Wolves United" />
+                  </div>
+                  <div class="field">
+                    <label>MATCH TYPE</label>
+                    <input type="text" value="League" />
+                  </div>
+                  <div class="field">
+                    <label>HOME / AWAY</label>
+                    <div class="btn-seg">
+                      <button class="seg seg-active">Home</button>
+                      <button class="seg">Away</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- DATE & TIME -->
+              <section class="card">
+                <h6>DATE & TIME</h6>
+                <div class="grid g4 g-gap">
+                  <div class="field">
+                    <label>DATE</label>
+                    <input type="text" value="Sat, Sep 28" />
+                  </div>
+                  <div class="field">
+                    <label>KICKOFF</label>
+                    <input type="text" value="3:30 PM" />
+                  </div>
+                  <div class="field">
+                    <label>ARRIVAL</label>
+                    <input type="text" value="2:45 PM" />
+                  </div>
+                  <div class="field">
+                    <label>END</label>
+                    <input type="text" value="4:45 PM" />
+                  </div>
+                </div>
+
+                <!-- Repeat -->
+                <div class="repeat">
+                  <div class="row">
+                    <div class="field">
+                      <label>REPEAT</label>
+                    </div>
+                    <div class="grow"></div>
+                    <label class="switch">
+                      <input id="repeatToggle" type="checkbox" checked />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+
+                  <div class="grid g4 g-gap repeat-grid">
+                    <div class="field">
+                      <label>FREQUENCY</label>
+                      <div class="select-wrap">
+                        <select>
+                          <option selected>Weekly</option>
+                          <option>Daily</option>
+                          <option>Monthly</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>EVERY</label>
+                      <input type="text" value="1 week" />
+                    </div>
+                    <div class="field">
+                      <label>AT</label>
+                      <input type="text" value="3:30 PM" />
+                    </div>
+                    <div class="field">
+                      <label>ENDS</label>
+                      <input class="ends" type="text" value="After • 8 occurrences" />
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label>DAYS</label>
+                    <div class="days">
+                      <button class="chip">S</button>
+                      <button class="chip">M</button>
+                      <button class="chip chip-active">T</button>
+                      <button class="chip">W</button>
+                      <button class="chip">T</button>
+                      <button class="chip">F</button>
+                      <button class="chip">S</button>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label>EXCEPTIONS</label>
+                    <div class="exceptions">
+                      <button class="btn btn-outline">Skip dates...</button>
+                      <button class="btn btn-gradient small">Add date</button>
+                    </div>
+                  </div>
+
+                  <div class="summary-line">
+                    <input type="text" disabled
+                      value="Summary: Repeats weekly on Tue at 3:30 PM • Every 1 week • Ends after 8 occurrences" />
+                  </div>
+                </div>
+              </section>
+
+              <!-- VENUE & MAP -->
+              <section class="card">
+                <h6>VENUE & MAP</h6>
+                <div class="field">
+                  <label>VENUE</label>
+                  <div class="grid g2 g-gap">
+                    <input type="text" value="Riverside Sports Complex – Pitch 2" />
+                    <button class="btn btn-gradient">Open in Maps</button>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label>ADDRESS</label>
+                  <input type="text" value="100 Riverside Ave, Ottawa, CA" />
+                </div>
+
+                <div class="map-box">
+                  <div class="map-dash">
+                    <span>Map preview (replace with embed in code)</span>
+                  </div>
+                </div>
+              </section>
+
+              <div class="footer-actions">
+                <button class="btn btn-outline">Cancel</button>
+                <button class="btn btn-gradient indigo">Preview Event</button>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="col-right">
+              <!-- ROSTER -->
+              <section class="card">
+                <div class="row align-center">
+                  <h6>ROSTER</h6>
+                </div>
+                <div class="field">
+                  <label>TEAM</label>
+                  <div class="select-wrap">
+                    <select>
+                      <option selected>U17 – Premier</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="roster">
+                  <!-- 4x5 grid (example) -->
+                  <div class="pill pill-active">Porter</div>
+                  <div class="pill">Chavez</div>
+                  <div class="pill">Thomas</div>
+                  <div class="pill">Chavez</div>
+
+                  <div class="pill pill-active">Porter</div>
+                  <div class="pill">Chavez</div>
+                  <div class="pill">Thomas</div>
+                  <div class="pill">Chavez</div>
+
+                  <div class="pill pill-active">Porter</div>
+                  <div class="pill">Chavez</div>
+                  <div class="pill">Thomas</div>
+                  <div class="pill">Chavez</div>
+
+                  <div class="pill pill-active">Porter</div>
+                  <div class="pill">Chavez</div>
+                  <div class="pill">Thomas</div>
+                  <div class="pill">Chavez</div>
+
+                  <div class="pill pill-active">Porter</div>
+                  <div class="pill">Chavez</div>
+                  <div class="pill">Thomas</div>
+                  <div class="pill">Chavez</div>
+                </div>
+              </section>
+
+              <!-- ATTENDANCE -->
+              <section class="card">
+                <h6>ATTENDANCE</h6>
+                <div class="btn-seg wide">
+                  <button class="seg seg-active" id="rsvpYes">RSVP</button>
+                  <button class="seg" id="rsvpNo">No RSVP</button>
+                </div>
+                <p class="muted small">Players will be asked: Yes / Maybe / No</p>
+              </section>
+
+              <!-- ATTACHMENTS -->
+              <section class="card">
+                <h6>ATTACHMENTS</h6>
+                <div class="upload">
+                  <span class="muted">Drag & drop or click to upload</span>
+                  <button class="btn btn-orange">Upload</button>
+                </div>
+              </section>
+
+              <!-- NOTIFICATIONS -->
+              <section class="card">
+                <h6>NOTIFICATIONS</h6>
+                <div class="btn-seg">
+                  <button class="seg">24h before</button>
+                  <button class="seg">2h</button>
+                  <button class="seg">30m</button>
+                </div>
+                <button class="btn btn-gradient full">Create Event</button>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

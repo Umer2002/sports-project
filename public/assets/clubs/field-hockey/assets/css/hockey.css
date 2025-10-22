@@ -1,0 +1,344 @@
+:root {
+  /* Hockey Theme Colors */
+  --hero-bg: #e0f2ff;
+  /* --btn-bg: #0055ff; */
+  --btn-color: #fff000;
+  --card-bg: #141522;
+  --main-image: url('../image/bg-hockey-hero.png'),
+    url('../image/bg-hockey-hero-1.png'); /* Replace with hockey hero image if available */
+  --main-logo: url('../image/logo.png'); /* Replace with hockey logo if available */
+  --primary-text: #1e293b;
+  --secondary-text: #27417c;
+  --header-bg-img: url('../image/Rectangle.png');
+  --stats-label-bg: linear-gradient(180deg, #2C3E50 0%, #061523 100%);
+  --stats-box-bg: linear-gradient(180deg, #2C3E50 0%, #061523 100%);
+  /* Add more variables as needed for hockey page */
+}
+
+body {
+  color: var(--primary-text);
+}
+
+.header{
+    background-color: transparent;
+    background-image: var(--header-bg-img)
+}
+
+.main{
+    background-image: var(--main-image) !important;
+    object-fit: contain;
+    background-size: cover;
+}
+
+/* Example usage (override base styles) */
+.hero {
+  /* background-color: var(--hero-bg) !important; */
+  /* background-image: var(--main-image) !important; */
+  background-image: none;
+}
+.login-btn,
+.donate-btn {
+  background-color: var(--btn-bg) !important;
+  color: var(--btn-color) !important;
+}
+.card {
+  background-color: var(--card-bg) !important;
+}
+.logo {
+  background-image: var(--main-logo) !important;
+}
+
+.team-logos {
+  padding: 0px;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.stats-box{
+    width: 472px;
+    max-width: 472px;
+    min-width: 472px;
+    background: var(--stats-box-bg);
+}
+
+@media (min-width: 992px) {
+  /* .stats-box {
+    max-width: 360px;
+    min-width: 360px;
+    width: 360px;
+  } */
+}
+
+.stats-label{
+    background: var(--stats-label-bg);
+}
+/* Add more overrides as needed for hockey-specific look */
+
+/* 1. Radio buttons ko screen se chupayein */
+.css-tab-input {
+    display: none;
+}
+
+/* 2. Sabhi content sections ko default mein chupayein */
+.tab-wrapper .tab-pane {
+    display: none;
+}
+
+/* 3. Labels (tabs) ko clickable banane ke liye style karein */
+.css-tab-label {
+    cursor: pointer;
+    /* Aap yahan apne .menu-bar a ka style daal sakte hain */
+    padding: 10px 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Yeh CSS ka Jadoo hai! */
+/* Jab radio button checked ho, to uske corresponding content ko dikhayein */
+/* (General Sibling Combinator '~' ka istemal) */
+
+#tab-donation:checked ~ .row .tab-wrapper #donation,
+#tab-bio:checked ~ .row .tab-wrapper #bio,
+#tab-club:checked ~ .row .tab-wrapper #club,
+#tab-teams:checked ~ .row .tab-wrapper #teams,
+#tab-awards:checked ~ .row .tab-wrapper #awards,
+#tab-posts:checked ~ .row .tab-wrapper #posts {
+    display: block; /* Content ko show karein */
+}
+
+/* Active tab ka style badalne ke liye */
+#tab-donation:checked ~ .row .menu-bar label[for="tab-donation"],
+#tab-bio:checked ~ .row .menu-bar label[for="tab-bio"],
+#tab-club:checked ~ .row .menu-bar label[for="tab-club"],
+#tab-teams:checked ~ .row .menu-bar label[for="tab-teams"],
+#tab-awards:checked ~ .row .menu-bar label[for="tab-awards"],
+#tab-posts:checked ~ .row .menu-bar label[for="tab-posts"] {
+    /* Yahan active tab ka style daalein (e.g., color, border-bottom) */
+    color: var(--btn-color); /* Example color */
+    background-color: var(--btn-bg);
+    /* border-bottom: 2px solid #00aaff; Example border */
+}
+
+/* Main container - ismein koi tabdeeli nahi */
+.definition-list-container {
+    background-color: #0d1424;
+    border: 2px solid #3a8dff;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.definition-list-container .heading {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* === YAHAN ZAROORI TABDEELIYAN HAIN === */
+
+/* 1. Main Grid Container (<dl>) ki settings */
+.club-definition-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    
+    /* YEH NAYI PROPERTY HAI: Sequence ko theek karne ke liye */
+    grid-auto-flow: column; 
+    
+    /* YEH BHI NAYI PROPERTY HAI: Har column mein kitni rows hongi */
+    grid-template-rows: repeat(6, auto); /* Aapke design ke mutabiq 6 rows */
+
+    gap: 15px 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Har Entry (<div>) ke andar ek aur Grid banayein */
+.club-definition-list div {
+    display: grid;
+    /* Year ke liye 110px, Club ke liye baaki jagah */
+    grid-template-columns: 110px auto; 
+    align-items: start; /* Text ko upar se align karein */
+    gap: 15px; /* Year aur Club ke darmiyan space */
+}
+
+/* 3. <dt> aur <dd> ki styling */
+.club-definition-list dt,
+.club-definition-list dd {
+    /* Ab 'display: inline' ki zaroorat nahi */
+    margin: 0;
+}
+
+.club-definition-list dt { /* Year */
+    color: #a0a8b2;
+}
+
+.club-definition-list dd { /* Club Name */
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .club-definition-list {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, auto); /* 14 items ke liye 7 rows */
+    }
+}
+
+@media (max-width: 768px) {
+    .club-definition-list {
+        grid-template-columns: 1fr;
+        grid-auto-flow: row; /* Mobile par wapas normal flow */
+        grid-template-rows: none; /* Rows ko auto kar dein */
+    }
+}
+
+/* Main container for the awards section */
+.awards-container {
+    background-color: #0d1424;
+    border: 2px solid #3a8dff;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.awards-container .heading {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Awards Grid Layout */
+.awards-grid {
+    display: grid;
+    /* Yeh line grid ko automatically responsive banati hai */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px; /* Cards ke darmiyan space */
+}
+
+/* Individual Award Card Styling */
+.award-item {
+    background-color: #1a2947; /* Card ka background color */
+    border-radius: 15px;      /* Rounded corners */
+    padding: 20px;            /* Card ke andar space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect ke liye transition */
+}
+
+/* Image styling */
+.award-item img {
+    max-width: 100%; /* Image ko card se bahar jane se rokein */
+    height: auto;
+}
+
+/* Card par hover karne ka effect (Optional, lekin acha lagta hai) */
+.award-item:hover {
+    transform: translateY(-8px); /* Card thora sa upar uthega */
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.15); /* Halka sa shadow effect */
+}
+
+/* Main container for the posts section */
+.posts-container {
+    background-color: #0d1424;
+    border: 2px solid #3a8dff;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+/* The card for a single post */
+.post-card {
+    /* Iska background container jaisa hi hai, is liye alag color nahi */
+    color: #ffffff;
+}
+
+/* Post Header styling */
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Avatar aur text ke darmiyan space */
+}
+
+.post-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Gol avatar ke liye */
+    object-fit: cover;
+}
+
+.post-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-user-info strong {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.post-user-info small {
+    font-size: 12px;
+    color: #a0a8b2;
+}
+
+/* Post body styling */
+.post-body {
+    margin: 20px 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #d0d2d6; /* Thora halka white */
+}
+
+.post-body p {
+    margin-bottom: 1em;
+}
+
+.post-body a {
+    color: #3a8dff;
+    text-decoration: none;
+}
+
+.post-body a:hover {
+    text-decoration: underline;
+}
+
+/* Post image styling */
+.post-media img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Post actions (Like, Comment, Share) styling */
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15px;
+    border-top: 1px solid #2a3a5a; /* Upar halki si line */
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #a0a8b2;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.action-button:hover {
+    color: #ffffff;
+}
+
+.action-button svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor; /* Icon ka color text ke color jaisa ho jayega */
+}

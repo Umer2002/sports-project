@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #2a2d35;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        color: white;
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+      }
+
+      .section {
+        background-color: #3a3d45;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: white;
+      }
+
+      .more-btn {
+        background: none;
+        border: none;
+        color: #8b8d97;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      /* Stats Cards */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .stat-card {
+        background-color: #464952;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .stat-circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+      }
+
+      .stat-circle.green {
+        background: conic-gradient(#22c55e 0deg 162deg, #464952 162deg 360deg);
+      }
+
+      .stat-circle.orange {
+        background: conic-gradient(#f97316 0deg 248deg, #464952 248deg 360deg);
+      }
+
+      .stat-circle.blue {
+        background: conic-gradient(#3b82f6 0deg 302deg, #464952 302deg 360deg);
+      }
+
+      .stat-circle.purple {
+        background: conic-gradient(#8b5cf6 0deg 201deg, #464952 201deg 360deg);
+      }
+
+      .stat-number {
+        background-color: #3a3d45;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        color: #b4b6c0;
+        margin-bottom: 8px;
+      }
+
+      .stat-change {
+        font-size: 12px;
+        color: #22c55e;
+      }
+
+      /* Action Buttons */
+      .buttons-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .buttons-grid-second {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+      }
+
+      .action-btn {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .btn-green {
+        background-color: #22c55e;
+        color: white;
+      }
+
+      .btn-cyan {
+        background-color: #06b6d4;
+        color: white;
+      }
+
+      .btn-teal {
+        background-color: #14b8a6;
+        color: white;
+      }
+
+      .btn-pink {
+        background-color: #ec4899;
+        color: white;
+      }
+
+      .btn-blue {
+        background-color: #3b82f6;
+        color: white;
+      }
+
+      .btn-orange {
+        background-color: #f97316;
+        color: white;
+      }
+
+      .btn-yellow {
+        background-color: #eab308;
+        color: white;
+      }
+
+      .btn-purple {
+        background-color: #8b5cf6;
+        color: white;
+      }
+
+      /* Main Content Grid */
+      .main-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+      }
+
+      /* Countdown Section */
+      .countdown-section {
+        background-color: #3a3d45;
+        border-radius: 12px;
+        padding: 20px;
+      }
+
+      .countdown-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .countdown-title {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .countdown-badge {
+        background-color: #3b82f6;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .countdown-label {
+        font-size: 12px;
+        color: #8b8d97;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .countdown-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        margin-bottom: 15px;
+      }
+
+      .countdown-item {
+        text-align: center;
+        border-radius: 8px;
+        padding: 20px 10px;
+        color: white;
+        font-weight: bold;
+      }
+
+      .countdown-item.weeks {
+        background-color: #8b5cf6;
+      }
+
+      .countdown-item.days {
+        background-color: #f97316;
+      }
+
+      .countdown-item.hours {
+        background-color: #06b6d4;
+      }
+
+      .countdown-item.minutes {
+        background-color: #ec4899;
+      }
+
+      .countdown-item.seconds {
+        background-color: #22c55e;
+      }
+
+      .countdown-number {
+        font-size: 32px;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .countdown-text {
+        font-size: 12px;
+        text-transform: capitalize;
+      }
+
+      .countdown-tip {
+        font-size: 11px;
+        color: #8b8d97;
+        line-height: 1.4;
+      }
+
+      /* Chat Section */
+      .chat-section {
+        background-color: #3a3d45;
+        border-radius: 12px;
+        padding: 20px;
+      }
+
+      .chat-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .search-box {
+        background-color: #464952;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 15px;
+        color: white;
+        font-size: 14px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .search-box::placeholder {
+        color: #8b8d97;
+      }
+
+      .chat-list {
+        list-style: none;
+      }
+
+      .chat-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #464952;
+      }
+
+      .chat-item:last-child {
+        border-bottom: none;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 15px;
+        background-color: #6b7280;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .avatar.vincent {
+        background-color: #8b5cf6;
+      }
+      .avatar.aiden {
+        background-color: #f97316;
+      }
+      .avatar.mike {
+        background-color: #06b6d4;
+      }
+      .avatar.erika {
+        background-color: #eab308;
+      }
+      .avatar.christian {
+        background-color: #22c55e;
+      }
+
+      .chat-info {
+        flex: 1;
+      }
+
+      .chat-name {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 2px;
+      }
+
+      .chat-status {
+        font-size: 12px;
+        color: #22c55e;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .chat-status.offline {
+        color: #8b8d97;
+      }
+
+      .status-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #22c55e;
+      }
+
+      .status-dot.offline {
+        background-color: #8b8d97;
+      }
+
+      .chat-arrow {
+        color: #8b8d97;
+        font-size: 16px;
+      }
+
+      .search-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #8b8d97;
+      }
+
+      .search-container {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Stats Section -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Heading</h2>
+          <button class="more-btn">⋯</button>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-circle green">
+              <div class="stat-number">45</div>
+            </div>
+            <div class="stat-label">Total Revenue</div>
+            <div class="stat-change">26% increase in<br />28 Days</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-circle orange">
+              <div class="stat-number">69</div>
+            </div>
+            <div class="stat-label">Reported Injuries</div>
+            <div class="stat-change">26% increase in<br />28 Days</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-circle blue">
+              <div class="stat-number">84</div>
+            </div>
+            <div class="stat-label">Player Transfers</div>
+            <div class="stat-change">26% increase in<br />28 Days</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-circle purple">
+              <div class="stat-number">56</div>
+            </div>
+            <div class="stat-label">New Registrations</div>
+            <div class="stat-change">26% increase in<br />28 Days</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons Section -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Heading</h2>
+          <button class="more-btn">⋯</button>
+        </div>
+        <div class="buttons-grid">
+          <button class="action-btn btn-green">+ Add Coach</button>
+          <button class="action-btn btn-cyan">⚡ Assign Award</button>
+          <button class="action-btn btn-teal">⚙ Tournament Engine</button>
+          <button class="action-btn btn-pink">👤 Player Attributes</button>
+        </div>
+        <div class="buttons-grid-second">
+          <button class="action-btn btn-blue">⚽ Create Match</button>
+          <button class="action-btn btn-orange">📝 Blog Post</button>
+          <button class="action-btn btn-yellow">💡 Post Training Ads</button>
+          <button class="action-btn btn-purple">📋 Tournament Directory</button>
+        </div>
+      </div>
+
+      <!-- Main Content Grid -->
+      <div class="main-content">
+        <!-- Countdown Section -->
+        <div class="countdown-section">
+          <div class="countdown-header">
+            <h3 class="countdown-title">Onboarding Period Remaining</h3>
+            <span class="countdown-badge">End in 14 Days</span>
+          </div>
+          <div class="countdown-label">COUNTDOWN</div>
+          <div class="countdown-grid">
+            <div class="countdown-item weeks">
+              <span class="countdown-number">02</span>
+              <span class="countdown-text">Weeks</span>
+            </div>
+            <div class="countdown-item days">
+              <span class="countdown-number">00</span>
+              <span class="countdown-text">Days</span>
+            </div>
+            <div class="countdown-item hours">
+              <span class="countdown-number">00</span>
+              <span class="countdown-text">Hours</span>
+            </div>
+            <div class="countdown-item minutes">
+              <span class="countdown-number">00</span>
+              <span class="countdown-text">Minutes</span>
+            </div>
+            <div class="countdown-item seconds">
+              <span class="countdown-number">00</span>
+              <span class="countdown-text">Seconds</span>
+            </div>
+          </div>
+          <p class="countdown-tip">
+            Tip: Turn this into a component and expose the five numbers as
+            properties for a live countdown.
+          </p>
+        </div>
+
+        <!-- Chat Section -->
+        <div class="chat-section">
+          <div class="chat-header">
+            <h3 class="section-title">Chats</h3>
+            <button class="more-btn">⋯</button>
+          </div>
+          <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search" />
+            <span class="search-icon">🔍</span>
+          </div>
+          <ul class="chat-list">
+            <li class="chat-item">
+              <div class="avatar vincent"></div>
+              <div class="chat-info">
+                <div class="chat-name">Vincent Porter</div>
+                <div class="chat-status">
+                  <span class="status-dot"></span>
+                  Online
+                </div>
+              </div>
+              <span class="chat-arrow">›</span>
+            </li>
+            <li class="chat-item">
+              <div class="avatar aiden"></div>
+              <div class="chat-info">
+                <div class="chat-name">Aiden Chavez</div>
+                <div class="chat-status offline">
+                  <span class="status-dot offline"></span>
+                  Left 7 min ago
+                </div>
+              </div>
+              <span class="chat-arrow">›</span>
+            </li>
+            <li class="chat-item">
+              <div class="avatar mike"></div>
+              <div class="chat-info">
+                <div class="chat-name">Mike Thomas</div>
+                <div class="chat-status">
+                  <span class="status-dot"></span>
+                  Online
+                </div>
+              </div>
+              <span class="chat-arrow">›</span>
+            </li>
+            <li class="chat-item">
+              <div class="avatar erika"></div>
+              <div class="chat-info">
+                <div class="chat-name">Erika Hughes</div>
+                <div class="chat-status">
+                  <span class="status-dot"></span>
+                  Online
+                </div>
+              </div>
+              <span class="chat-arrow">›</span>
+            </li>
+            <li class="chat-item">
+              <div class="avatar christian"></div>
+              <div class="chat-info">
+                <div class="chat-name">Christian Kelly</div>
+                <div class="chat-status">
+                  <span class="status-dot"></span>
+                  Online
+                </div>
+              </div>
+              <span class="chat-arrow">›</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

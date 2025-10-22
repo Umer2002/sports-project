@@ -1,0 +1,1647 @@
+:root {
+    /* background: linear-gradient(180deg, #E67E22 0%, #A44D00 100%); */
+
+    --body-bg: #1c3749;
+    --hero-bg: #e67e22;
+    --btn-bg-secondary: #0055ff;
+    --join-club-btn-bg: linear-gradient(180deg, #074cea 0%, #001648 100%);
+    --join-club-btn-color: #d5f40b;
+    --btn-color: #fff000;
+    --card-bg: #141522;
+    --club-list-bg: #141522;
+    --club-input-bg: #1f2522;
+    --club-input-border: #514e4e;
+    --club-input-placeholder: #8b8b8b;
+    --coach-card-bg: #212235;
+    --team-card-bg: #203d95;
+    --team-country-bar-bg: linear-gradient(180deg, #3498db 0%, #265c7f 100%);
+
+    --player-name-bg: #0c121b;
+    --player-stats-header-bg: #2a6d9a;
+    --player-stats-values-bg: linear-gradient(180deg, #3498db 0%, #265c7f 100%);
+
+    --skill-card-bg: #232335;
+    --main-left-image: url("../image/bg-hockey-hero-1.png");
+    --main-right-image: url("../image/new-hockey-right-bg-1.png"),
+        url("../image/new-hockey-right-bg-2.png");
+    --main-logo: url("../image/logo.png");
+    --primary-text: #1e293b;
+    --secondary-text: #27417c;
+    --default-text: #ffffff;
+    --weather-dec-text: #ebebf599;
+    --header-bg-img: url("../image/Rectangle.png");
+    --stats-label-bg: linear-gradient(180deg, #2c3e50 0%, #061523 100%);
+    --stats-box-bg: linear-gradient(180deg, #2c3e50 0%, #061523 100%);
+}
+/* Global horizontal overflow suppression for mobile */
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--primary-text);
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.header {
+    background-image: var(--header-bg-img);
+}
+
+.hero-left-content {
+    padding: 40px;
+    background-image: var(--main-left-image) !important;
+    object-fit: contain;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+.hero-left-content::before {
+    /* display: none; */
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 55%;
+    width: 300px; /* ← Fixed width */
+    height: 200px; /* ← Fixed height */
+    background-image: url("../image/—Pngtree—hockey.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* transform: scaleX(-1); */
+    z-index: -1;
+    opacity: 0.3;
+    filter: brightness(0.8);
+}
+.hero-left-content {
+    background-image: none; /* ← Original background remove */
+}
+
+.hero-right-content {
+    padding: 40px;
+    background-image: var(--main-right-image) !important;
+    object-fit: contain;
+    background-size: cover;
+}
+
+.hero {
+    background-image: none;
+}
+
+/* ==========================================================================
+   Sidebar (Complete Refactor for New Design)
+   ========================================================================== */
+.profile-sidebar {
+    width: 130px;
+    min-width: 130px;
+    background: #131b17;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 120;
+    border-right: 1px solid #2a3a5a40;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-dropdown {
+    width: 100%;
+    padding: 18px 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    flex-shrink: 0;
+    border-left: 3px solid #00aaff;
+    background: linear-gradient(180deg, #3498db 0%, #265c7f 100%);
+}
+
+/* 2. Scroll Buttons */
+.sidebar-scroll-btn {
+    width: 80%;
+    margin: 10px auto;
+    background: linear-gradient(180deg, #2f3733 0%, #0a0c0b 100%);
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    height: 36px;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.sidebar-scroll-btn:hover {
+    background: #232a2e;
+}
+
+/* 3. Scrollable Player List */
+.sidebar-player-list {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 5px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.sidebar-player-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* 4. New Player Card Design */
+.sidebar-card {
+    position: relative;
+    width: 100px;
+    height: 130px;
+    margin: 0 auto 15px;
+}
+
+.sidebar-card-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.sidebar-card-player {
+    position: absolute;
+    width: 75px;
+    height: 90px;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    object-fit: contain;
+}
+
+.sidebar-card-name {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    color: white;
+    background: black;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+/* ==========================================================================
+   Sidebar - Responsive
+   ========================================================================== */
+@media (max-width: 767.98px) {
+    .profile-sidebar {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+        height: 88px !important;
+        padding: 0px 15px 0px 0px;
+        width: auto;
+        min-width: auto;
+        border-right: none;
+        height: 88px;
+        background-color: #0d1621;
+        position: relative;
+    }
+
+    .sidebar-dropdown {
+        width: 88px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: none;
+        padding: 0px;
+        /*Typography*/
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        flex-shrink: 0;
+    }
+
+    .sidebar-scroll-btn {
+        margin: 0px;
+        height: 24px;
+        width: 56px;
+        transform: rotate(-90deg);
+        flex-shrink: 0;
+    }
+
+    .sidebar-player-list {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex: 1;
+        padding: 0px 10px;
+        gap: 15px;
+        align-items: center;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .sidebar-player-list::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .sidebar-card {
+        margin: 0px;
+        width: 47px;
+        height: 56px;
+        flex-shrink: 0;
+    }
+
+    .sidebar-card-bg {
+        width: 47px;
+        height: 56px;
+    }
+
+    .sidebar-card-player {
+        width: 37px;
+        height: 46px;
+        top: 0px;
+    }
+
+    .sidebar-card-name {
+        bottom: 0px;
+        font-size: 6px;
+    }
+}
+
+/* ==========================================================================
+   Custom Hero Section
+   ========================================================================== */
+.hero-section-custom {
+    gap: 32px;
+    color: #fff;
+}
+
+.weather-location {
+    gap: 10px;
+    font-size: 18px;
+}
+
+.weather-temp {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 0.37px;
+    line-height: 42px;
+    font-style: regular;
+}
+
+.weather-desc,
+.weather-city {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.08px;
+    line-height: 18px;
+    font-style: regular;
+    color: var(--weather-dec-text);
+}
+
+.weather-city {
+    color: var(--default-text);
+}
+
+.hero-label {
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--default-text);
+    font-weight: 500;
+    letter-spacing: 0px;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: 0px;
+    margin-bottom: 0.5rem;
+}
+
+.share-profile span {
+    font-weight: 600;
+}
+
+.info-card {
+    width: 337px;
+    max-width: 100%;
+    height: 167px;
+    background: #2876aa;
+    border-radius: 32px;
+    padding: 18px 20px;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    gap: 8px;
+}
+
+.info-card-title {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    gap: 6px;
+    border-bottom: 1px solid #374655;
+    padding-bottom: 10px;
+}
+
+.info-card-desc {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+    opacity: 0.9;
+}
+
+.join-club-btn {
+    background: var(--join-club-btn-bg);
+    color: var(--join-club-btn-color);
+    border: none;
+    border-radius: 50px;
+    padding: 7px 24px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.join-club-btn:hover {
+    background: var(--btn-color);
+    color: var(--btn-bg-secondary);
+}
+
+.hero-contact-bar {
+    background: #2876aa;
+    border-radius: 32px 32px 0 0;
+    padding: 20px;
+    font-size: 15px;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-contact-bar span {
+    gap: 6px;
+}
+
+.hero-managed-by {
+    position: absolute;
+    height: 39px;
+    bottom: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: var(--default-text);
+}
+
+.hero-right-content {
+    position: relative;
+}
+
+.hexagon-badge {
+    width: 260px;
+    height: 300px;
+    background-image: url("../image/vector 6.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -225px;
+    top: -170px;
+    z-index: 1;
+}
+
+.hex-logo-img {
+    position: relative;
+    left: -25px;
+    top: -25px;
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+}
+
+.hockey-bg-img {
+    position: absolute;
+    top: -25px;
+    left: 80px;
+    z-index: 1;
+}
+
+.vertical-hockey-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-size: 180px;
+    font-weight: 700;
+    color: var(--default-text);
+    opacity: 0.13;
+    letter-spacing: 0px;
+    user-select: none;
+    pointer-events: none;
+    line-height: 180px;
+    text-transform: uppercase;
+    /* left: 0; */
+    left: calc(100% - 430px);
+}
+
+/* ==========================================================================
+   Custom Hero Section - Responsive
+   ========================================================================== */
+@media (min-width: 1027px) and (max-width: 1199.98px) {
+    .hexagon-badge {
+        top: -150px;
+        left: -120px;
+    }
+}
+@media (max-width: 1199.98px) {
+    .mobile-hexagon-badge {
+        position: relative;
+        left: 0%;
+        top: 50%;
+    }
+}
+@media (max-width: 767.98px) {
+    .hero-left-content {
+        padding: 31px 15px;
+    }
+
+    .hero-label {
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: 0px;
+        font-weight: 500;
+    }
+
+    .hero-title {
+        margin-top: 0px !important;
+        font-size: 40px;
+        line-height: 48px;
+        letter-spacing: 0px;
+        font-weight: 800;
+    }
+
+    .donate-btn {
+        width: 276px;
+        max-width: 276px;
+        height: 44px;
+        max-height: 44px;
+        padding: 10px 50px;
+        border-radius: 50px;
+        margin-top: 16px;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10px;
+        max-width: 400px;
+        width: auto;
+        margin: 0;
+    }
+
+    .hero-contact-bar {
+        flex-direction: row;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .hero-contact-bar span {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        width: 160px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .hero-contact-bar span img {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0; /* Prevents icon from shrinking */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .info-card {
+        height: 185px;
+    }
+}
+
+/* ===================== Club List Tab Section CSS Start ===================== */
+
+.menu-bar {
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    background-color: #1c3749;
+}
+
+.menu-bar label {
+    width: 83px;
+    height: 80px;
+    radius: 15px;
+    padding: 28px 21px;
+}
+
+/* Hide radio tab inputs */
+.css-tab-input {
+    display: none;
+}
+
+/* Tab labels (tab buttons) */
+.css-tab-label {
+    cursor: pointer;
+    padding: 10px 24px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #bfc9d8;
+    background: transparent;
+    border-radius: 8px 8px 0 0;
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Active tab style */
+#tab-clublist-club:checked ~ .row .menu-bar label[for="tab-clublist-club"],
+#tab-clublist-post:checked ~ .row .menu-bar label[for="tab-clublist-post"],
+#tab-clublist-bio:checked ~ .row .menu-bar label[for="tab-clublist-bio"],
+#tab-clublist-coach:checked ~ .row .menu-bar label[for="tab-clublist-coach"],
+#tab-clublist-teams:checked ~ .row .menu-bar label[for="tab-clublist-teams"],
+#tab-clublist-players:checked
+    ~ .row
+    .menu-bar
+    label[for="tab-clublist-players"],
+#tab-clublist-skills:checked ~ .row .menu-bar label[for="tab-clublist-skills"] {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: var(--btn-color);
+    background: var(--btn-bg);
+}
+
+/* Tab content logic */
+.tab-content {
+    height: auto;
+}
+
+.tab-wrapper .tab-pane {
+    width: calc(100% - (100% - 1100px));
+    max-width: 1100px;
+    margin: 0 auto;
+    display: none;
+}
+
+#tab-clublist-club:checked ~ .row .tab-wrapper #clublist-club,
+#tab-clublist-post:checked ~ .row .tab-wrapper #clublist-post,
+#tab-clublist-bio:checked ~ .row .tab-wrapper #clublist-bio,
+#tab-clublist-coach:checked ~ .row .tab-wrapper #clublist-coach,
+#tab-clublist-teams:checked ~ .row .tab-wrapper #clublist-teams,
+#tab-clublist-players:checked ~ .row .tab-wrapper #clublist-players,
+#tab-clublist-skills:checked ~ .row .tab-wrapper #clublist-skills {
+    display: block;
+}
+
+.club-list-grid-container {
+    padding: 4px 32px 24px;
+    background: var(--club-list-bg);
+}
+
+/* Club List Grid */
+.club-list-grid {
+    display: grid;
+    /* Max 6 cards per row on large screens */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    background: var(--club-list-bg);
+    border-radius: 0px 0x 20px 20px;
+    border-top: 1px solid #374655;
+    width: 100%;
+    padding: 12px 8px 10px 8px;
+}
+
+/* Club Card */
+.club-card {
+    background: #2c3140;
+    border-radius: 16px;
+    padding: 18px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    min-width: 100px;
+}
+
+.club-logo {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.club-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.club-country img {
+    width: 18px;
+    height: 12px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.club-id {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Skills Tab Placeholder */
+.skills-list-placeholder {
+    color: #bfc9d8;
+    padding: 32px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* ==========================================================================
+   Club List Tab Section - Responsive
+   ========================================================================== */
+@media (max-width: 767.98px) {
+    .menu-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0 16px;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        padding: 0px;
+    }
+
+    .menu-bar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .css-tab-label {
+        white-space: nowrap;
+        flex-shrink: 0;
+        margin-right: 0;
+        min-width: fit-content;
+    }
+
+    /* Active tab style for mobile */
+    #tab-clublist-club:checked ~ .row .menu-bar label[for="tab-clublist-club"],
+    #tab-clublist-post:checked ~ .row .menu-bar label[for="tab-clublist-post"],
+    #tab-clublist-bio:checked ~ .row .menu-bar label[for="tab-clublist-bio"],
+    #tab-clublist-coach:checked
+        ~ .row
+        .menu-bar
+        label[for="tab-clublist-coach"],
+    #tab-clublist-teams:checked
+        ~ .row
+        .menu-bar
+        label[for="tab-clublist-teams"],
+    #tab-clublist-players:checked
+        ~ .row
+        .menu-bar
+        label[for="tab-clublist-players"],
+    #tab-clublist-skills:checked
+        ~ .row
+        .menu-bar
+        label[for="tab-clublist-skills"] {
+        padding: 28px 21px;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .club-list-grid-container {
+        padding: 4px 16px 24px;
+    }
+    .club-list-grid {
+        gap: 12px;
+    }
+}
+
+/* ===================== Club List Section CSS End ===================== */
+/* ===================== Club List Header Start ===================== */
+.club-list-header {
+    padding: 18px 24px 18px 24px;
+    border-radius: 20px 20px 0 0;
+    background: var(--club-list-bg);
+}
+
+.club-list-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.club-list-filters {
+    gap: 12px;
+}
+
+.club-search-box {
+    position: relative;
+}
+
+.club-search-input {
+    background: var(--club-input-bg);
+    border: 1px solid var(--club-input-border);
+    border-radius: 50px;
+    padding: 8px 36px 8px 16px;
+    color: #fff;
+    font-size: 15px;
+    width: 170px;
+    outline: none;
+}
+
+.club-search-input::placeholder {
+    color: var(--club-input-placeholder) !important;
+    opacity: 1;
+}
+
+.club-search-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--club-input-bg);
+    border: none;
+    color: #bfc9d8;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.city-dropdown-btn {
+    background: var(--club-input-bg);
+    border: 1px solid var(--club-input-border);
+    border-radius: 50px;
+    color: #fff;
+    font-size: 15px;
+    padding: 8px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+/* ==========================================================================
+   Club List Header - Responsive
+   ========================================================================== */
+@media (max-width: 1199.98px) {
+    .club-list-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 991.98px) {
+    .club-list-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 767.98px) {
+    .club-list-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 12px;
+        padding: 12px 8px;
+    }
+
+    .club-list-filters {
+        justify-content: space-between;
+        width: 100%;
+    }
+    .club-search-input {
+        font-size: 13px;
+        width: auto;
+    }
+    .city-dropdown-btn {
+        font-size: 13px;
+    }
+
+    .club-list-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 376.98px) {
+    .club-list-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .club-list-filters {
+        flex-direction: column;
+        align-items: normal !important;
+    }
+    .club-search-input {
+        width: 100% !important;
+    }
+    .club-city-dropdown {
+        width: 100% !important;
+    }
+    .city-dropdown-btn {
+        width: 100% !important;
+    }
+}
+/* ===================== Club List Header End ===================== */
+/* ===================== Club Card Footer Start ===================== */
+.club-footer {
+    width: 100%;
+    margin-top: 10px;
+    background: #000;
+    border-radius: 0px 0px 12px 12px;
+    padding: 4px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 32px;
+    gap: 12px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.footer-flag {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+    border: 2px solid #232e38;
+}
+
+.footer-player {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: #fff;
+    border: 2px solid #232e38;
+}
+
+.footer-number {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+/* ===================== Club Card Footer End ===================== */
+/* ===================== Post Card Section Start ===================== */
+.post-body-outer {
+    border-top: 1px solid #232e38;
+    width: 100%;
+}
+
+.post-section {
+    width: calc(100% - (100% - 1100px));
+    margin: 0 auto;
+    padding: 24px 0;
+}
+
+.post-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.post-card {
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    padding: 24px 24px 18px 24px;
+    color: #fff;
+}
+
+.post-header {
+    margin-bottom: 10px;
+}
+
+.post-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #232e38;
+}
+
+.post-author {
+    font-size: 16px;
+    color: #fff;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.post-time {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+}
+
+.post-body {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin-bottom: 10px;
+}
+
+.post-link {
+    color: #4bb3fd;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+.post-image img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.post-actions {
+    padding-top: 10px;
+    margin-top: 10px;
+    gap: 24px;
+}
+
+.post-action-btn {
+    background: none;
+    border: none;
+    color: #bfc9d8;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0;
+}
+
+.post-action-btn:hover {
+    color: var(--btn-color);
+}
+
+/* ==========================================================================
+   Post Card Section - Responsive
+   ========================================================================== */
+@media (max-width: 767.98px) {
+    .post-section {
+        max-width: 100%;
+        padding: 12px 0;
+    }
+    .post-card {
+        padding: 12px 8px 10px 8px;
+    }
+    .post-title {
+        font-size: 16px;
+    }
+    .post-avatar {
+        width: 32px;
+        height: 32px;
+    }
+    .post-body {
+        font-size: 13px;
+    }
+    .post-actions {
+        gap: 12px;
+    }
+    .post-action-btn {
+        font-size: 13px;
+    }
+}
+/* ===================== Post Card Section End ===================== */
+
+/* ===================== Bio Tab Section Start ===================== */
+.bio-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 0;
+}
+
+.bio-card {
+    background: var(--card-bg);
+    border-radius: 36px;
+    padding: 40px 48px 40px 48px;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.bio-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.bio-divider {
+    width: 100%;
+    height: 1px;
+    background: #232e38;
+    opacity: 0.7;
+    margin-bottom: 32px;
+    border: none;
+}
+
+.bio-text {
+    font-size: 18px;
+    color: #e0e6ed;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.achievements-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.achievements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievements-list li {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #e0e6ed;
+    margin-bottom: 18px;
+    gap: 14px;
+}
+
+.achievement-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+/* ==========================================================================
+   Bio Tab Section - Responsive
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .bio-card {
+        padding: 24px 12px;
+        border-radius: 24px;
+    }
+
+    .bio-section {
+        padding: 18px 0;
+    }
+
+    .bio-title {
+        font-size: 22px;
+    }
+
+    .achievements-title {
+        font-size: 18px;
+    }
+
+    .bio-text,
+    .achievements-list li {
+        font-size: 15px;
+    }
+
+    .achievement-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+/* ===================== Bio Tab Section End ===================== */
+
+/* ===================== Coach Tab Section Start ===================== */
+.coach-section {
+    width: calc(100% - (100% - 1100px));
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 0;
+    background: var(--card-bg);
+    padding: 40px 55px;
+    border-radius: 36px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.coach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 16px;
+}
+
+.coach-card {
+    background: var(--coach-card-bg);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    min-height: 370px;
+    position: relative;
+}
+
+.coach-card-header {
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 210px;
+    padding-top: 24px;
+}
+
+.coach-img {
+    width: 180px;
+    height: 210px;
+    object-fit: contain;
+    border-radius: 0;
+    background: transparent;
+}
+
+.coach-card-body {
+    width: 100%;
+    background: none;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.coach-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.coach-role {
+    font-size: 15px;
+    color: #e0e6ed;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.coach-card-footer {
+    width: 100%;
+    background: linear-gradient(180deg, #181b23 0%, #000 100%);
+    border-radius: 0 0 18px 18px;
+    color: #e0e6ed;
+    font-size: 15px;
+    text-align: center;
+    padding: 18px 12px 18px 12px;
+    margin-top: auto;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ==========================================================================
+   Coach Tab Section - Responsive
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .coach-section {
+        padding: 16px;
+        width: auto;
+        max-width: none;
+    }
+    .coach-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 767.98px) {
+    .coach-section {
+        padding: 16px;
+        width: auto;
+        max-width: auto;
+    }
+
+    .coach-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .coach-card {
+        min-height: 220px;
+    }
+
+    .coach-card-footer {
+        font-size: 13px;
+        padding: 10px 6px;
+        min-height: 40px;
+    }
+
+    .coach-name {
+        font-size: 16px;
+    }
+
+    .coach-role {
+        font-size: 13px;
+    }
+}
+/* ===================== Coach Tab Section End ===================== */
+
+/* ===================== Teams Tab Section Start ===================== */
+.teams-section {
+    width: calc(100% - (100% - 1170px));
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 40px 45px;
+    background: var(--card-bg);
+    border-radius: 36px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 24px 0;
+    justify-items: center;
+}
+
+.team-card {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-width: 252px;
+    min-height: 72px;
+    margin-bottom: 8px;
+    background: none;
+}
+
+.team-logo {
+    width: 71px;
+    height: 72px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: var(--team-card-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    margin-right: -30px;
+    padding: 2px;
+}
+
+.team-info {
+    flex: 1 1 0%;
+    min-width: 0;
+    /* background: var(--team-card-bg); */
+    border-radius: 16px;
+    /* padding: 18px 24px 12px 54px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70px;
+    position: relative;
+    z-index: 1;
+    left: 17px;
+}
+
+.team-score {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--default-text);
+    margin-right: 6px;
+    text-align: right;
+}
+
+.team-name {
+    width: 180px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8px 0 8px 24px;
+    /* background: var(--team-card-bg); */
+    color: var(--default-text);
+    margin-left: 0px;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.team-country-bar {
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 700;
+    width: fit-content;
+    min-width: 130px;
+    height: 16px;
+    background: var(--team-country-bar-bg);
+    color: var(--default-text);
+    border-radius: 0 0 16px 0px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    padding: 2px 0 2px 24px;
+    position: relative;
+    /* left: -24px; */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.team-country {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* ==========================================================================
+    Teams Tab Section - Responsive
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .teams-section {
+        width: auto;
+    }
+    .teams-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 991.98px) {
+    .teams-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 767.98px) {
+    .teams-section {
+        padding: 24px 16px;
+    }
+
+    .teams-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 375.98px) {
+    .teams-section {
+        padding: 12px 8px;
+    }
+}
+/* ===================== Teams Tab Section End ===================== */
+
+/* ===================== Players Tab Section Start ===================== */
+
+.flag-container {
+    width: 80%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.flag {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 15px;
+    overflow: hidden;
+    display: flex;
+}
+
+.flag img {
+    border-radius: 12px;
+}
+
+.flag-blue {
+    width: 33.33%;
+    height: 100%;
+    background-color: #002395;
+}
+.flag-white {
+    width: 33.33%;
+    height: 100%;
+    background-color: #ffffff;
+}
+.flag-red {
+    width: 33.33%;
+    height: 100%;
+    background-color: #ed2939;
+}
+
+.jersey-number {
+    margin: 10px 0;
+}
+.jersey-number h3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--default-text);
+    margin: 0;
+}
+
+/* .badges {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+} */
+.badge-item {
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
+.badge-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.player-name.player-name-on-card {
+    text-align: center;
+    margin-bottom: 8px;
+    background: var(--player-name-bg);
+    border-radius: 8px 8px 0 0;
+    padding: 8px 0;
+}
+.player-name.player-name-on-card h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 700;
+}
+
+.stats-header {
+    font-size: 0.9rem;
+    color: #bfc9d8;
+    font-weight: 600;
+    margin-bottom: 4px;
+    background: var(--player-stats-header-bg);
+    border-radius: 0 0 0 0;
+    padding: 6px 0;
+}
+.stats-values {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 700;
+    background: var(--player-stats-values-bg);
+    border-radius: 0 0 8px 8px;
+    padding: 8px 0;
+}
+
+/* ===================== Players Tab Section End ===================== */
+
+/* ===================== Skills Tab Section Start ===================== */
+.skills-section {
+    /* width: calc(100% - (100% - 1170px)); */
+    /* max-width: 1170px; */
+    margin: 0 auto;
+    padding: 40px 35px;
+    background: var(--card-bg);
+    border-radius: 36px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px 18px;
+}
+
+.skill-card {
+    background: var(--skill-card-bg);
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+.skill-card:hover {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+
+.skill-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.3/1;
+    background: #181b23;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skill-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.play-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 50%;
+}
+.play-btn img {
+    width: 32px;
+    height: 32px;
+}
+
+.skill-title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    padding: 18px 16px 16px 16px;
+    width: 100%;
+    min-height: 56px;
+}
+/* ==========================================================================
+   Skills Tab Section - Responsive
+   ========================================================================== */
+@media (max-width: 1199.98px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 767.98px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .skill-title {
+        font-size: 14px;
+        padding: 12px 8px 10px 8px;
+        min-height: 36px;
+    }
+    .play-btn {
+        width: 32px;
+        height: 32px;
+    }
+    .play-btn img {
+        width: 20px;
+        height: 20px;
+    }
+}
+@media (max-width: 375.98px) {
+    .jersey-number {
+        margin: 0px;
+    }
+}
+/* ===================== Skills Tab Section End ===================== */
+
+/* ======================================================== */
+/* LAYOUT RESTRUCTURING FOR TABLET & MOBILE (CORRECTED)    */
+/* ======================================================== */
+
+@media (max-width: 1330px) {
+    .tab-wrapper .tab-pane {
+        width: auto;
+    }
+}
+
+/* ======================================================== */
+/* MOBILE-SPECIFIC STYLING (Optional)                      */
+/* ======================================================== */
+@media (max-width: 767.98px) {
+    main.main > .d-flex {
+        display: flex;
+        flex-direction: column;
+    }
+    .profile-sidebar + div[style*="width: 100%"] {
+        display: contents;
+    }
+    /* Step 3: Elements ko order karein */
+    .header {
+        order: 1;
+        position: static;
+    }
+    .profile-sidebar {
+        order: 2;
+    }
+    .hero-section-custom {
+        order: 3;
+    }
+}

@@ -1,0 +1,214 @@
+<div class="modal fade" id="assignTaskModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body card container">
+        <div class="assign-task-modal">
+          <!-- Header -->
+          <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+          >
+            <div class="header-left d-flex align-items-center gap-3">
+              <img src="/assets/TaskIcon.png" alt="" width="40" height="40" />
+              <div class="task-header-content">
+                <div>Assign Task</div>
+                <p class="mb-0">CLUB DASHBOARD</p>
+              </div>
+            </div>
+
+            <div class="header-right d-flex align-items-center gap-3">
+              <span class="template-badge d-flex align-items-center"
+                >Template: None</span
+              >
+              <button class="save-template-btn">Save as Template</button>
+              <button
+                class="close-btn d-flex align-items-center justify-content-center"
+              >
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="assign-task-modal-body">
+            <!-- Left Column -->
+            <div class="assign-task-left-column">
+              <!-- Task Title -->
+              <div class="mb-3">
+                <label class="form-label">TASK TITLE</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="e.g., Confirm hotel bookings for out-of-town tournament"
+                />
+              </div>
+
+              <!-- Description -->
+              <div class="mb-3">
+                <label class="form-label">DESCRIPTION</label>
+                <textarea
+                  class="form-control description-field"
+                  placeholder="Add details, links, or notes for the assignee...&#10;&#10;Markdown supported -   paste screenshots below."
+                ></textarea>
+              </div>
+
+              <!-- Subtasks -->
+
+              <label class="form-label">SUBTASKS</label>
+              <div class="subtasks-section">
+                <div class="subtask-item">
+                  <div class="subtask-bullet"></div>
+                  <span class="subtask-text"
+                    >Call hotel and confirm block rate</span
+                  >
+                </div>
+                <div class="subtask-item">
+                  <div class="subtask-bullet"></div>
+                  <span class="subtask-text"
+                    >Share address & map link in team chat</span
+                  >
+                </div>
+                <button class="add-subtask-btn">
+                  <i class="fas fa-plus"></i>
+                  Add
+                </button>
+              </div>
+
+              <!-- Attachments -->
+              <div class="attachments-section">
+                <label class="form-label">ATTACHMENTS</label>
+                <div class="upload-area">
+                  <p>Drag & drop files or click to upload</p>
+                  <button class="upload-btn">Upload</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="assign-task-right-sidebar">
+              <!-- Assignee -->
+              <div class="">
+                <label class="form-label">ASSIGNEE</label>
+                <select class="status-select sidebar-section">
+                  <option>
+                    <div class="">
+                      <div class="user-avatar">VP</div>
+                      <span>Vincent Porter</span>
+                      <i class="fas fa-chevron-down ms-auto"></i>
+                    </div>
+                  </option>
+                </select>
+              </div>
+
+              <!-- Due Date -->
+              <div class="">
+                <label class="form-label">DUE DATE</label>
+                <select class="status-select sidebar-section">
+                  <option>2025-08-30</option>
+                </select>
+              </div>
+
+              <!-- Priority -->
+              <div class="">
+                <label class="form-label">PRIORITY</label>
+                <div class="priority-buttons sidebar-section">
+                  <button class="priority-btn low">Low</button>
+                  <button class="priority-btn low">Medium</button>
+                  <button class="priority-btn high">High</button>
+                  <button class="priority-btn critical">Critical</button>
+                </div>
+              </div>
+
+              <!-- Status -->
+              <div class="">
+                <label class="form-label">STATUS</label>
+                <select class="status-select sidebar-section">
+                  <option><div class="to-do">To Do</div></option>
+                </select>
+              </div>
+
+              <!-- Related -->
+              <div class="">
+                <label class="form-label">RELATED</label>
+                <select class="status-select sidebar-section">
+                  <option>Tournament: Summer Cup • Team: U14 Elite</option>
+                </select>
+              </div>
+
+              <!-- Notify -->
+              <div class=" ">
+                <label class="form-label">NOTIFY</label>
+                <div class="sidebar-section notification-options">
+                  <button class="notification-btn">Email assignee</button>
+                  <button class="notification-btn">Post in team chat</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="modal-footer">
+            <div class="footer-left">
+              <button class="btn-secondary">Cancel</button>
+              <button class="btn-primary">Assign Task</button>
+            </div>
+            <div class="footer-right">
+              <button class="btn-secondary">Set Reminder</button>
+              <button class="btn-save-draft">Save Draft</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add interactive functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Priority button selection
+            const priorityBtns = document.querySelectorAll('.priority-btn');
+            priorityBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    priorityBtns.forEach(b => b.style.opacity = '0.6');
+                    this.style.opacity = '1';
+                });
+            });
+
+            // Add subtask functionality
+            const addSubtaskBtn = document.querySelector('.add-subtask-btn');
+            addSubtaskBtn.addEventListener('click', function() {
+                const newSubtask = document.createElement('div');
+                newSubtask.className = 'subtask-item';
+                newSubtask.innerHTML = `
+                    <div class="subtask-bullet"></div>
+                    <input type="text" class="form-control" style="background: transparent; border: none; color: #e2e8f0; padding: 0;" placeholder="New subtask...">
+                `;
+                this.parentNode.insertBefore(newSubtask, this);
+                newSubtask.querySelector('input').focus();
+            });
+
+            // File upload simulation
+            const uploadArea = document.querySelector('.upload-area');
+            const uploadBtn = document.querySelector('.upload-btn');
+            
+            uploadArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.style.borderColor = '#00d4aa';
+                this.style.backgroundColor = 'rgba(0, 212, 170, 0.05)';
+            });
+            
+            uploadArea.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                this.style.borderColor = '#3a4a5c';
+                this.style.backgroundColor = 'rgba(30, 37, 51, 0.5)';
+            });
+
+            uploadBtn.addEventListener('click', function() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.multiple = true;
+                input.click();
+            });
+        });
+    </script> -->
+      </div>
+    </div>
+  </div>
+</div>

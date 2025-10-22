@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Hockey Dashboard</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="main-dashboard">
+        <i class="fa fa-bars hamburger" id="hamburger"></i>
+        <div class="overlay" id="overlay"></div>
+        <div class="left-bar" id="sidebar">
+            <div class="left-main">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="logo">
+                            <a href="#"><img src="images/logo.png" alt="Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="Left-profile">
+                            <img src="images/profile.png" alt="Profile">
+                            <h2>Emily Smith</h2>
+                            <p>Manager</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="sidebar">
+                            <h4>main</h4>
+                            <ul>
+                                <li class="menu-item">
+                                    <a class="dropdown-toggle">
+                                        <span><i class="fa-solid fa-house"></i> Home</span>
+                                        <i class="fa fa-chevron-down arrow"></i>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="soccer-dashboard.html">Soccer Dashboard</a></li>
+                                        <li class="active"><a href="hockey-dashboard.html">Hockey Dashboard</a></li>
+                                        <li><a href="boxing-dashboard.html">Boxing Dashboard</a></li>
+                                        <li><a href="swimming-dashboard.html">Swimming Dashboard</a></li>
+                                        <li><a href="mma-dashboard.html">MMA Dashboard</a></li>
+                                        <li><a href="tennis-dashboard.html">Tennis Dashboard</a></li>
+                                        <li><a href="basketball-dashboard.html">Basketball Dashboard</a></li>
+                                        <li><a href="field-hockey-dashboard.html">Field Hockey Dashboard</a></li>
+                                        <li><a href="gymnastics-dashboard.html">Gymnastics Dashboard</a></li>
+                                        <li><a href="lacrosse-dashboard.html">Lacrosse Dashboard</a></li>
+                                        <li><a href="track-field-dashboard.html">Track & Field Dashboard</a></li>
+                                        <li><a href="american-football-dashboard.html">American Football Dashboard</a></li>
+                                        <li><a href="baseball-dashboard.html">Baseball Dashboard</a></li>
+                                        <li><a href="rugby-dashboard.html">Rugby Dashboard</a></li>
+                                        <li><a href="volleyball-dashboard.html">Volleyball Dashboard</a></li>
+                                        <li><a href="Wrestling-dashboard.html">Wrestling Dashboard</a></li>
+                                        <li><a href="glof-dashboard.html">Glof Dashboard</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="club-enrollment.html"><span><i class="fa-regular fa-calendar"></i> Events</span></a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/"><span><i class="fa-regular fa-envelope"></i> Email</span><i
+                                            class="fa fa-plus"></i></a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="helpChatModal.html"><span><i class="fa-solid fa-diagram-project"></i>
+                                            Apps</span><i class="fa fa-plus"></i></a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="playerstats.html"><span><i class="fa-solid fa-cart-shopping"></i>
+                                            E-commerce</span><i class="fa fa-plus"></i></a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="pay-the-order.html"><span><i class="fa-solid fa-table-cells"></i> Widgets</span><i
+                                            class="fa fa-plus"></i></a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="request-transfer.html"><span><i class="fa-regular fa-object-group"></i> User Interface
+                                            (UI)</span><i class="fa fa-plus"></i></a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="u-premier.html"><span><i class="fa-regular fa-file"></i> Forms</span><i
+                                            class="fa fa-plus"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="logout-account">
+                            <a href="#"><img src="images/logout-icon.svg" alt="Logout Account">Logout Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-bar">
+            <div class="top-bar">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 d-flex align-items-center">
+                        <div class="topbar-text">
+                            <h2>Dashboard</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 mobile-screen-topbar">
+                        <div class="search-box">
+                            <img src="images/search.svg" alt="Icon">
+                            <input type="text" placeholder="Search">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 mobile-screen-topbar">
+                        <div class="topbar">
+                            <button class="icon-btn" title="Fullscreen">
+                                <img src="images/la_expand.svg" alt="Icon">
+                            </button>
+                            <button class="icon-btn" title="Fullscreen">
+                                <img src="images/Bell.svg" alt="Icon">
+                            </button>
+                            <button class="icon-btn" title="Fullscreen">
+                                <img src="images/uil_setting.svg" alt="Icon">
+                            </button>
+                            <button class="icon-btn ab" type="button" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop-two">
+                                <img src="images/profile1.svg" alt="Icon">
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="same-card profile-header">
+                    <div class="left">
+                        <img src="images/hockey.svg" alt="Icon">
+                        <div class="weather">
+                            <strong>13° <img src="images/cloud-rain.svg" alt="Icon"></strong>
+                            <h3>H:16° | L:8° <br><span>Ottawa, Canada</span></h3>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2>Share Profile</h2>
+                        <a href="#"><img src="images/icon10.svg" alt="Icon"></a>
+                        <a href="#"><img src="images/icon9.svg" alt="Icon"></a>
+                        <a href="#"><img src="images/icon8.svg" alt="Icon"></a>
+                        <a href="#"><img src="images/icon7.svg" alt="Icon"></a>
+                        <a href="#"><img src="images/icon6.svg" alt="Icon"></a>
+                        <a href="#"><img src="images/icon5.svg" alt="Icon"></a>
+                        <a href="#"><img src="images/icon4.svg" alt="Icon"></a>
+                        <a href="#"><img src="images/icon3.svg" alt="Icon"></a>
+                        <a href="#"><img src="images/icon2.svg" alt="Icon"></a>
+                        <a href="#"><img src="images/icon1.svg" alt="Icon"></a>
+                    </div>
+                </div>
+                <div class="middle-banner  middle-banner-2">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+                            <div class="banner-card-1">
+                                <img src="images/img2.png">
+                                <h2 class="text-center pt-3">HOCKEY</h2>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+                            <div class="banner-card-2">
+                                <h2 class="text-start">Jack<br>Eichel</h2>
+                                <div class="midfielder-main d-flex">
+                                    <div class="midfielder d-flex">
+                                        <img src="images/forward-icon.png">
+                                        <h6 class="d-flex">Forward</h6>
+                                    </div>
+                                    <div class="Right-Foot d-flex">
+                                        <img src="images/shot-right-icon.png">
+                                        <h6> Shot-Right<h6>
+                                    </div>
+                                </div>
+                                <h5>INTL CAREER - 2013 - 2024</h5>
+                                <div class="info-box text-start">
+                                    <div class="info-card">
+                                        <h6>BORN:</h6>
+                                        <h6>28-10-1996</h6>
+                                    </div>
+                                    <div class="info-card">
+                                        <h6>AGE:</h6>
+                                        <h6>52 Years</h6>
+                                    </div>
+                                    <div class="info-card">
+                                        <h6>NATIONALITY:</h6>
+                                        <h6>FRANCE</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+                            <div class="banner-card-3">
+                                <h2 class="text-center">09</h2>
+                                <img src="images/player-2.png">
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+                            <div class="banner-card-4">
+                                <h6 class="stats">Stats</h6>
+                                <div class="stats-box text-start">
+                                    <div class="stats-cards">
+                                        <h6>POINT</h6>
+                                        <h6 class="text-warning fw-bold pt-2">102</h6>
+                                    </div>
+                                    <div class="stats-cards">
+                                        <h6>GOAL</h6>
+                                        <h6 class="text-warning fw-bold pt-2">32</h6>
+                                    </div>
+                                    <div class="stats-cards">
+                                        <h6>ASSIST</h6>
+                                        <h6 class="text-warning fw-bold pt-2">56</h6>
+                                    </div>
+                                    <div class="stats-cards">
+                                        <h6>SAVE</h6>
+                                        <h6 class="text-warning fw-bold pt-2">45%</h6>
+                                    </div>
+                                </div>
+                                <div class="real-madrid-main mt-4">
+                                    <div class="midfielder d-flex">
+                                        <img src="images/vegas-golden-knights-icon.png">
+                                        <h6 class="d-flex ps-2">Vegas Golden Knights</h6>
+                                    </div>
+                                    <div class="Right-Foot d-flex">
+                                        <img src="images/buffalo-sabres.png">
+                                        <h6 class="ps-2"> Buffalo Sabres<h6>
+                                    </div>
+                                </div>
+                                <h5>JERSEY NUMBER - 09</h5>
+                                <div class="info-box text-start mt-4">
+                                    <div class="info-card border-0 pb-2">
+                                        <h6>HEIGHT</h6>
+                                        <h6>1.88 M</h6>
+                                    </div>
+                                    <div class="info-card border-0 pb-2">
+                                        <h6>WEIGHT</h6>
+                                        <h6>78 KG</h6>
+                                    </div>
+                                    <div class="info-card border-0 pb-2">
+                                        <h6>DEBUT</h6>
+                                        <h6>2013</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="four-card">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="same-card boxone-text">
+                                <h2>Shooting</h2>
+                                <img src="images/box1.png" alt="Photo">
+                                <div class="increase-card">
+                                    <div class="d-flex justify-content-between">
+                                        <span>0%</span>
+                                        <span>100%</span>
+                                    </div>
+                                    <p>10% Increase in 28 Days</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="same-card boxone-text">
+                                <h2>Passing</h2>
+                                <img src="images/box2.png" alt="Photo">
+                                <div class="increase-card">
+                                    <div class="d-flex justify-content-between">
+                                        <span>0%</span>
+                                        <span>100%</span>
+                                    </div>
+                                    <p>26% Increase in 28 Days</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="same-card boxone-text">
+                                <h2>Speed</h2>
+                                <img src="images/box3.png" alt="Photo">
+                                <div class="increase-card">
+                                    <div class="d-flex justify-content-between">
+                                        <span>0%</span>
+                                        <span>100%</span>
+                                    </div>
+                                    <p>14% Increase in 28 Days</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="same-card boxone-text">
+                                <h2>Stamina</h2>
+                                <img src="images/box4.png" alt="Photo">
+                                <div class="increase-card">
+                                    <div class="d-flex justify-content-between">
+                                        <span>0%</span>
+                                        <span>100%</span>
+                                    </div>
+                                    <p>50% Increase in 28 Days</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="same-card awards-card">
+                    <div class="awards-headding">
+                        <h2>Awards</h2>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    <ul class="hidden-list" id="awardList">
+                        <li>
+                            <button class="award-btn award-btn-a" onclick="openModalFunction('images/NewRecruit.png', 'New Recruit' ,'Welcome to the team! This badge celebrates the exciting first step in  your journey as a player. Completing your profile and joining your first club shows your commitment and enthusiasm to be part of something amazing. You’re officially part of the family, and this is just the beginning of your adventure!')">
+                                <img src="images/awards-sm-bg.png" alt="Awards">
+                            </button>
+                        </li>
+                       <li>
+  <button class="award-btn"
+    onclick="openModalFunction(
+      'images/NewRecruit3.png',
+      'Loyal Player',
+      'This award is a tribute to your dedication and loyalty. Being active for 1,3, 6 months, or even longer proves your passion and love for the game. Your persistence inspires your teammates, and this badge shows that you’re here to stay and make a difference!'
+    )">
+    <img src="images/lock.png" alt="Awards">
+  </button>
+</li>
+
+                        <li>
+                            <button class="award-btn" onclick="openModalFunction('images/NewRecruit4.png', 'Team Spirit', 'Your commitment to your team is what makes you shine. By showing up to practices nd games, you’ve proven that you’re not just a player but a true team player. This award celebrates your reliability, energy, and the bond you share with your teammates. Keep spreading that positive spirit!')">
+                                <img src="images/lock.png" alt="Awards">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="award-btn" onclick="openModalFunction('images/NewRecruit5.png', 'Rising Star', 'Congratulations on reaching new heights! This badge is a testament to your hard work, talent, and determination to keep improving. You’re becoming a standout player, and this recognition shows everyone that you’re a star in the making. Keep reaching for the top!')">
+                                <img src="images/lock.png" alt="Awards">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="award-btn" onclick="openModalFunction('images/NewRecruit6.png', 'Goal Getter', 'Scoring goals is no easy feat, but you make it look effortless! This badge celebrates your incredible ability to step up and deliver for your team. You’re a true game-changer, and your goals are what make the crowd cheer and your teammates proud!')">
+                                <img src="images/lock.png" alt="Awards">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="award-btn" onclick="openModalFunction('images/NewRecruit2.png', 'Assist Queen', 'Being an assist leader shows your selflessness and vision on the field. You’re the player who helps others shine, setting up those incredible plays that lead to goals. This badge celebrates your generosity and teamwork. Your contribution doesn’t go unnoticed!')">
+                                <img src="images/lock.png" alt="Awards">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="award-btn" onclick="openModalFunction('images/NewRecruit7.png', 'Assist King', 'Being an assist leader shows your selflessness and vision on the field. You’re the player who helps others shine, setting up those incredible plays that lead to goals. This badge celebrates your generosity and teamwork. Your contribution doesn’t go unnoticed!')">
+                                <img src="images/lock.png" alt="Awards">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="award-btn" onclick="openModalFunction('images/NewRecruit8.png', 'MVP of the Month', 'You’ve been voted as the most valuable player by your teammates and fans—what an incredible honor! This badge proves that your effort, skills, and heart for the game have made a lasting impact. Keep being the player everyone looks up to!')">
+                                <img src="images/lock.png" alt="Awards">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="award-btn" onclick="openModalFunction('images/NewRecruit9.png', 'Fan Favourite ', 'Wow! So many people believe in you and your journey, and this badge celebrates the overwhelming love and support you’ve received. You’re not just a player—you’re an inspiration to friends, family, and fans everywhere!')">
+                                <img src="images/lock.png" alt="Awards">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="award-btn" onclick="openModalFunction('images/NewRecruit10.png', 'Training Titan', 'Your dedication to practice is what sets you apart. This badge honors the countless hours you’ve spent training and improving your skills. Your hard work behind the scenes is building the foundation for your future success!')">
+                                <img src="images/lock.png" alt="Awards">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="award-btn" onclick="openModalFunction('images/NewRecruit11.png', 'Streak Master', 'Your consistency is amazing! This badge celebrates your ability to show up day after day, proving your passion and dedication. Keeping up a streak like this takes focus and determination, and you’ve shown everyone you have what it takes')">
+                                <img src="images/lock.png" alt="Awards">
+                            </button>
+                        </li>
+                    </ul>
+                    <button id="showMoreBtn" class="show-more-btn">Show More</button>
+                    <!-- Modal 1 -->
+                    <div id="myModal-a" class="modal-a">
+                        <div class="modal-content-a">
+                            <div class="modal-headers">
+                                <span class="close-a">&times;</span>
+                                <h2>Award Unlocked</h2>
+                                <p id="modal-tag">New Recruit</p>
+                            </div>
+                            <div class="alldata-middle">
+                                <div class="row g-4">
+                                    <div class="col-lg-4 d-flex flex-column">
+                                        <div class="award-img-block">
+                                            <img src="images/NewRecruit.png" alt="New Recruit Award Photo"
+                                                class="award-img" id="modal-img">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 d-flex flex-column">
+                                        <div class="section-title">DESCRIPTION</div>
+                                        <div class="desc-block" id="desc-para">
+                                            “Welcome to the team! This badge celebrates the exciting first step in your
+                                            journey as a player. Completing your profile and joining your first club
+                                            shows your commitment and enthusiasm to be part of something amazing. You're
+                                            officially part of the family, and this is just the beginning of your
+                                            adventure!”
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="section-title">REQUIREMENTS</div>
+                                            <div class="key-passes-text">• 5+ key passes in a match • 2+ assists • 80%+
+                                                pass accuracy</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="section-title">REWARDS</div>
+                                            <div class="key-passes-text">• +250 XP • Playmaker frame • Leaderboard
+                                                highlight</div>
+                                        </div>
+                                        <div class="flex-wrap gap-3 mb-3 buttons3">
+                                            <button class="btn-share">Share</button>
+                                            <button class="btn-ack">Acknowledge Award</button>
+                                            <button class="btn-clos">Close</button>
+                                        </div>
+                                        <div class="d-flex flex-wrap gap-3 mb-3">
+                                            <div class="social-icon "><img src="images/prisma.png" width="100%"
+                                                    height="100%" /></div>
+                                            <div class="social-icon "><img src="images/facebook.png" width="100%"
+                                                    height="100%" /></div>
+                                            <div class="social-icon "><img src="images/insta.png" width="100%"
+                                                    height="100%" /></div>
+                                            <div class="social-icon "><img src="images/tiktok.png" width="100%"
+                                                    height="100%" /></div>
+                                            <div class="social-icon"><img src="images/linkedin.png" width="100%"
+                                                    height="100%" /></div>
+                                            <div class="social-icon "><img src="images/x.png" width="100%"
+                                                    height="100%" /></div>
+                                            <div class="social-icon"><img src="images/youtube.png" width="100%"
+                                                    height="100%" /></div>
+                                        </div>
+                                    </div>
+                                    <div class="bottom-bar">
+                                        <div class="other-awards mt-auto">
+                                            <div class="section-title">Other Awards</div>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <div class="award-circle"></div>
+                                                <div class="award-circle"></div>
+                                                <div class="award-circle"></div>
+                                                <div class="award-circle"></div>
+                                                <div class="award-circle"></div>
+                                                <div class="award-circle award-circle-a"></div>
+                                                <div class="award-circle award-circle-a"></div>
+                                                <div class="award-circle award-circle-a"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-auto text-end">
+                                            <button class="footer-btn">View All Awards</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awards-inner-card">
+                        <ul class="hidden-list" id="awardList">
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit12.png', 'Dedicated Player', 'Your attendance record speaks volumes about your commitment to your team. Whether it’s rain or shine, you show up and give it your all. This badge recognizes your unwavering dedication, making you an inspiration to everyone around you!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit13.png', 'Community Champ', 'You’ve shown that being part of a team is about more than just playing—it’s about lifting others up. This badge celebrates your kindness, encouragement, and active participation in the community. You’re a true champion on and off the field!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit14.png', 'All-Star', 'Being named MVP multiple times is no small achievement. This badge recognizes your consistent excellence and the impact you’ve made every time you step onto the field. You’re a true All-Star, and everyone knows it!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit14.png', 'Milestone Achiever ', 'Reaching a big milestone like 10, 25, or 50 games is an incredible accomplishment! This badge celebrates your journey, resilience, and love for the sport. Every game you’ve played has brought you closer to greatness!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit14.png', 'Supporter’s Choice', 'The fans have spoken, and they’ve chosen you as their favourite! This badge is a special recognition of the connection you’ve built with your supporters. Your efforts on and off the field have truly inspired those around you!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit17.png', 'Club Legend', 'Sticking with your club for multiple seasons shows loyalty and heart. This badge celebrates your role as a cornerstone of your team, someone who builds traditions and inspires the next generation. You’re a true legend!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit18.png', 'Top Scorer', 'Your ability to find the back of the net is unmatched! This badge celebrates your incredible skill and drive to lead your team in scoring. You’re the player everyone looks to when it’s time to make something happen!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit19.png', 'Playmaker', 'Your vision and creativity on the field make you an irreplaceable asset to your team. This badge recognizes the incredible plays you’ve set up and the defensive stops you’ve made to change the game. You’re the ultimate playmaker!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit20.png', 'Player of the Week/Month', 'Your consistent performances have earned you this well-deserved recognition! This badge celebrates your ability to bring your best week after week. Your efforts inspire your teammates and raise the bar for everyone!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit21.png', 'Tactical Mind', 'Your ability to think strategically and contribute to team plans is outstanding. This badge recognizes your leadership and insight, showing that you’re as sharp off the field as you are on it!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit22.png', 'Mentor Badge', 'Your willingness to help new players get started is what makes you truly special. This badge celebrates your kindness and leadership. You’re not just a teammate—you’re a mentor and a role model!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit23.png', 'Comeback Queen', 'Your journey of improvement is truly inspiring. This badge celebrates your ability to overcome challenges and come back stronger than ever. You’re a testament to what hard work and resilience can achieve!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit24.png', 'Comeback King', 'Your journey of improvement is truly inspiring. This badge celebrates your ability to overcome challenges and come back stronger than ever. You’re a testament to what hard work and resilience can achieve!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit25.png', 'Team Builder', 'Bringing others into the team shows your love for the game and your desire to share that with others. This badge recognizes your role in building something bigger and better. You’re helping the team grow, one player at a time!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit26.png', 'Performance Perfection', 'Delivering a flawless performance is no small feat. This badge celebrates your ability to rise to the occasion and make everything look effortless. You’re a true perfectionist on the field!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit27.png', 'Champion Badge', 'Your contributions helped your team win it all! This badge celebrates the hard work, determination, and teamwork that led to this amazing achievement. You’re a champion in every sense of the word!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit28.png', 'Donor Appreciation', 'Choosing to give back makes you truly special. This badge celebrates your generosity and willingness to support others. You’re making a difference in more ways than one!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit29.png', 'Fundraiser', 'Raising donations is no small task, and this badge celebrates your ability to inspire others to contribute. You’ve shown incredible initiative and drive to make a positive impact!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit30.png', 'Milestone Donor', 'Supporting your teammates through donations shows your generosity and team spirit. This badge celebrates your kindness and willingness to help others succeed!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit31.png', 'Skill Builder', 'Your commitment to improving your skills is incredible. This badge celebrates the time and effort you’ve put into becoming the best version of yourself!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit32.png', 'Fitness Fiend', 'Reaching fitness milestones shows your discipline and dedication. This badge recognizes your commitment to staying strong and ready to perform at your best!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit33.png', 'Social Star', 'Your enthusiasm for sharing achievements and inviting others to join makes you a standout. This badge celebrates your energy and ability to connect with people!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit34.png', 'League Leader', 'Consistently ranking at the top is an extraordinary accomplishment. This badge recognizes your hard work, determination, and leadership in your league!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="award-btn-one" onclick="openModalFunction('images/NewRecruit35.png', 'Resilient Warrior', 'Overcoming setbacks takes strength and courage, and this badge celebrates your ability to bounce back and shine. You’re an inspiration to everyone who faces challenges!')">
+                                    <img src="images/lock2.png" alt="Awards">
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row middle-twopart">
+                    <div class="col-lg-8 col-md-12 part-one">
+                        <div class="same-card calendar-card">
+                            <div class="calendar-container">
+                                <div class="month-main d-flex justify-content-between">
+                                    <div class="calendar-header">
+                                        <h2 id="monthYear">April 2025</h2>
+                                        <button onclick="prevMonth()">❮</button>
+                                        <button onclick="nextMonth()">❯</button>
+                                    </div>
+                                    <div class="tabs">
+                                        <div class="tab active">Month</div>
+                                        <div class="tab">Week</div>
+                                        <div class="tab">Day</div>
+                                        <div class="tab">List</div>
+                                    </div>
+                                </div>
+                                <div class="weekdays" data-bs-toggle="modal" data-bs-target="#fixtureModal">
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                    <div>Sun</div>
+                                </div>
+                                 <div class="calendar" id="calendarDays"  data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop-one">
+                                    <!-- Days will be injected by JS -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-card" id="videoCard">
+                                <img src="https://img.youtube.com/vi/GyO1MtLhyt0/hqdefault.jpg" alt="Video Thumbnail"
+                                    class="thumbnail">
+                                <div class="play-btn"></div>
+                                <iframe id="videoFrame" src=""
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                        <div class="same-card trainer-banners">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="trainer-banner">
+                                        <img src="images/trainer-post1.png" alt="Banner">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="trainer-banner">
+                                        <img src="images/trainer-post2.png" alt="Banner">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="trainer-banner">
+                                        <img src="images/trainer-post3.png" alt="Banner">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="same-card tournament-buttons">
+                            <ul class="tournament-btn">
+                                <li>
+                                    <a href="tournament-directory.html"><button class="tournament-search-btn" type="button">Tournament Search
+                                        <i class="fa-solid fa-caret-right"></i></button></a>
+                                </li>
+                                <li><a href="refer-club.html"><button class="tournament-search-btn refer-club-bg"
+                                            type="button">Refer A Club Earn
+                                            $1000 <i class="fa-solid fa-caret-right"></i></button></a>
+                                </li>
+                                <li><a href="refer-Player.html"><button class="tournament-search-btn refer-player-bg"
+                                            type="button">Refer A Player
+                                            $10 <i class="fa-solid fa-caret-right"></i></button></a>
+                                </li>
+                                <li><button class="tournament-search-btn request-access-bg" type="button"
+                                        data-bs-toggle="modal" data-bs-target="#requestModal">
+                                        Volunteer<br> To Manage This Team <i
+                                            class="fa-solid fa-caret-right"></i></button>
+                                </li>
+                            </ul>
+                            <!-- Modal 1 -->
+                            <div class="modal fade" id="staticBackdrop-one" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                    <div class="modal-content modal-content-one">
+                                        <div class="modal-header modal-header-one">
+                                            <div class="modal-headding">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Tournament Title
+                                                </h1>
+                                                <p>Sat, Sep 20 • 9:30 AM – 5:30 PM</p>
+                                            </div>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-lg-8">
+                                                    <div class="big-panel">
+                                                        <strong class="d-block mb-1 text-muted-a small">Location &
+                                                            Map</strong>
+                                                        Riverside Sports Complex – Pitch 2, Ottawa, CA
+                                                        <div class="map-placeholder mt-2">
+                                                            Map area (replace with embedded map when implementing)
+                                                        </div>
+                                                        <div class="filters">
+                                                            <button class="filter-btn-a active">Hotels</button>
+                                                            <button class="filter-btn-a">Distance</button>
+                                                            <button class="filter-btn-a">Price</button>
+                                                            <button class="filter-btn-a">Rating</button>
+                                                        </div>
+                                                        <div class="d-flex gap-2 flex-wrap">
+                                                            <div class="hotel-card">
+                                                                <div class="courtyard-downtown">
+                                                                    <strong>Courtyard Downtown</strong>
+                                                                    <small class="d-block">1.2 km • ★★★★★</small>
+                                                                </div>
+                                                                <button class="book-btn">Book</button>
+                                                            </div>
+                                                            <div class="hotel-card">
+                                                                <div>
+                                                                    <strong>Holiday Inn Express</strong>
+                                                                    <small class="d-block">2.5 km • ★★★★☆</small>
+                                                                </div>
+                                                                <button class="book-btn">Book</button>
+                                                            </div>
+                                                            <div class="hotel-card">
+                                                                <div>
+                                                                    <strong>Hilton Riverside</strong>
+                                                                    <small class="d-block">3.1 km • ★★★★★</small>
+                                                                </div>
+                                                                <button class="book-btn">Book</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="panel-sm">
+                                                        <small
+                                                            class="d-block mb-2 text-muted-b fw-semibold">Attending?</small>
+                                                        <div class="d-flex gap-2">
+                                                            <button class="attend-btn btn-yes">Yes</button>
+                                                            <button class="attend-btn btn-maybe">Maybe</button>
+                                                            <button class="attend-btn btn-no">No</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="panel-sm">
+                                                        <small class="d-block mb-2 text-muted-b fw-semibold">Carpool /
+                                                            Transportation</small>
+                                                        <div class="d-flex gap-2 mb-2">
+                                                            <button class="carpool-btn active">I can drive</button>
+                                                            <button class="carpool-btn">Need a ride</button>
+                                                        </div>
+                                                        <small class="d-block text-muted-c">Seats available</small>
+                                                        <input type="number" value="3" class="seat-input mt-1">
+                                                    </div>
+
+                                                    <div class="panel-sm panel-hig">
+                                                        <small class="d-block mb-2 text-muted-b fw-semibold">Coach
+                                                            Note</small>
+                                                        <div class="arrive-text">Arrive 45 minutes early. Bring both
+                                                            kits.</div>
+                                                    </div>
+
+                                                    <div class="panel-sm">
+                                                        <small class="d-block mb-2 text-muted-b fw-semibold">Event
+                                                            Images</small>
+                                                        <div class="mb-2 text-muted drag-text">Drag & drop or click to
+                                                            upload</div>
+                                                        <div class="upload-btn-one">
+                                                            <button class="upload-btn">Upload</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="panel-sm panel-hig weather-main">
+                                                        <small
+                                                            class="d-block mb-2 text-muted-b fw-semibold">Weather</small>
+                                                        <div class="drag-text">Ottawa • 13° C • Partly Cloudy</div>
+                                                        <img src="images/rundes-icon.png" alt="icon">
+                                                    </div>
+
+                                                    <div class="panel-sm">
+                                                        <small class="d-block mb-2 text-muted-b fw-semibold">Venue &
+                                                            Links</small>
+                                                        <div class="drag-text">Riverside Sports Complex – Pitch 2</div>
+                                                        <div class="d-flex gap-2 mt-2">
+                                                            <button class="save-btn save-btn-a">Save</button>
+                                                            <button class="chat-btn">Open Team Chat</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Footer buttons: centered row -->
+                                            <div class="modal-footer-custom mb-3">
+                                                <button class="footer-btn1">Add to Calendar</button>
+                                                <button class="footer-btn1">Share</button>
+                                                <button class="footer-btn1 footer-btn-primary">Open Map</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 part-one">
+                        <div class="same-card chats-card">
+                            <div class="awards-headding">
+                                <h2>Chats</h2>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </div>
+                            <div class="search-box chats-search">
+                                <input type="text" placeholder="Search">
+                                <img src="images/search.svg" alt="Icon">
+                            </div>
+                            <div class="chat-profile-all">
+                                <div class="chat-profile align-items-center">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <span class="chat-user">
+                                            <img src="images/chat1.png" alt="Chat Image">
+                                        </span>
+                                        <span class="chat-user flex-column gap-1">
+                                            <h5>Vincent Porter</h5>
+                                            <h6><label></label>Online</h6>
+                                        </span>
+                                    </div>
+                                    <div class="chat-icon">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop-four"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="chat-profile align-items-center">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <span class="chat-user">
+                                            <img src="images/chat2.png" alt="Chat Image">
+                                        </span>
+                                        <span class="chat-user offline-dot flex-column gap-1">
+                                            <h5>Aiden Chavez</h5>
+                                            <h6><label></label>Left 7 min ago</h6>
+                                        </span>
+                                    </div>
+                                    <div class="chat-icon">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop-four"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="chat-profile align-items-center">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <span class="chat-user">
+                                            <img src="images/chat3.png" alt="Chat Image">
+                                        </span>
+                                        <span class="chat-user flex-column gap-1">
+                                            <h5>Mike Thomas</h5>
+                                            <h6><label></label>Online</h6>
+                                        </span>
+                                    </div>
+                                    <div class="chat-icon">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop-four"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="chat-profile align-items-center">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <span class="chat-user">
+                                            <img src="images/chat4.png" alt="Chat Image">
+                                        </span>
+                                        <span class="chat-user flex-column gap-1">
+                                            <h5>Erika Hughes</h5>
+                                            <h6><label></label>Online</h6>
+                                        </span>
+                                    </div>
+                                    <div class="chat-icon">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop-four"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="chat-profile align-items-center">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <span class="chat-user">
+                                            <img src="images/chat5.png" alt="Chat Image">
+                                        </span>
+                                        <span class="chat-user flex-column gap-1">
+                                            <h5>Ginger Johnston</h5>
+                                            <h6><label></label>Online</h6>
+                                        </span>
+                                    </div>
+                                    <div class="chat-icon">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop-four"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="chat-profile align-items-center">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <span class="chat-user">
+                                            <img src="images/chat6.png" alt="Chat Image">
+                                        </span>
+                                        <span class="chat-user offline-dot flex-column gap-1">
+                                            <h5>Tracy Carpenter</h5>
+                                            <h6><label></label>Offline</h6>
+                                        </span>
+                                    </div>
+                                    <div class="chat-icon">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop-four"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="chat-profile align-items-center">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <span class="chat-user">
+                                            <img src="images/chat7.png" alt="Chat Image">
+                                        </span>
+                                        <span class="chat-user flex-column gap-1">
+                                            <h5>Christian Kelly</h5>
+                                            <h6><label></label>Online</h6>
+                                        </span>
+                                    </div>
+                                    <div class="chat-icon">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop-four"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="chat-profile align-items-center">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <span class="chat-user">
+                                            <img src="images/chat8.png" alt="Chat Image">
+                                        </span>
+                                        <span class="chat-user offline-dot flex-column gap-1">
+                                            <h5>Monica Ward</h5>
+                                            <h6><label></label>Offline</h6>
+                                        </span>
+                                    </div>
+                                    <div class="chat-icon">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop-four"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="chat-profile align-items-center">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <span class="chat-user">
+                                            <img src="images/chat9.png" alt="Chat Image">
+                                        </span>
+                                        <span class="chat-user flex-column gap-1">
+                                            <h5>Dean Henry</h5>
+                                            <h6><label></label>Online</h6>
+                                        </span>
+                                    </div>
+                                    <div class="chat-icon">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop-four"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="chat-profile align-items-center">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <span class="chat-user">
+                                            <img src="images/chat10.png" alt="Chat Image">
+                                        </span>
+                                        <span class="chat-user flex-column gap-1">
+                                            <h5>Erick</h5>
+                                            <h6><label></label>Online</h6>
+                                        </span>
+                                    </div>
+                                    <div class="chat-icon">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop-four"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="chat-profile align-items-center">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <span class="chat-user">
+                                            <img src="images/chat11.png" alt="Chat Image">
+                                        </span>
+                                        <span class="chat-user flex-column gap-1">
+                                            <h5>Saima</h5>
+                                            <h6><label></label>Online</h6>
+                                        </span>
+                                    </div>
+                                    <div class="chat-icon">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop-four"><i
+                                                class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Chat Modal 1 -->
+                                <div class="modal fade" id="staticBackdrop-four" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                        <div class="modal-content modal-content-padding modal-content-one">
+                                            <div class="modal-header modal-header-one">
+                                                <div class="modal-headding modal-headding-two">
+                                                    <div class="leftmodal-header">
+                                                        <div class="chat-box-icon personal-chat-text">
+                                                            <h2>VP</h2>
+                                                        </div>
+                                                        <div class="modal-text-headding">
+                                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Live
+                                                                Vincent Porter
+                                                            </h1>
+                                                            <p><label></label>Online</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="chat-container">
+                                                    <div class="chat-left panel-box panel-box-a chat-left-card">
+                                                        <div class="chat-body d-flex flex-column pt-0">
+                                                            <div class="chat-day"><span>TODAY</span></div>
+                                                            <div class="msg-two">
+                                                                <div class="user-name">
+                                                                    <h2>AG</h2>
+                                                                </div>
+                                                                <div class="msg-rignt">
+                                                                    <div class="msg msg-agent mb-0">
+                                                                        <p>Hi! I'm Alex from Support. How can I help
+                                                                            today?
+                                                                            You can also start an audio chat if that’s
+                                                                            easier.
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="msg-time">09:18</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="joining-team-text">
+                                                                <div class="msg text-msg-two msg-user">
+                                                                    I’m having issues joining team chat from the
+                                                                    tournament
+                                                                    page.
+                                                                </div>
+                                                                <div class="msg-time text-end">09:20 • Read</div>
+                                                            </div>
+                                                            <div class="msg-two">
+                                                                <div class="user-name">
+                                                                    <h2>AG</h2>
+                                                                </div>
+                                                                <div class="msg-rignt msg-rignt-w">
+                                                                    <div class="msg msg-agent screen-preview-text mb-0">
+                                                                        <div class="msg-preview">Image / Screen Preview
+                                                                        </div>
+                                                                        Could you share a screenshot?
+                                                                    </div>
+                                                                    <div class="msg-time">09:22</div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="joining-team-text">
+                                                                <div class="msg text-msg-two msg-user msg-uploading">
+                                                                    Uploading now...
+                                                                </div>
+                                                                <div class="msg-time text-end">09:25</div>
+                                                            </div>
+
+                                                            <div class="msg-two">
+                                                                <div class="user-name">
+                                                                    <h2>AG</h2>
+                                                                </div>
+                                                                <div class="msg-rignt">
+                                                                    <div class="msg msg-agent typing-dots">
+                                                                        <span></span><span></span><span></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="chat-footer">
+                                                    <div class="chat-input-box">
+                                                        <div class="write-message-main">
+                                                            <div class="write-message-input">
+                                                                <input type="text" placeholder="Write a message...">
+                                                            </div>
+                                                            <div class="camera-buttons">
+                                                                <button><img src="images/pin-icon.svg"
+                                                                        alt="Icon"></button>
+                                                                <button><img src="images/camera.svg"
+                                                                        alt="Icon"></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="audio-three-btn">
+                                                            <button class="share-btn"><img src="images/share-icon.svg"
+                                                                    alt="Icon"></button>
+                                                            <button class="share-btn audio-btn"><img
+                                                                    src="images/audio-icon.svg" alt="Icon"></button>
+                                                            <button class="share-btn emoji-btn"><img
+                                                                    src="images/emoji-icon.svg" alt="Icon"></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                        <div class="same-card assign-task-card">
+                            <div class="awards-headding">
+                                <h2>Assign Task</h2>
+                                <div class="dropdown">
+                                    <button class="filter-btn dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="images/filter-icon.svg" alt="Filter Icon"> Filter <img
+                                            class="buttom-icon" src="images/buttom-icon.png" alt="Filter Icon">
+                                    </button>
+                                    <ul class="dropdown-menu filter-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Filter 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Filter 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Filter 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="select-player-btn">
+                                <select id="player" name="player">
+                                    <option value="player1">Player 1</option>
+                                    <option value="player2">Player 2</option>
+                                    <option value="player3">Player 3</option>
+                                    <option value="player4">Player 4</option>
+                                </select>
+                                <button class="assign-task">Assign New Task</button>
+                            </div>
+                            <div class="assign-list">
+                                <table class="sem-table">
+                                    <thead>
+                                        <tr>
+                                            <th>User</th>
+                                            <th>Status</th>
+                                            <th>Manager</th>
+                                            <th>Progress</th>
+                                            <th>Task</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="user-info">
+                                                    <img src="https://i.pravatar.cc/35?img=1" alt="User">
+                                                    Fill out paperwork
+                                                </div>
+                                            </td>
+                                            <td><span class="status done">Done</span></td>
+                                            <td>John Doe</td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill green"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="user-info">
+                                                    <img src="https://i.pravatar.cc/35?img=2" alt="User">
+                                                    Work on shooting
+                                                </div>
+                                            </td>
+                                            <td><span class="status todo">To Do</span></td>
+                                            <td>John Doe</td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill purple"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="user-info">
+                                                    <img src="https://i.pravatar.cc/35?img=3" alt="User">
+                                                    Attend referee tr...
+                                                </div>
+                                            </td>
+                                            <td><span class="status hold">On Hold</span></td>
+                                            <td>John Doe</td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill orange"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="user-info">
+                                                    <img src="https://i.pravatar.cc/35?img=4" alt="User">
+                                                    Update profile info
+                                                </div>
+                                            </td>
+                                            <td><span class="status wait">Wait Approval</span></td>
+                                            <td>John Doe</td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill blue"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="user-info">
+                                                    <img src="https://i.pravatar.cc/35?img=5" alt="User">
+                                                    Turn birth year on
+                                                </div>
+                                            </td>
+                                            <td><span class="status todo">To Do</span></td>
+                                            <td>John Doe</td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill light"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="same-card help-chat-card">
+                            <button class="help-chat-btn" type="button" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop-three">
+                                <img src="images/HelpIcon.svg" alt="Help Icon"> Help Chat
+                            </button>
+                            <button class="help-chat-btn report-bug-btn" data-bs-toggle="modal"
+                                data-bs-target="#bugModal">
+                                <img src="images/BugIcon.svg" alt="Help Icon"> Report a Bug
+                            </button>
+                        </div>
+
+                        <!-- Modal 4 -->
+                        <div class="modal fade" id="bugModal" tabindex="-1">
+                            <div class="modal-dialog modal-xl modal-dialog-centered">
+                                <div class="modal-content modal-content-responsive">
+
+                                    <!-- Header -->
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="report-headding-card">
+                                            <div class="report-icon">
+                                                <img src="images/bugIcon-two.png" alt="icon">
+                                            </div>
+                                            <div>
+                                                <h2 class="header-title">Report a Bug</h2>
+                                                <p class="header-sub">Help us fix things fast</p>
+                                            </div>
+                                        </div>
+                                        <div class="ticket-main-btn">
+                                            <span class="ticket-pill">Ticket ID: #TEMP</span>
+                                            <button class="btn-diagnostics">Submit Diagnostics</button>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3">
+                                        <!-- LEFT -->
+                                        <div class="col-lg-7">
+                                            <div class="mb-3">
+                                                <div class="label-a">Title</div>
+                                                <input class="form-control-a"
+                                                    placeholder='Short summary, e.g., "Crash when opening team chat"'>
+                                            </div>
+                                            <div class="row g-2 mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="label-a">Category</div>
+                                                    <select class="form-select form-select-a">
+                                                        <option>UI</option>
+                                                        <option>Chat</option>
+                                                        <option>Payments</option>
+                                                        <option>Other</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="label-a">Severity</div>
+                                                    <div class="panel-box-one">
+                                                        <button class="severity-btn active-low">Low</button>
+                                                        <button class="severity-btn">Medium</button>
+                                                        <button class="severity-btn active-high">High</button>
+                                                        <button class="severity-btn active-crit">Crit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="label-a">Description</div>
+                                                <textarea class="form-control-a" rows="3"
+                                                    placeholder="What happened? What did you expect to happen?"></textarea>
+                                            </div>
+                                            <div class="steps-box">
+                                                <div class="label-a">Steps to Reproduce</div>
+                                                <textarea class="form-control-a" rows="0"></textarea>
+                                                <button class="btn-add">+ Add</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- RIGHT -->
+                                        <div class="col-lg-5">
+                                            <div class="mb-3">
+                                                <div class="label-a">Screenshots / Files</div>
+                                                <div class="upload-box-one">
+                                                    Drag & drop or click to upload
+                                                    <button class="btn-upload-one">Upload</button>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="label-a">Environment</div>
+                                                <div class="environment-bg">
+                                                    <div class="small-one mb-2">
+                                                        App v1.4.2 • iOS 17.5 • iPhone 14 Pro<br>
+                                                        Build: 2025.08.20-rc2 • Network: Wi-Fi
+                                                    </div>
+                                                    <div class="form-check form-switch">
+                                                        <label class="form-check-label" for="logsSwitch">Include console
+                                                            logs</label>
+                                                        <input class="form-check-input" type="checkbox" id="logsSwitch"
+                                                            checked>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="label-a">Contact (Optional)</div>
+                                                <input class="form-control-a"
+                                                    placeholder="Email or phone for follow-up">
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="checkbox" id="privacyCheck">
+                                                    <label for="privacyCheck" class="form-check-label">
+                                                        I agree to share diagnostics & screenshots for troubleshooting
+                                                    </label>
+                                                </div>
+                                                <div class="small text-muted mt-1">
+                                                    <strong>Privacy:</strong> We redact tokens and personal identifiers
+                                                    automatically.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Footer -->
+                                    <div class="d-flex justify-content-between align-items-center mt-4">
+                                        <div class="button-responive">
+                                            <button class="btn-cancel cancel-button">Cancel</button>
+                                            <button class="btn-submit submit-report-btn">Submit Report</button>
+                                        </div>
+                                        <div class="button-responive">
+                                            <button class="btn-outline open-help-btn">Open Help Chat</button>
+                                            <button class="btn-view view-docs-btn">View Docs</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal 3 -->
+                        <div class="modal fade" id="staticBackdrop-three" data-bs-backdrop="static"
+                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-centered">
+                                <div class="modal-content modal-content-padding modal-content-one">
+                                    <div class="modal-header modal-header-one">
+                                        <div class="modal-headding modal-headding-two">
+                                            <div class="leftmodal-header">
+                                                <div class="chat-box-icon">
+                                                    <img src="images/chat-icon.svg" alt="Chat Icon">
+                                                </div>
+                                                <div class="modal-text-headding">
+                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Live Help Chat
+                                                    </h1>
+                                                    <p>CONNECTED TO SUPPORT</p>
+                                                </div>
+                                            </div>
+                                            <div class="leftmodal-header">
+                                                <div class="chat-box-icon start-audio-chat">
+                                                    <i class="fa-solid fa-microphone"></i> Start Audio Chat
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="chat-container">
+                                            <div class="chat-left panel-box panel-box-a chat-left-card">
+                                                <div class="chat-body d-flex flex-column pt-0">
+                                                    <div class="chat-day"><span>TODAY</span></div>
+                                                    <div class="msg-two">
+                                                        <div class="user-name">
+                                                            <h2>AG</h2>
+                                                        </div>
+                                                        <div class="msg-rignt">
+                                                            <div class="msg msg-agent mb-0">
+                                                                <p>Hi! I'm Alex from Support. How can I help today?
+                                                                    You can also start an audio chat if that’s easier.
+                                                                </p>
+                                                            </div>
+                                                            <div class="msg-time">09:18</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="joining-team-text">
+                                                        <div class="msg text-msg-two msg-user">
+                                                            I’m having issues joining team chat from the tournament
+                                                            page.
+                                                        </div>
+                                                        <div class="msg-time text-end">09:20 • Read</div>
+                                                    </div>
+                                                    <div class="msg-two">
+                                                        <div class="user-name">
+                                                            <h2>AG</h2>
+                                                        </div>
+                                                        <div class="msg-rignt msg-rignt-w">
+                                                            <div class="msg msg-agent screen-preview-text mb-0">
+                                                                <div class="msg-preview">Image / Screen Preview</div>
+                                                                Could you share a screenshot?
+                                                            </div>
+                                                            <div class="msg-time">09:22</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="joining-team-text">
+                                                        <div class="msg text-msg-two msg-user msg-uploading">
+                                                            Uploading now...
+                                                        </div>
+                                                        <div class="msg-time text-end">09:25</div>
+                                                    </div>
+
+                                                    <div class="msg-two">
+                                                        <div class="user-name">
+                                                            <h2>AG</h2>
+                                                        </div>
+                                                        <div class="msg-rignt">
+                                                            <div class="msg msg-agent typing-dots">
+                                                                <span></span><span></span><span></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Right -->
+                                            <div class="chat-right panel-box panel-box-a chat-right-card">
+                                                <div class="right-section">
+                                                    <h6>SESSION</h6>
+                                                    <div class="agent-text">Agent: Alex Green • Online</div>
+                                                    <div class="agent-text">Ticket: #TEMP</div>
+                                                </div>
+
+                                                <div class="right-section">
+                                                    <h6>QUICK ACTIONS</h6>
+                                                    <button class="quick-btn quick-audio">Start Audio Chat</button>
+                                                    <button class="quick-btn quick-screen">Share Screen</button>
+                                                </div>
+
+                                                <div class="right-section">
+                                                    <h6>SUGGESTED LINKS</h6>
+                                                    <button class="link-btn">Troubleshoot Team Chat</button>
+                                                    <button class="link-btn">Network Requirements</button>
+                                                </div>
+
+                                                <div class="right-section">
+                                                    <h6>ATTACHMENTS</h6>
+                                                    <div class="upload-box">
+                                                        Drag &amp; drop or click to upload
+                                                        <button class="btn-upload">Upload</button>
+                                                    </div>
+                                                    <div class="form-check mt-2">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="includeDiag">
+                                                        <label class="form-check-label" for="includeDiag">Include
+                                                            diagnostics with this chat</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="chat-footer">
+                                            <div class="chat-input-box">
+                                                <div class="write-message-main">
+                                                    <div class="write-message-input">
+                                                        <input type="text" placeholder="Write a message...">
+                                                    </div>
+                                                    <div class="camera-buttons">
+                                                        <button><img src="images/pin-icon.svg" alt="Icon"></button>
+                                                        <button><img src="images/camera.svg" alt="Icon"></button>
+                                                    </div>
+                                                </div>
+                                                <div class="audio-three-btn">
+                                                    <button class="share-btn"><img src="images/share-icon.svg"
+                                                            alt="Icon"></button>
+                                                    <button class="share-btn audio-btn"><img src="images/audio-icon.svg"
+                                                            alt="Icon"></button>
+                                                    <button class="share-btn emoji-btn"><img src="images/emoji-icon.svg"
+                                                            alt="Icon"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal 5 -->
+            <div class="modal modal-top-modal fade" id="staticBackdrop-two" data-bs-backdrop="static"
+                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content modal-content-one">
+                        <div class="modal-header modal-header-one">
+                            <div class="modal-headding">
+                                <h2 class="modal-title edit-profile-text fs-5" id="staticBackdropLabel">
+                                    Edit Profile <label>Update details or set privacy. Preview updates
+                                        live.</label>
+                                </h2>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-content">
+                                <div class="row g-3">
+                                    <div class="col-md-4 col-md-12">
+                                        <div class="profile-left">
+                                            <div class="profile-image">Profile Image</div>
+                                            <h1 class="profile-title">Profile preview</h1>
+                                            <div class="preview-box">
+                                                <strong>Jordan</strong>
+                                                <div>Morgan</div>
+                                                <small>Nationality · Height · Weight</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8  col-md-12">
+                                        <div class="profile-right">
+                                            <div class="row g-3">
+                                                <div class="col-md-4 col-md-6">
+                                                    <label class="form-label">First name</label>
+                                                    <input type="text" class="form-control input-btn" value="Jordan">
+                                                </div>
+                                                <div class="col-md-4 col-md-6">
+                                                    <label>Last name</label>
+                                                    <input type="text" class="form-control input-btn" value="Morgan">
+                                                </div>
+                                                <div class="col-md-4 col-md-6">
+                                                    <label>Debut</label>
+                                                    <input type="date" class="form-control input-btn">
+                                                </div>
+
+                                                <div class="col-md-4 col-md-6">
+                                                    <label>Born</label>
+                                                    <input type="date" class="form-control input-btn">
+                                                </div>
+                                                <div class="col-md-4 col-md-6">
+                                                    <label>Age (auto)</label>
+                                                    <input type="text" class="form-control input-btn"
+                                                        value="Auto from Born" disabled>
+                                                </div>
+                                                <div class="col-md-4 col-md-6">
+                                                    <label>Weight</label>
+                                                    <input type="text" class="form-control input-btn" value="72 kg">
+                                                </div>
+
+                                                <div class="col-md-4 col-md-6">
+                                                    <label>Nationality</label>
+                                                    <input type="text" class="form-control input-btn" value="Canada">
+                                                </div>
+                                                <div class="col-md-4 col-md-6">
+                                                    <label>Height</label>
+                                                    <input type="text" class="form-control input-btn" value="178 cm">
+                                                </div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <label>Last name display</label>
+                                                <div class="d-flex gap-3 mt-1">
+                                                    <button
+                                                        class="btn btn-outline-secondary show-two-btn flex-fill">Show
+                                                        full last name</button>
+                                                    <button
+                                                        class="btn btn-outline-secondary show-two-btn flex-fill">Show
+                                                        only last 3 letters</button>
+                                                </div>
+                                            </div>
+                                            <div class="privacy-section mt-4">
+                                                <h6>Privacy <small>Choose what’s public.</small>
+                                                </h6>
+                                                <div class="row mt-2">
+                                                    <div class="col-md-6">
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="privateSwitch">
+                                                            <label class="form-check-label" for="privateSwitch">Make
+                                                                entire
+                                                                profile private</label>
+                                                        </div>
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="hideFirst">
+                                                            <label class="form-check-label" for="hideFirst">Hide first
+                                                                name</label>
+                                                        </div>
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="hideLast">
+                                                            <label class="form-check-label" for="hideLast">Hide last
+                                                                name</label>
+                                                        </div>
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="hideBorn">
+                                                            <label class="form-check-label" for="hideBorn">Hide
+                                                                born</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="hideAge">
+                                                            <label class="form-check-label" for="hideAge">Hide
+                                                                age</label>
+                                                        </div>
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="hideWeight">
+                                                            <label class="form-check-label" for="hideWeight">Hide
+                                                                weight</label>
+                                                        </div>
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="hideNationality">
+                                                            <label class="form-check-label" for="hideNationality">Hide
+                                                                nationality</label>
+                                                        </div>
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="hideHeight">
+                                                            <label class="form-check-label" for="hideHeight">Hide
+                                                                height</label>
+                                                        </div>
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="hideDebut">
+                                                            <label class="form-check-label" for="hideDebut">Hide
+                                                                debut</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4 d-flex gap-3">
+                                                <button class="btn-save">Save Changes</button>
+                                                <button class="btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Modal 6-->
+            <div class="modal fade" id="fixtureModal" tabindex="-1" aria-labelledby="fixtureModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content fixture-card">
+                        <div class="modal-header border-0">
+                            <h5 class="modal-title fixture-header" id="fixtureModalLabel">U18 Premier – Quarter Finals
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <p class="text-muted">Confirm your availability for this fixture.</p>
+
+                            <!-- Info Grid -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="info-box-1">
+                                        <div class="icon-main">
+                                            <i class="fa-regular fa-calendar info-icon"></i>
+                                        </div>
+                                        <div>
+                                            <div class="info-label">DATE</div>
+                                            <div class="info-value">Sat, Sep 14, 2025</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-box-1">
+                                        <div class="icon-main">
+                                            <i class="fa-regular fa-clock info-icon"></i>
+                                        </div>
+                                        <div>
+                                            <div class="info-label">TIME</div>
+                                            <div class="info-value">3:30 PM – 5:00 PM</div>
+                                        </div>
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-box-1">
+                                        <div class="icon-main">
+                                            <i class="fa-solid fa-building info-icon"></i>
+                                        </div>
+                                        <div>
+                                            <div class="info-label">VENUE</div>
+                                            <div class="info-value">Riverside Sports Complex – Pitch 2</div>
+                                        </div>
+                                        <i class="bi bi-geo-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-box-1">
+                                        <div class="icon-main">
+                                            <i class="fa-solid fa-location-dot info-icon"></i>
+                                        </div>
+                                        <div>
+                                            <div class="info-label">MAP</div>
+                                            <div class="info-value text-primary"><a href="#"
+                                                    class="text-decoration-none">View location ↗</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Note -->
+                            <div class="note-box">
+                                Note: Park in Lot B; players arrive 45 min early
+                            </div>
+
+                            <!-- Carpool -->
+                            <div class="container d-flex justify-content-end">
+                                <div class="transport-card shadow-sm">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-start mb-2 gap-3">
+                                        <div>
+                                            <small class=" d-block lable-module">Carpool / Transportation</small>
+                                            <div class="d-flex gap-2 mt-2">
+                                                <button id="driveBtn" class="btn btn-toggle active">✔ I can
+                                                    drive</button>
+                                                <button id="rideBtn" class="btn btn-toggle inactive">Need a
+                                                    ride</button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <small class="lable-module d-block mb-1">Seats available</small>
+                                            <div class="seats-box">
+                                                <button id="minusBtn" class="seats-btn">−</button>
+                                                <span id="seatCount" class="seats-number">3</span>
+                                                <button id="plusBtn" class="seats-btn">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <small class="text-muted">
+                                        Sharing your ride helps teammates get to the venue on time.
+                                    </small>
+                                </div>
+                            </div>
+                            <small class="text-muted d-block mt-2">ATTENDING?</small>
+                        </div>
+
+                        <div class="modal-footer border-0 d-flex justify-content-between flex-wrap gap-2">
+                            <div class="d-flex gap-2">
+                                <button class="btn-attend btn-green">Yes</button>
+                                <button class="btn-attend btn-yellow">Maybe</button>
+                                <button class="btn-attend btn-red">No</button>
+                            </div>
+                            <button class="btn-map">Open Map</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!--Modal7-->
+            <div class="m modal fade" id="requestModal" tabindex="-1" aria-labelledby="requestModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <!-- Header -->
+                        <div class="modal-header">
+                            <h5 class="modal-title fw-bold">Request Access: Team Manager (Parent / Volunteer)</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Progress -->
+                        <div class="progress mb-3">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="modal-body">
+                            <div class="row g-3">
+                                <!-- Role -->
+                                <div class="col-md-6 mm">
+                                    <div class="border-box">
+                                        <label class="fw-bold mb-2">Role</label>
+                                        <div class="d-flex gap-2 flex-wrap mb-3">
+                                            <button class="btn btn-option active">Parent/Guardian</button>
+                                            <button class="btn btn-option">Volunteer</button>
+                                            <button class="btn btn-option">Assistant Coach</button>
+                                        </div>
+                                    </div>
+                                    <div class="border-box">
+
+                                        <input type="text" class="form-control"
+                                            placeholder="Select team (e.g., U12 Girls • Ottawa Comets)">
+
+                                    </div>
+                                    <div class="border-box">
+
+                                        <div class="d-flex">
+                                            <input type="text" class="form-control me-2"
+                                                placeholder="Brief note: connection to player or club">
+                                            <button class="btn btn-outline-secondary rounded-pill">Upload</button>
+                                        </div>
+                                    </div>
+                                    <div class="border-box">
+
+                                        <!-- Additional Info -->
+                                        <div class="row g-3 ">
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="Full name">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="email" class="form-control" placeholder="Email address">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="Mobile number">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Preferred language">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Verification -->
+                                <div class="col-md-6 mm">
+                                    <div class="border-box">
+
+                                        <label class="fw-bold mb-2">5. Verification method</label>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-option active">SMS code</button>
+                                            <button class="btn btn-option">Email link</button>
+                                        </div>
+                                    </div>
+                                    <div class="border-box">
+
+                                        <input type="text" class="form-control mb-3"
+                                            placeholder="Enter phone or email to receive verification">
+                                        <div class="d-flex mb-3">
+                                            <input type="text" class="form-control me-2"
+                                                placeholder="Invite link will appear here">
+                                            <button class="btn btn-copy">Copy </button>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-generate flex-fill">Generate Link</button>
+                                            <button class="btn btn-outline-secondary flex-fill rounded-pill">Upload
+                                                CSV</button>
+                                        </div>
+                                    </div>
+                                    <!-- Consent -->
+                                    <div class="border-box">
+
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="consentCheck">
+                                            <label for="consentCheck" class="form-check-label">
+                                                <strong>Consent</strong>
+                                                <p class="text-muted mb-0 small">
+                                                    I agree to temporarily manage this team according to club policies
+                                                    and safeguarding rules.
+                                                </p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="modal-footer border-0 justify-content-between">
+                            <button class="btn btn-cancel">Cancel</button>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-save">Save for Later</button>
+                                <button class="btn btn-request">Request Access</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src='js/main.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

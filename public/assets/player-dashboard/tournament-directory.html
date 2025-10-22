@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Soccer Dashboard</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="m-4">
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1>🏆 <span>Tournament Directory</span></h1>
+        <p>Search and register for tournaments by location, date, sport, division, age, and more.</p>
+      </header>
+
+      <!-- Filter Bar -->
+      <div class="filters">
+        <select>
+          <option>Ontario</option>
+        </select>
+        <select>
+          <option>Ottawa</option>
+        </select>
+        <select>
+          <option>Soccer</option>
+        </select>
+        <select>
+          <option>May 1–31, 2025</option>
+        </select>
+        <button class="btn-gradient">Search</button>
+        <button class="btn-clear">Clear Filters</button>
+        <select>
+          <option>U15</option>
+        </select>
+        <select>
+          <option>Co-ed</option>
+        </select>
+        <select>
+          <option>Indoor</option>
+        </select>
+        <select>
+          <option>Registration Open</option>
+        </select>
+        <select>
+          <option>$300</option>
+        </select>
+      </div>
+
+      <!-- Results -->
+      <p class="results">Results · 6 tournaments</p>
+
+      <div class="table">
+        <!-- Table Header -->
+        <div class="table-row header-row">
+          <div>Tournament</div>
+          <div>City / Province</div>
+          <div>Dates</div>
+          <div>Divisions</div>
+          <div>Teams</div>
+          <div>Fee</div>
+          <div>Status</div>
+        </div>
+
+        <!-- Table Rows -->
+        <div class="table-row">
+          <div class="bold">Spring Cup 2025</div>
+          <div>Ottawa, ON</div>
+          <div>May 10–14</div>
+          <div>U13 • U15</div>
+          <div>T12</div>
+          <div>$250</div>
+          <div class="status-row">
+            <span class="status open">Open</span>
+            <button class="btn-gradient small">Register</button>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="bold">Summer Classic</div>
+          <div>Toronto, ON</div>
+          <div>Jun 2–5</div>
+          <div>U17 • U19</div>
+          <div>24</div>
+          <div>$320</div>
+          <div class="status-row">
+            <span class="status waitlist">Waitlist</span>
+            <button class="btn-gradient small">Join Waitlist</button>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="bold">Capital City Invitational</div>
+          <div>Kingston, ON</div>
+          <div>Jul 12–15</div>
+          <div>U11 • U13</div>
+          <div>18</div>
+          <div>$280</div>
+          <div class="status-row">
+            <span class="status waitlist">Waitlist</span>
+            <button class="btn-gradient small">Join Waitlist</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="tip">
+        Tip: Use filters to narrow by province, city, date range, division, age, surface, status, and fee.
+      </p>
+    </div>
+  </div>
+
+
+
+
+
+  <script>
+        // Theme Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check for saved theme preference or default to 'light'
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            // Create theme toggle button if it doesn't exist
+            if (!document.querySelector('.theme-toggle')) {
+                const themeToggle = document.createElement('button');
+                themeToggle.className = 'theme-toggle';
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                document.body.appendChild(themeToggle);
+
+                // Update icon based on current theme
+                updateThemeIcon(currentTheme, themeToggle);
+
+                // Add click event listener
+                themeToggle.addEventListener('click', function () {
+                    const theme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = theme === 'light' ? 'dark' : 'light';
+
+                    // Update theme
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+
+                    // Update icon
+                    updateThemeIcon(newTheme, themeToggle);
+                });
+            }
+
+            function updateThemeIcon(theme, button) {
+                const icon = button.querySelector('i');
+                if (theme === 'dark') {
+                    icon.className = 'fas fa-sun';
+                } else {
+                    icon.className = 'fas fa-moon';
+                }
+            }
+
+            // Add Font Awesome for icons if not already included
+            if (!document.querySelector('link[href*="font-awesome"]')) {
+                const fontAwesome = document.createElement('link');
+                fontAwesome.rel = 'stylesheet';
+                fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+                document.head.appendChild(fontAwesome);
+            }
+        });
+    </script>
+</body>
+
+</html>

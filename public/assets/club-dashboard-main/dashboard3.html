@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ottawa South Soccer Club - Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./dashboard3.css" />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth",
+        });
+        calendar.render();
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebarToggle">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-container">
+        <!-- Header -->
+        <div class="sidebar-header">
+          <div class="logo-container">
+            <div class="d-flex flex-column align-items-center">
+              <div class="mb-2">
+                <img
+                  src="./assets/play2earn.png"
+                  width="110"
+                  height="88"
+                  alt="play2earn"
+                  class="log play-logo"
+                />
+              </div>
+              <div class="mb-2">
+                <img
+                  src="./assets/osu.png"
+                  width="70"
+                  height="68"
+                  alt="osu"
+                  class="log osu-logo"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="club-info">
+            <div class="club-name">Ottawa South Soccer</div>
+            <div class="club-type">CLUB</div>
+          </div>
+        </div>
+        <!-- Navigation -->
+        <div class="sidebar-nav">
+          <div class="nav-section">
+            <div class="nav-section-title">MAIN</div>
+
+            <!-- Home with Submenu -->
+            <div class="nav-item">
+              <button
+                class="nav-link active"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#homeSubmenu"
+                aria-expanded="true"
+                aria-controls="homeSubmenu"
+              >
+                <i class="fas fa-home"></i>
+                <span class="nav-text">Home</span>
+                <i class="fas fa-chevron-down nav-arrow"></i>
+              </button>
+              <div class="collapse show sub-nav" id="homeSubmenu">
+                <a href="dashboard1.html" class="nav-link">
+                  <span class="nav-text">Dashboard 1</span>
+                </a>
+                <a href="dashboard2.html" class="nav-link">
+                  <span class="nav-text">Dashboard 2</span>
+                </a>
+                <a href="dashboard3.html" class="nav-link active">
+                  <span class="nav-text">Dashboard 3</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Events -->
+            <div class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fas fa-calendar-alt"></i>
+                <span class="nav-text">Events</span>
+              </a>
+            </div>
+
+            <!-- Email -->
+            <div class="nav-item">
+              <button
+                class="nav-link"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#emailSubmenu"
+                aria-expanded="false"
+                aria-controls="emailSubmenu"
+              >
+                <i class="fas fa-envelope"></i>
+                <span class="nav-text">Email</span>
+                <i class="fas fa-plus nav-arrow"></i>
+              </button>
+              <div class="collapse sub-nav" id="emailSubmenu">
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Inbox</span>
+                </a>
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Compose</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Apps -->
+            <div class="nav-item">
+              <button
+                class="nav-link"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#appsSubmenu"
+                aria-expanded="false"
+                aria-controls="appsSubmenu"
+              >
+                <i class="fas fa-th-large"></i>
+                <span class="nav-text">Apps</span>
+                <i class="fas fa-plus nav-arrow"></i>
+              </button>
+              <div class="collapse sub-nav" id="appsSubmenu">
+                <a href="#" class="nav-link">
+                  <span class="nav-text">App Store</span>
+                </a>
+                <a href="#" class="nav-link">
+                  <span class="nav-text">My Apps</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- E-commerce -->
+            <div class="nav-item">
+              <button
+                class="nav-link"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#ecommerceSubmenu"
+                aria-expanded="false"
+                aria-controls="ecommerceSubmenu"
+              >
+                <i class="fas fa-shopping-cart"></i>
+                <span class="nav-text">E-commerce</span>
+                <i class="fas fa-plus nav-arrow"></i>
+              </button>
+              <div class="collapse sub-nav" id="ecommerceSubmenu">
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Products</span>
+                </a>
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Orders</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Widgets -->
+            <div class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fas fa-puzzle-piece"></i>
+                <span class="nav-text">Widgets</span>
+              </a>
+            </div>
+
+            <!-- User Interface -->
+            <div class="nav-item">
+              <button
+                class="nav-link"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#uiSubmenu"
+                aria-expanded="false"
+                aria-controls="uiSubmenu"
+              >
+                <i class="fas fa-desktop"></i>
+                <span class="nav-text">User Interface (UI)</span>
+                <i class="fas fa-plus nav-arrow"></i>
+              </button>
+              <div class="collapse sub-nav" id="uiSubmenu">
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Components</span>
+                </a>
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Elements</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Forms -->
+            <div class="nav-item">
+              <button
+                class="nav-link"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#formsSubmenu"
+                aria-expanded="false"
+                aria-controls="formsSubmenu"
+              >
+                <i class="fas fa-file-alt"></i>
+                <span class="nav-text">Forms</span>
+                <i class="fas fa-plus nav-arrow"></i>
+              </button>
+              <div class="collapse sub-nav" id="formsSubmenu">
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Basic Forms</span>
+                </a>
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Advanced Forms</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content">
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="header-left">
+          <h1 class="page-title">Dashboard</h1>
+        </div>
+        <div class="header-center">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+
+            <input type="text" placeholder="Search" id="search-box" />
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="header-icon">
+            <i class="fas fa-expand"></i>
+          </div>
+          <div class="header-icon">
+            <i class="fas fa-bell"></i>
+          </div>
+          <div class="header-icon">
+            <i class="fas fa-cog"></i>
+          </div>
+          <div class="user-profile">
+            <img src="./assets//user.png" alt="User" />
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        <!-- Weather Widget -->
+        <div class="weather-widget">
+          <div class="football">
+            <img src="./assets/football.png" alt="" />
+          </div>
+          <div class="weather-info">
+            <div class="weather-temp">13°</div>
+            <img src="./assets/sun-cloud.png" alt="" />
+            <div class="weather-details">
+              <div class="weather-detail">H:16° L:8°</div>
+              <div class="weather-location">Ottawa, Canada</div>
+            </div>
+          </div>
+          <div class="social-share">
+            <div class="share-label">Share Profile</div>
+            <div class="social-icons justify-content-center">
+              <div class="social-icon">
+                <!-- <i class="fab fa-paypal"></i> -->
+                <img
+                  src="./assets/paypal.svg"
+                  alt="paypal"
+                  width="28"
+                  height="28"
+                />
+              </div>
+              <div class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+              </div>
+              <div class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div class="social-icon tiktok">
+                <i class="fab fa-tiktok"></i>
+              </div>
+              <div class="social-icon pinterest">
+                <i class="fab fa-pinterest"></i>
+              </div>
+              <div class="social-icon linkedin">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div class="social-icon snapchat">
+                <i class="fab fa-snapchat-ghost"></i>
+              </div>
+              <div class="social-icon twitter">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div class="social-icon reddit">
+                <i class="fab fa-reddit"></i>
+              </div>
+              <div class="social-icon youtube">
+                <i class="fab fa-youtube"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-card">
+          <div class="row">
+            <!-- Card 1: Bar Chart -->
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div
+                class="stat-card d-flex flex-column align-items-center mb-4 text-center p-3 green"
+              >
+                <div class="w-75">
+                  <canvas id="chart1" height="120"></canvas>
+                </div>
+                <div class="stat-badge mt-2 mb-1 px-2 py-1 w-75 text-truncate">
+                  Estimated Payout
+                </div>
+                <div class="stat-value fs-5 fw-bold"><span>$1512</span></div>
+                <div class="fs-12px mb-2">21% Higher than Average</div>
+              </div>
+            </div>
+
+            <!-- Card 1: Bar Chart -->
+            <!-- <div class="col-sm-6 col-md-6 col-lg-3">
+              <div
+                class="stat-card d-flex flex-column align-items-center mb-4 text-center p-3 green"
+              >
+                <div class="w-75">
+                  <canvas id="chart1" height="60px"></canvas>
+                </div>
+                <div
+                  class="stat-badge mt-2 mb-2 px-2 py-1 w-75 text-truncate fs-12px"
+                >
+                  Estimated Payout
+                </div>
+                <div
+                  class="stat-value fs-24 fw-bold d-flex gap-2 align-items-center"
+                >
+                  <span>$1512</span
+                  ><img
+                    src="./assets/ic_trending_up.svg"
+                    alt="ic_trending_up"
+                    width="28"
+                    height="28"
+                  />
+                </div>
+                <div class="fs-12px mb-2">21% Higher than Average</div>
+              </div>
+            </div> -->
+
+            <!-- Card 2: Line Chart -->
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div
+                class="stat-card d-flex flex-column align-items-center mb-4 text-center p-3 orange"
+              >
+                <div class="w-75">
+                  <canvas id="chart2" height="60px"></canvas>
+                </div>
+                <div class="stat-badge mt-2 mb-2 px-2 py-1 w-75 fs-12px">
+                  Coaches
+                </div>
+                <div
+                  class="stat-value fs-24 fw-bold d-flex gap-2 align-items-center"
+                >
+                  <span>1236</span
+                  ><img
+                    src="./assets/ic_trending_up.svg"
+                    alt="ic_trending_up"
+                    width="28"
+                    height="28"
+                  />
+                </div>
+                <div class="fs-12px mb-2">13% Higher than Average</div>
+              </div>
+            </div>
+
+            <!-- Card 3: Pie Chart -->
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div
+                class="stat-card d-flex flex-column align-items-center mb-4 text-center p-3 blue"
+              >
+                <div class="w-75">
+                  <canvas id="chart3" height="60px"></canvas>
+                </div>
+                <div class="stat-badge mt-2 mb-2 px-2 py-1 w-75 fs-12px">
+                  Teams
+                </div>
+                <div
+                  class="stat-value fs-24 fw-bold d-flex gap-2 align-items-center"
+                >
+                  <span>1107</span
+                  ><img
+                    src="./assets/ic_trending_down.svg"
+                    alt="ic_trending_up"
+                    width="28"
+                    height="28"
+                  />
+                </div>
+                <div class="fs-12px mb-2">34% Lower than Average</div>
+              </div>
+            </div>
+
+            <!-- Card 4: Bar Chart -->
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div
+                class="stat-card d-flex flex-column align-items-center mb-4 text-center p-3 purple"
+              >
+                <div class="w-75">
+                  <canvas id="chart4" height="60px"></canvas>
+                </div>
+                <div
+                  class="stat-badge mt-2 mb-2 px-2 py-1 w-75 text-truncate fs-12px"
+                >
+                  Total Registered
+                </div>
+                <div
+                  class="stat-value fs-24 fw-bold d-flex gap-2 align-items-center"
+                >
+                  <span>167</span
+                  ><img
+                    src="./assets/ic_trending_down.svg"
+                    alt="ic_trending_up"
+                    width="28"
+                    height="28"
+                  />
+                </div>
+                <div class="fs-12px mb-2">06% Lower than Average</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="metric-widget gray-card p-4 pb-0 mb-4">
+          <div class="section-header mb-3 d-flex justify-content-between">
+            <h2 class="fs-5 mb-0">Heading</h2>
+            <div><i class="bi bi-three-dots"></i></div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xxl-3">
+              <div class="metric-card p-3 mb-4 d-flex gap-2">
+                <div class="time-breakdown-chart">
+                  <div class="percentage-chart percentage-chart-meeting">
+                    <svg viewBox="0 0 36 36">
+                      <defs>
+                        <linearGradient
+                          id="circleGradient"
+                          x1="0%"
+                          y1="0%"
+                          x2="100%"
+                          y2="100%"
+                        >
+                          <stop
+                            offset="0%"
+                            style="stop-color: #74d876; stop-opacity: 1"
+                          />
+                          <stop
+                            offset="90%"
+                            style="stop-color: #468477; stop-opacity: 1"
+                          />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        class="percentage-chart-bg"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        class="percentage-chart-stroke"
+                        stroke="url(#circleGradient)"
+                        stroke-dasharray="45, 100"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                    </svg>
+                    <div class="counter" style="--counter-end: 45"></div>
+                  </div>
+                </div>
+                <div class="metric-text">
+                  <h3 class="metric-title fs-14px mb-0">Total Revenue</h3>
+                  <div class="progress-xy my-2" style="height: 5px">
+                    <div
+                      class="progress-bar green-grad"
+                      style="width: 45%"
+                    ></div>
+                  </div>
+                  <div class="metric-subtitle fs-12px">
+                    26% Increase in <br />28 Days
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xxl-3">
+              <div class="metric-card p-3 mb-4 d-flex gap-2">
+                <div class="time-breakdown-chart">
+                  <div class="percentage-chart percentage-chart-meeting">
+                    <svg viewBox="0 0 36 36">
+                      <defs>
+                        <linearGradient
+                          id="circleGradient1"
+                          x1="0%"
+                          y1="0%"
+                          x2="100%"
+                          y2="100%"
+                        >
+                          <stop
+                            offset="0%"
+                            style="stop-color: #e2a944; stop-opacity: 1"
+                          />
+                          <stop
+                            offset="90%"
+                            style="stop-color: #ea7d4d; stop-opacity: 1"
+                          />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        class="percentage-chart-bg"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        class="percentage-chart-stroke"
+                        stroke="url(#circleGradient1)"
+                        stroke-dasharray="69, 100"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                    </svg>
+                    <div class="counter" style="--counter-end: 69"></div>
+                  </div>
+                </div>
+                <div class="metric-text">
+                  <h3 class="metric-title fs-14px mb-0">Reported Injuries</h3>
+                  <div class="progress-xy my-2" style="height: 5px">
+                    <div
+                      class="progress-bar orange-grad"
+                      style="width: 69%"
+                    ></div>
+                  </div>
+                  <div class="metric-subtitle fs-12px">
+                    26% Increase in <br />28 Days
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xxl-3">
+              <div class="metric-card p-3 mb-4 d-flex gap-2">
+                <div class="time-breakdown-chart">
+                  <div class="percentage-chart percentage-chart-meeting">
+                    <svg viewBox="0 0 36 36">
+                      <defs>
+                        <linearGradient
+                          id="circleGradient2"
+                          x1="0%"
+                          y1="0%"
+                          x2="100%"
+                          y2="100%"
+                        >
+                          <stop
+                            offset="0%"
+                            style="stop-color: #78bdde; stop-opacity: 1"
+                          />
+                          <stop
+                            offset="90%"
+                            style="stop-color: #0075ff; stop-opacity: 1"
+                          />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        class="percentage-chart-bg"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        class="percentage-chart-stroke"
+                        stroke="url(#circleGradient2)"
+                        stroke-dasharray="84, 100"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                    </svg>
+                    <div class="counter" style="--counter-end: 84"></div>
+                  </div>
+                </div>
+                <div class="metric-text">
+                  <h3 class="metric-title fs-14px mb-0">Player Transfers</h3>
+                  <div class="progress-xy my-2" style="height: 5px">
+                    <div
+                      class="progress-bar blue-grad"
+                      style="width: 84%"
+                    ></div>
+                  </div>
+                  <div class="metric-subtitle fs-12px">
+                    26% Increase in <br />28 Days
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xxl-3">
+              <div class="metric-card p-3 mb-4 d-flex gap-2">
+                <div class="time-breakdown-chart">
+                  <div class="percentage-chart percentage-chart-meeting">
+                    <svg viewBox="0 0 36 36">
+                      <defs>
+                        <linearGradient
+                          id="circleGradient3"
+                          x1="0%"
+                          y1="0%"
+                          x2="100%"
+                          y2="100%"
+                        >
+                          <stop
+                            offset="0%"
+                            style="stop-color: #667df2; stop-opacity: 1"
+                          />
+                          <stop
+                            offset="90%"
+                            style="stop-color: #7b4ed7; stop-opacity: 1"
+                          />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        class="percentage-chart-bg"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        class="percentage-chart-stroke"
+                        stroke="url(#circleGradient3)"
+                        stroke-dasharray="56, 100"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                    </svg>
+                    <div class="counter" style="--counter-end: 56"></div>
+                  </div>
+                </div>
+                <div class="metric-text">
+                  <h3 class="metric-title fs-14px mb-0">New Registrations</h3>
+                  <div class="progress-xy my-2" style="height: 5px">
+                    <div
+                      class="progress-bar purple-grad"
+                      style="width: 56%"
+                    ></div>
+                  </div>
+                  <div class="metric-subtitle fs-12px">
+                    26% Increase in <br />28 Days
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="two-column">
+          <div class="left-column">
+            <!--Action Button section-->
+            <div class="action-widget p-4 mb-0">
+              <div class="section-header">
+                <h2 class="section-title">Heading</h2>
+                <button class="section-menu">
+                  <i class="fas fa-ellipsis-h"></i>
+                </button>
+              </div>
+              <div class="d-flex flex-wrap gap-3 w-100">
+                <a href="#" class="action-btn green"
+                  ><i class="fas fa-plus"></i> Add Coach</a
+                >
+                <a href="#" class="action-btn cyan"
+                  ><i class="bi bi-trophy"></i> Assign Award</a
+                >
+                <a href="#" class="action-btn teal"
+                  ><i class="bi bi-diagram-3"></i> Tournament Engine</a
+                >
+                <a href="#" class="action-btn red"
+                  ><i
+                    class="fas fa-user-friends"
+                    style="color: transparent; -webkit-text-stroke: 1px #f0ecec"
+                  ></i>
+                  Player Attributes</a
+                >
+                <a href="#" class="action-btn blue"
+                  ><i
+                    class="fas fa-handshake"
+                    style="color: transparent; -webkit-text-stroke: 1px #f0ecec"
+                  ></i>
+                  Create Match</a
+                >
+                <a href="#" class="action-btn orange"
+                  ><i class="bi bi-files"></i> Blog Post</a
+                >
+                <a href="#" class="action-btn yellow"
+                  ><i
+                    class="fab fa-atlassian"
+                    style="color: transparent; -webkit-text-stroke: 1px #f0ecec"
+                  ></i
+                  >Paid Training Ads</a
+                >
+                <a href="#" class="action-btn purple"
+                  ><i class="fas fa-list"></i> Tournament Directory</a
+                >
+              </div>
+            </div>
+
+            <!--calender section-->
+            <!-- <div class="calendar-container">
+              <div class="calendar-header">
+                <h2>April 2025</h2>
+                <div class="calendar-nav">
+                  <button>&lt;</button>
+                  <button>&gt;</button>
+                </div>
+                <div class="calendar-views">
+                  <button class="active">Month</button>
+                  <button>Week</button>
+                  <button>Day</button>
+                  <button>List</button>
+                </div>
+              </div>
+
+              <div class="calendar-grid">
+                <div class="calendar-day head">Mon</div>
+                <div class="calendar-day head">Tue</div>
+                <div class="calendar-day head">Wed</div>
+                <div class="calendar-day head">Thu</div>
+                <div class="calendar-day head">Fri</div>
+                <div class="calendar-day head">Sat</div>
+                <div class="calendar-day head">Sun</div>
+
+                <div class="calendar-day prev">31</div>
+                <div class="calendar-day">
+                  <span>1</span>
+                  <div class="event green">12AM - 11:59PM All Day</div>
+                </div>
+                <div class="calendar-day"><span>2</span></div>
+                <div class="calendar-day"><span>3</span></div>
+                <div class="calendar-day"><span>4</span></div>
+                <div class="calendar-day"><span>5</span></div>
+                <div class="calendar-day"><span>6</span></div>
+
+                <div class="calendar-day"><span>7</span></div>
+                <div class="calendar-day"><span>8</span></div>
+                <div class="calendar-day"><span>9</span></div>
+                <div class="calendar-day"><span>10</span></div>
+                <div class="calendar-day"><span>11</span></div>
+                <div class="calendar-day"><span>12</span></div>
+                <div class="calendar-day"><span>13</span></div>
+
+                <div class="calendar-day"><span>14</span></div>
+                <div class="calendar-day"><span>15</span></div>
+                <div class="calendar-day"><span>16</span></div>
+                <div class="calendar-day"><span>17</span></div>
+                <div class="calendar-day"><span>18</span></div>
+                <div class="calendar-day"><span>19</span></div>
+                <div class="calendar-day"><span>20</span></div>
+
+                <div class="calendar-day"><span>21</span></div>
+                <div class="calendar-day"><span>22</span></div>
+                <div class="calendar-day"><span>23</span></div>
+                <div class="calendar-day">
+                  <span>24</span>
+                  <div class="event red">10AM - 10:30AM Go to..</div>
+                </div>
+                <div class="calendar-day"><span>25</span></div>
+                <div class="calendar-day"><span>26</span></div>
+                <div class="calendar-day"><span>27</span></div>
+
+                <div class="calendar-day"><span>28</span></div>
+                <div class="calendar-day">
+                  <span>29</span>
+                  <div class="event blue">11AM - 2PM Lunch</div>
+                </div>
+                <div class="calendar-day"><span>30</span></div>
+                <div class="calendar-day next">
+                  <span>1</span>
+                  <div class="event green">12:30PM - 2:30PM Off</div>
+                </div>
+                <div class="calendar-day next"><span>2</span></div>
+                <div class="calendar-day next"><span>3</span></div>
+                <div class="calendar-day next">
+                  <span>4</span>
+                  <div class="event orange">12PM - 8PM Shopping</div>
+                </div>
+              </div>
+            </div> -->
+            <!--tournmentcard-section-->
+            <div class="my-4 calendar-container"><div id="calendar"></div></div>
+
+            <div class="tournament-card p-4 mb-4">
+              <div
+                class="d-flex flex-column flex-md-row align-items-center justify-content-between mb-2"
+              >
+                <!-- Left -->
+                <div class="col-md-auto">
+                  <div class="d-flex align-items-center gap-3">
+                    <img
+                      src="./assets/tr.png"
+                      alt="stadium"
+                      class="tournament-img"
+                    />
+                    <h3 class="tournament-title">Tournament Directory</h3>
+                  </div>
+                </div>
+
+                <!-- Right -->
+                <!-- <div class="col-md-auto align-self-center"> -->
+                <div
+                  class="d-flex gap-2 justify-content-center align-items-center"
+                >
+                  <div class="subtitle fw-semibold text-white mb-0">
+                    Tournament Engine
+                  </div>
+                  <button class="start-btn">Start</button>
+                </div>
+                <!-- </div> -->
+              </div>
+
+              <!-- Description -->
+              <div class="card-desc">
+                Search and register for tournaments by location, date, sport,
+                division, age, and more.
+              </div>
+            </div>
+            <div
+              class="modal fade"
+              id="dashboardModal"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <div
+                class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+              >
+                <div class="modal-content">
+                  <div class="modal-header border-0">
+                    <h5 class="modal-title">Referee Dashboard</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                    ></button>
+                  </div>
+
+                  <div class="modal-body">
+                    <!-- Banner -->
+                    <div class="alert-claimed">
+                      Game claimed. This slot is now hidden from others.
+                    </div>
+
+                    <!-- Card -->
+                    <div class="games-card">
+                      <!-- Card Header -->
+                      <div
+                        class="d-flex flex-wrap justify-content-between align-items-center mb-3"
+                      >
+                        <h5 class="mb-2">Upcoming Games</h5>
+                        <div id="tags"></div>
+                      </div>
+
+                      <!-- Table -->
+                      <div class="table-responsive">
+                        <table class="table align-middle">
+                          <thead class="table-light">
+                            <tr>
+                              <th>Date</th>
+                              <th>Teams</th>
+                              <th>Location</th>
+                              <th>Pay</th>
+                              <th>Cert</th>
+                              <th>Status</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody id="gamesTable"></tbody>
+                        </table>
+                      </div>
+
+                      <!-- Footer -->
+                      <p class="mt-2 small-note">
+                        Optional fairness rules: daily claim limit, early
+                        preview for high-rated refs, waitlist, certification
+                        requirements, and cancellation cooldowns.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--video-section-->
+            <div class="video-card">
+              <!-- Thumbnail -->
+              <div class="video-thumb">
+                <img src="./assets/videotthump.png" alt="Video Thumbnail" />
+                <div class="overlay">
+                  <button class="play-btn">&#9658;</button>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <div class="video-controls">
+                <div class="progress-bar">
+                  <div class="progress"></div>
+                </div>
+                <span class="time">05:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <!-- Chat Panel -->
+            <div class="chat-container">
+              <div class="chat-header">
+                <h3>Chats</h3>
+                <button class="menu-btn">⋯</button>
+              </div>
+
+              <div class="chat-search">
+                <input type="text" placeholder="Search" />
+              </div>
+
+              <div class="chat-list">
+                <!-- Chat Item -->
+                <div class="chat-item">
+                  <img src="https://i.pravatar.cc/40?img=1" alt="User" />
+                  <div class="chat-info">
+                    <span class="name">Vincent Porter</span>
+                    <span class="status online ps-0">● Online</span>
+                  </div>
+                  <span class="arrow">›</span>
+                </div>
+
+                <div class="chat-item">
+                  <img src="https://i.pravatar.cc/40?img=2" alt="User" />
+                  <div class="chat-info">
+                    <span class="name">Aiden Chavez</span>
+                    <span class="status offline ps-0">● Left 7 min ago</span>
+                  </div>
+                  <span class="arrow">›</span>
+                </div>
+
+                <div class="chat-item">
+                  <img src="https://i.pravatar.cc/40?img=3" alt="User" />
+                  <div class="chat-info">
+                    <span class="name">Mike Thomas</span>
+                    <span class="status online ps-0">● Online</span>
+                  </div>
+                  <span class="arrow">›</span>
+                </div>
+
+                <div class="chat-item">
+                  <img src="https://i.pravatar.cc/40?img=4" alt="User" />
+                  <div class="chat-info">
+                    <span class="name">Erika Hughes</span>
+                    <span class="status online ps-0">● Online</span>
+                  </div>
+                  <span class="arrow">›</span>
+                </div>
+
+                <div class="chat-item">
+                  <img src="https://i.pravatar.cc/40?img=5" alt="User" />
+                  <div class="chat-info">
+                    <span class="name">Christian Kelly</span>
+                    <span class="status online ps-0">● Online</span>
+                  </div>
+                  <span class="arrow">›</span>
+                </div>
+
+                <div class="chat-item">
+                  <img src="https://i.pravatar.cc/40?img=6" alt="User" />
+                  <div class="chat-info">
+                    <span class="name">Monica Ward</span>
+                    <span class="status offline ps-0">● Left 30 min ago</span>
+                  </div>
+                  <span class="arrow">›</span>
+                </div>
+
+                <div class="chat-item">
+                  <img src="https://i.pravatar.cc/40?img=7" alt="User" />
+                  <div class="chat-info">
+                    <span class="name">Dean Henry</span>
+                    <span class="status online ps-0">● Online</span>
+                  </div>
+                  <span class="arrow">›</span>
+                </div>
+              </div>
+            </div>
+            <div class="container my-3">
+              <div
+                class="d-flex align-items-center justify-content-between gradient-card p-2 rounded"
+              >
+                <!-- Left side -->
+                <div class="d-flex align-items-center text-white gap-2">
+                  <img
+                    src="./assets/acheivement.png"
+                    alt="acheivement"
+                    width="28"
+                    height="28"
+                  />
+                  <span class="fw-semibold fst-italic">Tournament Engine</span>
+                </div>
+
+                <!-- Right side -->
+                <button
+                  class="btn btn-success btn-sm fw-semibold px-3 start-btn"
+                >
+                  Start
+                </button>
+              </div>
+            </div>
+
+            <!--Tournmet chat-->
+            <div class="chat-card p-3 rounded">
+              <!-- Header -->
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h5 class="text-white mb-0">Tournament Chat All Clubs</h5>
+                <i class="fas fa-ellipsis-h text-white"></i>
+              </div>
+
+              <!-- Search -->
+              <div class="mb-2">
+                <div class="input-group d-flex align-items-center px-2 py-1">
+                  <input
+                    type="text"
+                    class="form-control border-0 text-white p-0 bg-transparent"
+                    placeholder="Search"
+                  />
+                  <i class="fas fa-search"></i>
+                </div>
+              </div>
+
+              <!-- Note -->
+              <p class="note-text small mb-3">
+                Note: Your chats are visible to all clubs. ✅
+              </p>
+
+              <!-- Chat List -->
+              <div class="chat-list">
+                <!-- Chat User -->
+                <div class="chat-item d-flex align-items-center py-2">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/10.jpg"
+                    class="rounded-circle me-3"
+                    width="40"
+                    height="40"
+                  />
+                  <div class="flex-grow-1 user-name">
+                    <div class="text-white">Aiden Chavez</div>
+                    <small class="text-success">● Online</small>
+                  </div>
+                  <i class="fas fa-chevron-right"></i>
+                </div>
+
+                <div class="chat-item d-flex align-items-center py-2">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/11.jpg"
+                    class="rounded-circle me-3"
+                    width="40"
+                    height="40"
+                  />
+                  <div class="flex-grow-1 user-name">
+                    <div class="text-white">Aiden Chavez</div>
+                    <small class="text-danger">● Left 7 min ago</small>
+                  </div>
+                  <i class="fas fa-chevron-right"></i>
+                </div>
+
+                <div class="chat-item d-flex align-items-center py-2">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/12.jpg"
+                    class="rounded-circle me-3"
+                    width="40"
+                    height="40"
+                  />
+                  <div class="flex-grow-1 user-name">
+                    <div class="text-white">Mike Thomas</div>
+                    <small class="text-success">● Online</small>
+                  </div>
+                  <i class="fas fa-chevron-right"></i>
+                </div>
+
+                <div class="chat-item d-flex align-items-center py-2">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/13.jpg"
+                    class="rounded-circle me-3"
+                    width="40"
+                    height="40"
+                  />
+                  <div class="flex-grow-1 user-name">
+                    <div class="text-white">Dean Henry</div>
+                    <small class="text-success">● Online</small>
+                  </div>
+                  <i class="fas fa-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Assign Task / Reminders -->
+            <div class="task-card mt-4">
+              <!-- Header -->
+              <div class="task-header">
+                <h5>Assign Task / Reminders</h5>
+                <i class="fas fa-ellipsis-h"></i>
+              </div>
+
+              <!-- Table -->
+              <div class="task-table">
+                <div class="task-row task-head">
+                  <div>User</div>
+                  <div>Task</div>
+                  <div>Status</div>
+                  <div>Manager</div>
+                  <div>Progress</div>
+                </div>
+
+                <!-- Task A -->
+                <div class="task-row">
+                  <div><img src="./assets/emp1.png" alt="" /></div>
+                  <div>Task A</div>
+                  <div><span class="badge done">Done</span></div>
+                  <div>John Doe</div>
+                  <div class="progress-bar">
+                    <span style="width: 100%; background: #22c55e"></span>
+                  </div>
+                </div>
+
+                <!-- Task B -->
+                <div class="task-row">
+                  <div><img src="./assets/emp2.png" alt="" /></div>
+                  <div>Task B</div>
+                  <div><span class="badge todo">To Do</span></div>
+                  <div>John Doe</div>
+                  <div class="progress-bar">
+                    <span style="width: 60%; background: #6366f1"></span>
+                  </div>
+                </div>
+
+                <!-- Task C -->
+                <div class="task-row">
+                  <div><img src="./assets/emp3.png" alt="" /></div>
+                  <div>Task C</div>
+                  <div><span class="badge hold">On Hold</span></div>
+                  <div>John Doe</div>
+                  <div class="progress-bar">
+                    <span style="width: 50%; background: #f97316"></span>
+                  </div>
+                </div>
+
+                <!-- Task D -->
+                <div class="task-row">
+                  <div><img src="./assets/emp4.png" alt="" /></div>
+                  <div>Task D</div>
+                  <div><span class="badge wait">Wait Approval</span></div>
+                  <div>John Doe</div>
+                  <div class="progress-bar">
+                    <span style="width: 70%; background: #3b82f6"></span>
+                  </div>
+                </div>
+
+                <!-- Task E -->
+                <div class="task-row">
+                  <div><img src="./assets/emp5.png" alt="" /></div>
+                  <div>Task E</div>
+                  <div><span class="badge todo">To Do</span></div>
+                  <div>John Doe</div>
+                  <div class="progress-bar">
+                    <span style="width: 40%; background: #8b5cf6"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="modal fade"
+              id="claimedModal"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                  <!-- Header -->
+                  <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title claimed-text">Claimed ✔</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                    ></button>
+                  </div>
+
+                  <!-- Body -->
+                  <div class="modal-body pt-2">
+                    <p class="subtitle">
+                      We’ve held this slot for you. Next, notify the
+                      assignor/league.
+                    </p>
+
+                    <div class="row g-4">
+                      <!-- Left Column -->
+                      <div class="col-md-6">
+                        <h6 class="fw-bold">Route to the right body</h6>
+                        <div class="mb-3">
+                          <label class="subtitle">Recipient</label>
+                          <input
+                            type="email"
+                            id="recipientEmail"
+                            class="form-control"
+                          />
+                        </div>
+                        <p class="subtitle mb-1">Or submit via platform</p>
+                        <div class="section-box">
+                          <strong id="assignVia"></strong>
+                          <p class="subtitle mb-0" id="assignFallback"></p>
+                        </div>
+                      </div>
+
+                      <!-- Right Column -->
+                      <div class="col-md-6">
+                        <h6 class="fw-bold">Approval packet</h6>
+                        <div class="section-box">
+                          <p class="mb-1" id="filesList"></p>
+                          <p class="mb-1">
+                            <strong>Subject:</strong>
+                            <span id="packetSubject"></span>
+                          </p>
+                          <p class="mb-1">
+                            <strong>Reg:</strong> <span id="packetReg"></span>
+                          </p>
+                          <p class="mb-0" id="packetBody"></p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div
+                      class="d-flex justify-content-start flex-wrap gap-2 mt-4"
+                    >
+                      <button class="btn btn-gradient">Send Email</button>
+                      <button class="btn btn-gradient">Push to Platform</button>
+                      <button class="btn btn-outline-custom">Done</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("mainContent");
+        const sidebarToggle = document.getElementById("sidebarToggle");
+        const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+        // Toggle sidebar
+        sidebarToggle.addEventListener("click", function () {
+          const isLargeScreen = window.innerWidth >= 992;
+
+          if (isLargeScreen) {
+            // Large screen: collapse/expand
+            sidebar.classList.toggle("collapsed");
+            mainContent.classList.toggle("expanded");
+            sidebarToggle.classList.toggle("collapsed");
+          } else {
+            // Mobile: show/hide drawer
+            sidebar.classList.toggle("show");
+            sidebarOverlay.classList.toggle("show");
+          }
+        });
+
+        // Close mobile drawer when clicking overlay
+        sidebarOverlay.addEventListener("click", function () {
+          sidebar.classList.remove("show");
+          sidebarOverlay.classList.remove("show");
+        });
+
+        // Handle window resize
+        window.addEventListener("resize", function () {
+          const isLargeScreen = window.innerWidth >= 992;
+
+          if (isLargeScreen) {
+            // Remove mobile classes
+            sidebar.classList.remove("show");
+            sidebarOverlay.classList.remove("show");
+          } else {
+            // Remove desktop classes
+            sidebar.classList.remove("collapsed");
+            mainContent.classList.remove("expanded");
+            sidebarToggle.classList.remove("collapsed");
+          }
+        });
+
+        // Handle nav link clicks
+        document
+          .querySelectorAll(".nav-link:not([data-bs-toggle])")
+          .forEach((link) => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+
+              // Remove active class from all nav links
+              document
+                .querySelectorAll(".nav-link")
+                .forEach((l) => l.classList.remove("active"));
+
+              // Add active class to clicked link
+              this.classList.add("active");
+
+              // Close mobile sidebar after selection
+              if (window.innerWidth < 992) {
+                sidebar.classList.remove("show");
+                sidebarOverlay.classList.remove("show");
+              }
+            });
+          });
+
+        // Handle collapse arrows
+        document
+          .querySelectorAll('[data-bs-toggle="collapse"]')
+          .forEach((button) => {
+            button.addEventListener("click", function () {
+              const target = document.querySelector(
+                this.getAttribute("data-bs-target")
+              );
+              const arrow = this.querySelector(".nav-arrow");
+
+              // Toggle arrow rotation
+              if (target.classList.contains("show")) {
+                arrow.style.transform = "rotate(0deg)";
+              } else {
+                arrow.style.transform = "rotate(180deg)";
+              }
+            });
+          });
+      });
+
+      // Dynamic tags
+      const tags = [
+        { text: "First-come, first-serve", class: "tag-blue" },
+        { text: "Claims today: 1/2", class: "tag-purple" },
+        { text: "Cooldown: 22h left", class: "tag-red" },
+        { text: "Your rating: ★★★★☆", class: "tag-orange" },
+      ];
+
+      // Dynamic games
+      const games = [
+        {
+          date: "Sat Aug 24, 7:30 PM",
+          teams: "Lions vs Hawks",
+          location: "Falcon Field, Ottawa ON",
+          pay: "$85",
+          cert: "—",
+          status: "Available",
+          action: "Claim",
+          note: "",
+          type: "available",
+        },
+        {
+          date: "Sun Aug 25, 2:00 PM",
+          teams: "Titans vs Wolves",
+          location: "Riverside Park, Kanata ON",
+          pay: "$90",
+          cert: "—",
+          status: "Preview",
+          action: "Opens Soon",
+          note: "• Early access: ★★★★☆ refs",
+          type: "preview",
+        },
+        {
+          date: "Tue Aug 27, 6:15 PM",
+          teams: "Eagles vs Bears",
+          location: "Maple Dome, Nepean ON",
+          pay: "$80",
+          cert: "Lv2",
+          status: "Restricted",
+          action: "Cert Required",
+          note: "• Requires Certification Lv2",
+          type: "restricted",
+        },
+        {
+          date: "Wed Aug 28, 8:45 PM",
+          teams: "Panthers vs Sharks",
+          location: "Queensway Turf — Field 2",
+          pay: "$95",
+          cert: "—",
+          status: "Full",
+          action: "Join Waitlist",
+          note: "• 3 ahead in queue",
+          type: "full",
+        },
+      ];
+
+      // Render tags
+      const tagContainer = document.getElementById("tags");
+      tags.forEach((tag) => {
+        const span = document.createElement("span");
+        span.className = `tag ${tag.class}`;
+        span.innerText = tag.text;
+        tagContainer.appendChild(span);
+      });
+
+      // Render games
+      const table = document.getElementById("gamesTable");
+      games.forEach((game) => {
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+      <td>${game.date}</td>
+      <td>${game.teams}</td>
+      <td>${game.location}</td>
+      <td class="text-success fw-bold">${game.pay}</td>
+      <td>${game.cert}</td>
+      <td class="status-${game.type}">${game.status}</td>
+      <td>
+        ${
+          game.type === "available"
+            ? `<button class="btn btn-gradient btn-sm">${game.action}</button>`
+            : game.type === "full"
+            ? `<button class="btn btn-gradient btn-sm">${game.action}</button><div class="small-note">${game.note}</div>`
+            : `<button class="btn btn-outline-secondary btn-sm" disabled>${game.action}</button><div class="small-note">${game.note}</div>`
+        }
+      </td>
+    `;
+
+        table.appendChild(tr);
+      });
+
+      const claimedData = {
+        recipient: "assignor@league.org",
+        assignVia: "Assign via ▾ Ref Centre (E2E)",
+        fallback: "Fallback: email packet with CSV + ICS",
+        files: ["Fixtures.csv", "Schedule.ics", "Cover.pdf"],
+        subject: "[Soccer] Officials request — EOSL U16",
+        reg: "Aug 24 19:30",
+        body: "Open officials for Kanata U16 vs OSU U16 (CR×1, AR×2). Fees from league table.",
+      };
+
+      function loadClaimedData() {
+        document.getElementById("recipientEmail").value = claimedData.recipient;
+        document.getElementById("assignVia").textContent =
+          claimedData.assignVia;
+        document.getElementById("assignFallback").textContent =
+          claimedData.fallback;
+        document.getElementById("filesList").textContent =
+          "• " + claimedData.files.join(" • ");
+        document.getElementById("packetSubject").textContent =
+          claimedData.subject;
+        document.getElementById("packetReg").textContent = claimedData.reg;
+        document.getElementById("packetBody").textContent = claimedData.body;
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // Card 1: Bar Chart
+      new Chart(document.getElementById("chart1"), {
+        type: "bar",
+        data: {
+          labels: Array(22).fill(""),
+          datasets: [
+            {
+              data: [
+                10, 12, 8, 15, 20, 18, 22, 5, 7, 9, 13, 11, 14, 6, 4, 19, 21,
+                17, 16, 3, 2, 1,
+              ],
+              backgroundColor: "#ffffff", // white bars
+              borderColor: "#ffffff", // white border
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { x: { display: false }, y: { display: false } },
+        },
+      });
+
+      // Card 2: Line Chart
+      new Chart(document.getElementById("chart2"), {
+        type: "line",
+        data: {
+          labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: [
+            {
+              data: [5, 9, 7, 12, 15, 18, 14],
+              backgroundColor: "#ffffff", // white bars
+              borderColor: "#ffffff", // white border
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { x: { display: false }, y: { display: false } },
+        },
+      });
+
+      // Card 3: Pie Chart
+      new Chart(document.getElementById("chart3"), {
+        type: "pie",
+        data: {
+          labels: ["Active", "Inactive", "Pending"],
+          datasets: [
+            {
+              data: [60, 25, 15],
+              backgroundColor: ["#ffffff", "#6c757d", "#B2BEB5"],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+        },
+      });
+
+      // Card 4: Bar Chart
+      new Chart(document.getElementById("chart4"), {
+        type: "bar",
+        data: {
+          labels: Array(22).fill(""),
+          datasets: [
+            {
+              data: Array.from(
+                { length: 22 },
+                () => Math.floor(Math.random() * 50) + 1
+              ),
+              backgroundColor: "#ffffff", // white bars
+              borderColor: "#ffffff", // white border
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { x: { display: false }, y: { display: false } },
+        },
+      });
+    </script>
+  </body>
+</html>

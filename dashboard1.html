@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ottawa South Soccer Club - Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./dashboard1.css" />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth",
+        });
+        calendar.render();
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebarToggle">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-container">
+        <!-- Header -->
+        <div class="sidebar-header">
+          <div class="logo-container">
+            <div class="d-flex flex-column align-items-center">
+              <div class="mb-2">
+                <img
+                  src="./assets/play2earn.png"
+                  width="110"
+                  height="88"
+                  alt="play2earn"
+                  class="log play-logo"
+                />
+              </div>
+              <div class="mb-2">
+                <img
+                  src="./assets/osu.png"
+                  width="70"
+                  height="68"
+                  alt="osu"
+                  class="log osu-logo"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="club-info">
+            <div class="club-name">Ottawa South Soccer</div>
+            <div class="club-type">CLUB</div>
+          </div>
+        </div>
+        <!-- Navigation -->
+        <div class="sidebar-nav">
+          <div class="nav-section">
+            <div class="nav-section-title">MAIN</div>
+
+            <!-- Home with Submenu -->
+            <div class="nav-item">
+              <button
+                class="nav-link active"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#homeSubmenu"
+                aria-expanded="true"
+                aria-controls="homeSubmenu"
+              >
+                <i class="fas fa-home"></i>
+                <span class="nav-text">Home</span>
+                <i class="fas fa-chevron-down nav-arrow"></i>
+              </button>
+              <div class="collapse show sub-nav" id="homeSubmenu">
+                <a href="dashboard1.html" class="nav-link">
+                  <span class="nav-text">Dashboard 1</span>
+                </a>
+                <a href="dashboard2.html" class="nav-link">
+                  <span class="nav-text">Dashboard 2</span>
+                </a>
+                <a href="dashboard3.html" class="nav-link active">
+                  <span class="nav-text">Dashboard 3</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Events -->
+            <div class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fas fa-calendar-alt"></i>
+                <span class="nav-text">Events</span>
+              </a>
+            </div>
+
+            <!-- Email -->
+            <div class="nav-item">
+              <button
+                class="nav-link"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#emailSubmenu"
+                aria-expanded="false"
+                aria-controls="emailSubmenu"
+              >
+                <i class="fas fa-envelope"></i>
+                <span class="nav-text">Email</span>
+                <i class="fas fa-plus nav-arrow"></i>
+              </button>
+              <div class="collapse sub-nav" id="emailSubmenu">
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Inbox</span>
+                </a>
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Compose</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Apps -->
+            <div class="nav-item">
+              <button
+                class="nav-link"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#appsSubmenu"
+                aria-expanded="false"
+                aria-controls="appsSubmenu"
+              >
+                <i class="fas fa-th-large"></i>
+                <span class="nav-text">Apps</span>
+                <i class="fas fa-plus nav-arrow"></i>
+              </button>
+              <div class="collapse sub-nav" id="appsSubmenu">
+                <a href="#" class="nav-link">
+                  <span class="nav-text">App Store</span>
+                </a>
+                <a href="#" class="nav-link">
+                  <span class="nav-text">My Apps</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- E-commerce -->
+            <div class="nav-item">
+              <button
+                class="nav-link"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#ecommerceSubmenu"
+                aria-expanded="false"
+                aria-controls="ecommerceSubmenu"
+              >
+                <i class="fas fa-shopping-cart"></i>
+                <span class="nav-text">E-commerce</span>
+                <i class="fas fa-plus nav-arrow"></i>
+              </button>
+              <div class="collapse sub-nav" id="ecommerceSubmenu">
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Products</span>
+                </a>
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Orders</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Widgets -->
+            <div class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fas fa-puzzle-piece"></i>
+                <span class="nav-text">Widgets</span>
+              </a>
+            </div>
+
+            <!-- User Interface -->
+            <div class="nav-item">
+              <button
+                class="nav-link"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#uiSubmenu"
+                aria-expanded="false"
+                aria-controls="uiSubmenu"
+              >
+                <i class="fas fa-desktop"></i>
+                <span class="nav-text">User Interface (UI)</span>
+                <i class="fas fa-plus nav-arrow"></i>
+              </button>
+              <div class="collapse sub-nav" id="uiSubmenu">
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Components</span>
+                </a>
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Elements</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Forms -->
+            <div class="nav-item">
+              <button
+                class="nav-link"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#formsSubmenu"
+                aria-expanded="false"
+                aria-controls="formsSubmenu"
+              >
+                <i class="fas fa-file-alt"></i>
+                <span class="nav-text">Forms</span>
+                <i class="fas fa-plus nav-arrow"></i>
+              </button>
+              <div class="collapse sub-nav" id="formsSubmenu">
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Basic Forms</span>
+                </a>
+                <a href="#" class="nav-link">
+                  <span class="nav-text">Advanced Forms</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content">
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="header-left">
+          <h1 class="page-title">Dashboard</h1>
+        </div>
+        <div class="header-center">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+
+            <input type="text" placeholder="Search" id="search-box" />
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="header-icon">
+            <i class="fas fa-expand"></i>
+          </div>
+          <div class="header-icon">
+            <i class="fas fa-bell"></i>
+          </div>
+          <div class="header-icon">
+            <i class="fas fa-cog"></i>
+          </div>
+          <div class="user-profile">
+            <img src="./assets//user.png" alt="User" />
+          </div>
+        </div>
+      </header>
+     <!-- Cheque Section -->
+<div class="card-area">
+  <div class="cheque-card">
+    <!-- Header -->
+    <div class="cheque-header d-flex justify-content-between align-items-center">
+      <h5 class="cheque-title">
+        <i class="fas fa-trophy me-2 text-warning"></i> Play 2 Earn Sports
+      </h5>
+      <div class="cheque-meta">
+        Cheque No: <span class="text-light">001234</span> &nbsp; | &nbsp; Date:
+        <input type="text" placeholder="MM/DD/YYYY" class="date-input"/>
+      </div>
+    </div>
+
+    <!-- Payee Row -->
+    <div class="cheque-row d-flex align-items-center">
+      <label class="me-2">Pay to the Order of</label>
+      <input type="text" placeholder="[ Club / Player Name ]" class="form-control me-2"/>
+      <div class="amount-box">$0,000.00</div>
+    </div>
+
+    <!-- Amount in Words -->
+    <div class="cheque-row">
+      <label class="me-2">Amount in Words</label>
+      <input type="text" placeholder="[ Amount in Words ]" class="form-control"/>
+    </div>
+
+    <!-- Memo + Signature -->
+    <div class="cheque-row d-flex align-items-center">
+      <label class="me-2">Memo:</label>
+      <input type="text" placeholder="[ Bonus / Tournament Payout ]" class="form-control"/>
+      <div class="signature-box">
+        Authorized Signature<br>
+        <span class="signature-line">[ Signature ]</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <p class="cheque-footer">
+      Bank of Play 2 Earn • Routing: 123456789 • Account: 987654321 <br>
+      This cheque is generated by Play 2 Earn Sports platform for visualization purposes.
+    </p>
+  </div>
+</div>
+
+            <!--countdown timer section-->
+         <div class="content-area">
+            <div class="countdown-container">
+              <div class="countdown-header">
+                <div>
+                  <h2>Onboarding Period Remaining</h2>
+                  <p class="sub-title">COUNTDOWN</p>
+                </div>
+                <button class="end-btn">End in 14 Days</button>
+              </div>
+
+              <div class="countdown-grid">
+                <div class="countdown-card purple">
+                  <span class="number">02</span>
+                  <span class="label">Weeks</span>
+                </div>
+                <div class="countdown-card orange">
+                  <span class="number">00</span>
+                  <span class="label">Days</span>
+                </div>
+                <div class="countdown-card blue">
+                  <span class="number">00</span>
+                  <span class="label">Hours</span>
+                </div>
+                <div class="countdown-card pink">
+                  <span class="number">00</span>
+                  <span class="label">Minutes</span>
+                </div>
+                <div class="countdown-card green">
+                  <span class="number">00</span>
+                  <span class="label">Seconds</span>
+                </div>
+              </div>
+
+              <p class="tip">
+                Tip: Turn this into a component and expose the five numbers as
+                properties for a live countdown.
+              </p>
+            </div>
+        </div>
+
+<!-- Payout Section -->
+<div class="card-area">
+  <div class="payout-card">
+    <!-- Header -->
+    <div class="mb-3">
+      <h5 class="payout-title"><i class="fas fa-coins me-2 text-success"></i>Payout Calculator</h5>
+      <small class="text-secondary">CLUB ADMIN • SINGLE PAYOUT PER PLAYER</small>
+    </div>
+
+    <div class="row">
+      <!-- Left Column -->
+      <div class="col-md-6">
+        <label class="form-label">Number of Players</label>
+        <input type="number" value="30" class="form-control mb-3"/>
+
+        <label class="form-label">Currency</label>
+        <select class="form-select mb-3">
+          <option>USD</option>
+          <option>CAD</option>
+          <option>EUR</option>
+        </select>
+
+        <!-- Quick Buttons -->
+        <div class="d-flex gap-2 mb-3 flex-wrap quick-btns">
+          <button class="btn btn-outline-secondary">50</button>
+          <button class="btn btn-primary">500</button>
+          <button class="btn btn-outline-secondary">1000</button>
+          <button class="btn btn-outline-secondary">3000</button>
+          <button class="btn btn-outline-secondary">5000</button>
+        </div>
+
+        <!-- Calculate Button -->
+        <button class="btn btn-success w-100">Calculate</button>
+        <p class="small text-secondary mt-2">
+          Formula: Players Enrollment Bonus × Rate =
+        </p>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-md-6">
+        <div class="result-box">
+          <h6>Net Payout to Club</h6>
+          <h3 class="text-success">$1,852.50</h3>
+          <p class="small">Gross payout (30 × X) = $1,950.00</p>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-dark btn-sm">Copy result</button>
+            <button class="btn btn-indigo btn-sm">Share to chat</button>
+            <button class="btn btn-orange btn-sm">Export CSV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!-- Sponsorship Payout -->
+                    <div class="content-area">
+            <div class="countdown-container">
+              <div class="countdown-header">
+                <div>
+                  <h2>Sponsorship Payout</h2>
+                  <p class="sub-title">COUNTDOWN</p>
+                </div>
+                <button class="end-btn">End in 14 Days</button>
+              </div>
+
+              <div class="countdown-grid">
+                <div class="countdown-card purple">
+                  <span class="number">00</span>
+                  <span class="label">Months</span>
+                </div>
+                <div class="countdown-card orange">
+                  <span class="number">02</span>
+                  <span class="label">Weeks</span>
+                </div>
+                 <div class="countdown-card purple">
+                  <span class="number">00</span>
+                  <span class="label">Days</span>
+                </div>
+                <div class="countdown-card blue">
+                  <span class="number">00</span>
+                  <span class="label">Hours</span>
+                </div>
+                <div class="countdown-card pink">
+                  <span class="number">00</span>
+                  <span class="label">Minutes</span>
+                </div>
+                <div class="countdown-card green">
+                  <span class="number">00</span>
+                  <span class="label">Seconds</span>
+                </div>
+              </div>
+
+              <p class="tip">
+                Tip: Turn this into a component and expose the five numbers as
+                properties for a live countdown.
+              </p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("mainContent");
+        const sidebarToggle = document.getElementById("sidebarToggle");
+        const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+        // Toggle sidebar
+        sidebarToggle.addEventListener("click", function () {
+          const isLargeScreen = window.innerWidth >= 992;
+
+          if (isLargeScreen) {
+            // Large screen: collapse/expand
+            sidebar.classList.toggle("collapsed");
+            mainContent.classList.toggle("expanded");
+            sidebarToggle.classList.toggle("collapsed");
+          } else {
+            // Mobile: show/hide drawer
+            sidebar.classList.toggle("show");
+            sidebarOverlay.classList.toggle("show");
+          }
+        });
+
+        // Close mobile drawer when clicking overlay
+        sidebarOverlay.addEventListener("click", function () {
+          sidebar.classList.remove("show");
+          sidebarOverlay.classList.remove("show");
+        });
+
+        // Handle window resize
+        window.addEventListener("resize", function () {
+          const isLargeScreen = window.innerWidth >= 992;
+
+          if (isLargeScreen) {
+            // Remove mobile classes
+            sidebar.classList.remove("show");
+            sidebarOverlay.classList.remove("show");
+          } else {
+            // Remove desktop classes
+            sidebar.classList.remove("collapsed");
+            mainContent.classList.remove("expanded");
+            sidebarToggle.classList.remove("collapsed");
+          }
+        });
+
+        // Handle nav link clicks
+        document
+          .querySelectorAll(".nav-link:not([data-bs-toggle])")
+          .forEach((link) => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+
+              // Remove active class from all nav links
+              document
+                .querySelectorAll(".nav-link")
+                .forEach((l) => l.classList.remove("active"));
+
+              // Add active class to clicked link
+              this.classList.add("active");
+
+              // Close mobile sidebar after selection
+              if (window.innerWidth < 992) {
+                sidebar.classList.remove("show");
+                sidebarOverlay.classList.remove("show");
+              }
+            });
+          });
+
+        // Handle collapse arrows
+        document
+          .querySelectorAll('[data-bs-toggle="collapse"]')
+          .forEach((button) => {
+            button.addEventListener("click", function () {
+              const target = document.querySelector(
+                this.getAttribute("data-bs-target")
+              );
+              const arrow = this.querySelector(".nav-arrow");
+
+              // Toggle arrow rotation
+              if (target.classList.contains("show")) {
+                arrow.style.transform = "rotate(0deg)";
+              } else {
+                arrow.style.transform = "rotate(180deg)";
+              }
+            });
+          });
+      });
+    </script>
+  </body>
+</html>

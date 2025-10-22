@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Popup Card</title>
+    <style>
+      body {
+        background: #1e1f26;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Inter";
+      }
+
+      .popup-card {
+        width: 360px;
+        height: 260px;
+        background: linear-gradient(
+          180deg,
+          #272a31 0%,
+          rgba(39, 42, 49, 0.49) 100%
+        );
+        border: 1px solid #223142e5;
+        border-radius: 16px;
+        padding: 16px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .image-box {
+        height: 120px;
+        background: #5f6061;
+        border: 1px solid #203040;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #7f8ea5;
+        font-size: 14px;
+        position: relative;
+      }
+
+      .tag {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background: linear-gradient(135deg, #12e0b0 0%, #39a2ff 100%);
+        color: #0a1117;
+        padding: 5px 29px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 400;
+        text-align: center;
+      }
+
+      .details {
+        margin-top: 12px;
+      }
+
+      .title {
+        color: #e9edf3;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        color: #91a3b8;
+        margin-top: 4px;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+      }
+
+      .price {
+        font-size: 12px;
+        font-weight: 400;
+        margin-top: 8px;
+      }
+
+      .btn {
+        display: block;
+        margin: auto;
+        padding: 8px;
+        width: 120px;
+        height: 34px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: 400;
+        color: #0a1117;
+        background: linear-gradient(90deg, #f59e0b 0%, #f97316 100%);
+        transition: transform 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup-card">
+      <div class="image-box">
+        <div class="tag">1-on-1</div>
+        Drop image
+      </div>
+
+      <div class="details">
+        <div class="title">Goalkeeper Reactions</div>
+        <div class="subtitle">Sun 9:00-10:00 • Max 4</div>
+        <div class="price">$30</div>
+      </div>
+
+      <div class="footer">
+        <button class="btn">Reserve Spot</button>
+      </div>
+    </div>
+  </body>
+</html>

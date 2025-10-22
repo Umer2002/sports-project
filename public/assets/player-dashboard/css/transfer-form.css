@@ -1,0 +1,179 @@
+:root {
+  --transfer-background: #111b2e;
+  --transfer-surface: #111b2e;
+  --transfer-surface-alt: #15233a;
+  --transfer-border: rgba(37, 99, 235, 0.35);
+  --transfer-text: rgba(226, 232, 240, 0.96);
+  --transfer-muted: rgba(148, 163, 184, 0.72);
+  --transfer-accent: linear-gradient(135deg, #2563eb, #1d4ed8);
+  --transfer-radius-xl: 36px;
+  --transfer-radius-card: 24px;
+  --transfer-radius-field: 18px;
+}
+
+[data-bs-theme="light"] {
+  --transfer-background: #ffffff;
+  --transfer-surface: #ffffff;
+  --transfer-surface-alt: #f6f8fc;
+  --transfer-border: rgba(59, 130, 246, 0.22);
+  --transfer-text: #0f172a;
+  --transfer-muted: #64748b;
+}
+
+[data-bs-theme="dark"] {
+  --transfer-background: #111b2e;
+  --transfer-surface: #111b2e;
+  --transfer-surface-alt: #162640;
+  --transfer-border: rgba(37, 99, 235, 0.4);
+  --transfer-text: rgba(226, 232, 240, 0.96);
+  --transfer-muted: rgba(148, 163, 184, 0.78);
+}
+
+.transfer-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 0 120px;
+}
+
+.transfer-card {
+  border-radius: var(--transfer-radius-xl);
+  border: 1px solid var(--transfer-border);
+  background: var(--transfer-surface);
+  color: var(--transfer-text);
+  box-shadow: 0 28px 72px rgba(15, 23, 42, 0.28);
+  overflow: hidden;
+}
+
+.transfer-card__header {
+  background: var(--transfer-accent);
+  padding: 32px 34px;
+  color: #fff;
+  border-bottom-left-radius: calc(var(--transfer-radius-xl) - 4px);
+  border-bottom-right-radius: calc(var(--transfer-radius-xl) - 4px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.transfer-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+
+.transfer-card__title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.transfer-card__body {
+  padding: 36px 34px 50px;
+  display: grid;
+  gap: 28px;
+}
+
+.transfer-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--transfer-muted);
+}
+
+.transfer-select {
+  background: var(--transfer-surface-alt);
+  border-radius: var(--transfer-radius-field);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 18px 22px 18px 56px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.transfer-select select {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  width: 100%;
+  appearance: none;
+  outline: none;
+}
+
+.transfer-select__icon {
+  position: absolute;
+  left: 22px;
+  font-size: 18px;
+  color: var(--transfer-muted);
+}
+
+.transfer-player-card {
+  background: var(--transfer-surface-alt);
+  border-radius: var(--transfer-radius-field);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 20px 22px;
+}
+
+.transfer-player-card__name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.transfer-player-card__meta {
+  margin: 6px 0 0;
+  color: var(--transfer-muted);
+  font-size: 0.95rem;
+}
+
+.transfer-player-card__divider {
+  margin: 0 10px;
+  color: rgba(148, 163, 184, 0.45);
+}
+
+.transfer-error {
+  color: #f87171;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.transfer-submit-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: -68px;
+}
+
+.transfer-submit {
+  border: none;
+  border-radius: 999px;
+  padding: 16px 74px;
+  font-weight: 600;
+  font-size: 1rem;
+  background: var(--transfer-accent);
+  color: #fff;
+  box-shadow: 0 22px 48px rgba(37, 99, 235, 0.34);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transfer-submit:hover,
+.transfer-submit:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 26px 54px rgba(37, 99, 235, 0.45);
+  outline: none;
+}
+
+@media (max-width: 575.98px) {
+  .transfer-card__header {
+    padding: 24px;
+  }
+  .transfer-card__body {
+    padding: 28px 24px 42px;
+  }
+  .transfer-submit {
+    padding: 14px 48px;
+  }
+}

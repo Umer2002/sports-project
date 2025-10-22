@@ -1,0 +1,157 @@
+
+
+<!-- Modal -->
+<div class="modal fade" id="tournamentModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content p-3">
+
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="text-white fw-semibold fs-5 lh-base">Tournament Search</h5>
+        <div class="d-flex gap-2">
+       <button class="tournment-eng-btn-gradient">Search</button>
+<button class="tournment-eng-btn-clear">Clear Filters</button>
+
+          <button type="button" class="btn-close btn-close-white ms-2" data-bs-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="modal-body pt-0">
+
+        <!-- Filters -->
+        <div class="row g-3 mb-3">
+  <div class="col-6 col-md-4 col-xl-3">
+    <label class="tournment-eng-form-label">Province</label>
+    <select class="tournment-eng-form-select">
+      <option selected>Ontario</option>
+      <option>Quebec</option>
+      <option>British Columbia</option>
+    </select>
+  </div>
+  <div class="col-6 col-md-4 col-xl-3">
+    <label class="tournment-eng-form-label">City</label>
+    <select class="tournment-eng-form-select">
+      <option selected>Ottawa</option>
+      <option>Toronto</option>
+      <option>Montreal</option>
+    </select>
+  </div>
+  <div class="col-6 col-md-4 col-xl-3">
+    <label class="tournment-eng-form-label">Sport</label>
+    <select class="tournment-eng-form-select">
+      <option selected>Soccer</option>
+      <option>Basketball</option>
+      <option>Hockey</option>
+    </select>
+  </div>
+  <div class="col-6 col-md-4 col-xl-3">
+    <label class="tournment-eng-form-label">Date</label>
+    <select class="tournment-eng-form-select">
+      <option selected>May 1–31, 2025</option>
+      <option>Jun 1–30, 2025</option>
+    </select>
+  </div>
+  <div class="col-6 col-md-4 col-xl-3">
+    <label class="tournment-eng-form-label">Division</label>
+    <select class="tournment-eng-form-select">
+      <option selected>U15</option>
+      <option>U17</option>
+    </select>
+  </div>
+  <div class="col-6 col-md-4 col-xl-3">
+    <label class="tournment-eng-form-label">Gender</label>
+    <select class="tournment-eng-form-select">
+      <option selected>Co-ed</option>
+      <option>Boys</option>
+    </select>
+  </div>
+  <div class="col-6 col-md-4 col-xl-3">
+    <label class="tournment-eng-form-label">Surface</label>
+    <select class="tournment-eng-form-select">
+      <option selected>Indoor</option>
+      <option>Outdoor</option>
+    </select>
+  </div>
+  <div class="col-6 col-md-4 col-xl-3">
+    <label class="tournment-eng-form-label">Status</label>
+    <select class="tournment-eng-form-select">
+      <option selected>Registration Open</option>
+      <option>Waitlist</option>
+    </select>
+  </div>
+  <div class="col-6 col-md-4 col-xl-3">
+    <label class="tournment-eng-form-label">Max Fee</label>
+    <select class="tournment-eng-form-select">
+      <option selected>$300 • Open</option>
+      <option>$100 or less</option>
+    </select>
+  </div>
+</div>
+
+
+        <!-- Results -->
+        <h6 class="mb-2 fw-semibold lh-1" style="font-size:14px;">Results · 6 Tournaments</h6>
+        <div class="tournment-eng-table-responsive">
+          <div class="table-responsive-custom">
+  <table class="tournment-eng-table tournment-eng-table-borderless align-middle">
+    <thead>
+      <tr>
+        <th>Tournament</th>
+        <th>City / Province</th>
+        <th>Dates</th>
+        <th>Divisions</th>
+        <th>Teams</th>
+        <th>Fee</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Spring Cup 2025</td>
+        <td>Ottawa, ON</td>
+        <td>May 10–14</td>
+        <td>U13 • U15</td>
+        <td>12</td>
+        <td>$250</td>
+        <td>
+      <span class="tournment-eng-btn-status open">Open</span>
+          <button class="tournment-eng-btn-register">Register</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Summer Classic</td>
+        <td>Toronto, ON</td>
+        <td>Jun 2–5</td>
+        <td>U17 • U19</td>
+        <td>24</td>
+        <td>$320</td>
+        <td>
+         <span class="tournment-eng-btn-status waitlist">Waitlist</span>
+
+          <button class="tournment-eng-btn-register">Register</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Capital City Invitational</td>
+        <td>Kingston, ON</td>
+        <td>Jul 12–15</td>
+        <td>U11 • U13</td>
+        <td>18</td>
+        <td>$280</td>
+        <td>
+          <span class="tournment-eng-btn-status open">Open</span>
+          <button class="tournment-eng-btn-register">Register</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+
+        <small class="text-muted">Tip: Use filters to narrow by province, city, date range, division, age, surface, status, and fee.</small>
+      </div>
+    </div>
+  </div>
+</div>
+

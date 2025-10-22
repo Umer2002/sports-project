@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamic Claimed Modal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8fafc; }
+    .modal-content { border-radius: 1rem; padding: 1.5rem; background: #fff; }
+    .claimed-text { color: #22c55e; font-weight: 600; font-size: 1.1rem; }
+    .subtitle { font-size: 0.9rem; color: #5A6B88; margin-bottom: 1rem; }
+
+    .form-control {
+      border-radius: .6rem;
+      border: 1px solid #d1d5db;
+      font-size: 0.95rem;
+      padding: .6rem .75rem;
+    }
+
+    .section-box {
+      border-radius: .75rem;
+      background: #fff;
+      border: 1px solid #d1d5db;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    .section-box strong { font-size: 0.95rem; }
+
+    .btn-gradient {
+      background: linear-gradient(90deg, #4f46e5, #3b82f6);
+      border: none;
+      color: #fff;
+      font-weight: 500;
+      min-width: 160px;
+      border-radius: .6rem;
+    }
+    .btn-gradient:hover { opacity: 0.9; }
+
+    .btn-outline-custom {
+      border: 1px solid #d1d5db;
+      background: #fff;
+      font-weight: 500;
+      min-width: 120px;
+      border-radius: .6rem;
+    }
+    .btn-outline-custom:hover {
+      border-color: #3b82f6;
+      color: #1e40af;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-5 text-center">
+  <!-- Trigger Button -->
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#claimedModal" onclick="loadClaimedData()">
+    Open Claimed Popup
+  </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="claimedModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Header -->
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title claimed-text">Claimed ✔</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body pt-2">
+        <p class="subtitle">
+          We’ve held this slot for you. Next, notify the assignor/league.
+        </p>
+
+        <div class="row g-4">
+          <!-- Left Column -->
+          <div class="col-md-6">
+            <h6 class="fw-bold">Route to the right body</h6>
+            <div class="mb-3">
+              <label class="subtitle">Recipient</label>
+              <input type="email" id="recipientEmail" class="form-control">
+            </div>
+            <p class="subtitle mb-1">Or submit via platform</p>
+            <div class="section-box">
+              <strong id="assignVia"></strong>
+              <p class="subtitle mb-0" id="assignFallback"></p>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="col-md-6">
+            <h6 class="fw-bold">Approval packet</h6>
+            <div class="section-box">
+              <p class="mb-1" id="filesList"></p>
+              <p class="mb-1"><strong>Subject:</strong> <span id="packetSubject"></span></p>
+              <p class="mb-1"><strong>Reg:</strong> <span id="packetReg"></span></p>
+              <p class="mb-0" id="packetBody"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-start flex-wrap gap-2 mt-4">
+          <button class="btn btn-gradient">Send Email</button>
+          <button class="btn btn-gradient">Push to Platform</button>
+          <button class="btn btn-outline-custom">Done</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // Example dynamic data object
+  const claimedData = {
+    recipient: "assignor@league.org",
+    assignVia: "Assign via ▾ Ref Centre (E2E)",
+    fallback: "Fallback: email packet with CSV + ICS",
+    files: ["Fixtures.csv", "Schedule.ics", "Cover.pdf"],
+    subject: "[Soccer] Officials request — EOSL U16",
+    reg: "Aug 24 19:30",
+    body: "Open officials for Kanata U16 vs OSU U16 (CR×1, AR×2). Fees from league table."
+  };
+
+  function loadClaimedData() {
+    document.getElementById("recipientEmail").value = claimedData.recipient;
+    document.getElementById("assignVia").textContent = claimedData.assignVia;
+    document.getElementById("assignFallback").textContent = claimedData.fallback;
+    document.getElementById("filesList").textContent = "• " + claimedData.files.join(" • ");
+    document.getElementById("packetSubject").textContent = claimedData.subject;
+    document.getElementById("packetReg").textContent = claimedData.reg;
+    document.getElementById("packetBody").textContent = claimedData.body;
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

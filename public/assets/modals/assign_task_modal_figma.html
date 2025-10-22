@@ -1,0 +1,131 @@
+<div class="modal fade" id="assignTask" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body task-modal">
+        <form class=" needs-validation" novalidate>
+          <div class="modal-header mb-3">
+            <div class="d-flex align-items-center flex-wrap">
+              <img src="https://img.icons8.com/ios-filled/50/000000/task.png" alt="Task Icon" width="28" class="me-2">
+              <span class="fw-bold">Assign Task</span>
+              <span class="ms-2 text-secondary small">CLUB DASHBOARD</span>
+            </div>
+            <button type="button" class="btn-close"></button>
+          </div>
+
+          <div class="row mb-1">
+            <div class="col-12 col-md-7">
+              <label for="taskTitle" class="form-label">TASK TITLE</label>
+              <input type="text" class="form-control" id="taskTitle" required
+                placeholder="e.g., Confirm hotel bookings">
+              <div class="invalid-feedback">Task title is required.</div>
+            </div>
+            <div class="col-12 col-md-5 text-md-end mt-2 mt-md-0">
+              <button type="button" class="btn btn-gradient w-100">Save as Template</button>
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <label for="taskDesc" class="form-label">DESCRIPTION</label>
+            <textarea class="form-control" id="taskDesc" rows="3"
+              placeholder="Add details, links, or notes..."></textarea>
+          </div>
+
+          <!-- Subtasks -->
+          <label class="form-label mb-2">SUBTASKS</label>
+          <div class="subtask-list mb-3">
+            <div class="input-group mb-2">
+              <span class="input-group-text">•</span>
+              <input type="text" class="form-control" value="Call hotel and confirm block rate" required>
+            </div>
+            <div class="input-group mb-2">
+              <span class="input-group-text">•</span>
+              <input type="text" class="form-control" value="Share address & map link" required>
+            </div>
+            <button type="button" class="btn-outline-gradient w-100">+ Add</button>
+          </div>
+
+          <!-- Attachments -->
+          <div class="attachment-section mb-3">
+            <label class="form-label">ATTACHMENTS</label>
+            <div class="d-flex flex-wrap gap-2">
+              <input type="file" class="form-control w-100 w-md-auto" id="attachmentInput">
+              <button type="button" class="upload-btn">Upload</button>
+            </div>
+            <small class="text-secondary d-block mt-2">Drag & drop files or click to upload</small>
+          </div>
+
+          <!-- Assignee, Due Date, Priority -->
+          <div class="row mb-2">
+            <div class="col-12 col-md-4">
+              <label class="form-label">ASSIGNEE</label>
+              <select class="form-select" required>
+                <option value="">Select Assignee</option>
+                <option value="vincent">Vincent Porter</option>
+              </select>
+              <div class="invalid-feedback">Assignee is required.</div>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label">DUE DATE</label>
+              <input type="date" class="form-control" value="2025-08-30" required>
+              <div class="invalid-feedback">Due date is required.</div>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label">PRIORITY</label>
+              <div class="priority-btn d-flex flex-wrap">
+                <input type="radio" id="low" name="priority" required><label for="low">Low</label>
+                <input type="radio" id="medium" name="priority"><label for="medium">Medium</label>
+                <input type="radio" id="high" name="priority"><label for="high">High</label>
+                <input type="radio" id="critical" name="priority"><label for="critical">Critical</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Status, Related, Notify -->
+          <div class="row mb-3">
+            <div class="col-12 col-md-4">
+              <label class="form-label">STATUS</label>
+              <select class="form-select" required>
+                <option>To Do</option>
+                <option>In Progress</option>
+                <option>Completed</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label">RELATED</label>
+              <select class="form-select">
+                <option>Tournament: Summer Cup • Team: U14 Elite</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label">NOTIFY</label>
+              <div class="d-flex flex-wrap gap-2">
+                <button type="button" class="btn btn-outline-primary btn-sm flex-grow-1">Email</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm flex-grow-1">Post</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reminder & Save -->
+          <div class="row mb-3">
+            <div class="col-12 col-md-6 mb-2 mb-md-0">
+              <button class="btn-reminder" type="button">Set Reminder</button>
+            </div>
+            <div class="col-12 col-md-6">
+              <button class="btn-save-draft" type="button">Save Draft</button>
+            </div>
+          </div>
+
+          <!-- Cancel & Assign -->
+          <div class="row mb-2 justify-content-end">
+            <div class="col-6 col-md-3 mb-2 mb-md-0">
+              <button type="button" class="btn-cancel">Cancel</button>
+            </div>
+            <div class="col-6 col-md-3">
+              <button type="submit" class="btn-assign">Assign Task</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
