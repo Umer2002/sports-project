@@ -557,6 +557,16 @@
 .f-modal .form-control{
     box-sizing: border-box !important;
 }
+.f-modal [type="checkbox"]:checked+span:not(.lever):before {
+    top: 0px;
+    left: -8px;
+    width: 18px;
+    height: 18px;
+    border-top: 0px solid white !important;
+    border-left: 0px solid white !important;
+    border-right: 0px solid white !important;
+    border-bottom: 0px solid white !important;
+}
 </style>
 
 <div class="modal f-modal fade" id="assigntoCalendar" tabindex="-1" aria-labelledby="assigntoCalendarLabel" aria-hidden="true">
