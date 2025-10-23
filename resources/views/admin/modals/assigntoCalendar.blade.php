@@ -573,7 +573,7 @@
     <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content calendar-modal">
             <!-- Header -->
-            <div class="modal-header p-4 pb-3">
+            <div class="modal-header pb-3">
                 <div>
                     <h4 class="modal-title mb-1">Assign to My Calendar</h4>
                     <p class="modal-subtitle mb-0">Quickly create a personal calendar event.</p>
