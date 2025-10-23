@@ -311,8 +311,6 @@
     }
     
     .blog-builder-header .d-flex {
-        flex-direction: column;
-        align-items: flex-start !important;
         gap: 1rem;
     }
     
