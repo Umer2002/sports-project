@@ -463,6 +463,7 @@
     @include('admin.modals.to-do-task')
     @include('admin.modals.frontBlogPosts')
     @include('admin.modals.createNewAward')
+    @include('admin.modals.assignTaskModal')
     @include('admin.modals.createBlogPostModel')
     @include('admin.modals.assigntoCalendar')
     @include('admin.modals.admin-blog-post', [
