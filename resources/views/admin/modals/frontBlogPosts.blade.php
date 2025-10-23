@@ -545,7 +545,7 @@
                             Edit text, swap images, and export slices. Use the window selector below to mark which front-page slot this post targets.
                         </p>
                     </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="z-index: 99999999;"><i class="fas fa-xmark"></i></button>
                 </div>
                 
                 <!-- Pagination Controls moved here -->

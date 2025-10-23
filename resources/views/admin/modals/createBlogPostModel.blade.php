@@ -660,7 +660,7 @@
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content p-5">
-            <button type="button" class="btn-close position-absolute" style="top: 1.5rem; right: 1.5rem; z-index: 1050;" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close position-absolute" style="top: 1.5rem; right: 1.5rem; z-index: 999999;" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-xmark"></i></button>
             
             <!-- Hero Section -->
              <div class="p-4 f-scroll">

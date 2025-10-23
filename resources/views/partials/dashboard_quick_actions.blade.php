@@ -33,10 +33,8 @@
             data-bs-target="#assigntoCalendar">
            <i class="fas fa-opencart"></i> Paid Training Ads
         </button>
-        <button type="button" class="action-btn yellow" data-bs-toggle="modal" data-bs-target="#assignTaskModal">
-            <a href="{{ route('admin.tournaments.index') }}" style="color: white !important;">
+        <button type="button" class="action-btn yellow" data-bs-toggle="modal" data-bs-target="#createNewAward">
                 <i class="fas fa-folder"></i> Tournament Directory
-            </a>
         </button>
     </div>
 </div>

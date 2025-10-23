@@ -578,7 +578,7 @@
                     <h4 class="modal-title mb-1">Assign to My Calendar</h4>
                     <p class="modal-subtitle mb-0">Quickly create a personal calendar event.</p>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-xmark"></i></button>
             </div>
 
             <!-- Body -->
