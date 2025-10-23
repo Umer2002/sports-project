@@ -20,18 +20,19 @@
         <button type="button" class="action-btn blue" data-bs-toggle="modal" data-bs-target="#assignTaskModal">
             <i class="fas fa-tasks"></i> To Do Tasks
         </button>
-        <a href="{{ route('admin.blog.index') }}" class="action-btn orange">
+        <button type="button" class="action-btn teal" data-bs-toggle="modal"
+            data-bs-target="#frontBlogPosts">
             <i class="fas fa-blog"></i> Front Blogs
-        </a>
+        </button>
         <button type="button" class="action-btn teal" data-bs-toggle="modal"
             data-bs-target="#createBlogPostModel">
             <i class="fas fa-swatchbook"></i> Blog Post
         </button>
 
-        
-        <a href="{{ route('admin.ads.index') }}" class="action-btn red">
-            <i class="fas fa-opencart"></i> Paid Training Ads
-        </a>
+         <button type="button" class="action-btn teal" data-bs-toggle="modal"
+            data-bs-target="#assigntoCalendar">
+           <i class="fas fa-opencart"></i> Paid Training Ads
+        </button>
         <button type="button" class="action-btn yellow" data-bs-toggle="modal" data-bs-target="#assignTaskModal">
             <a href="{{ route('admin.tournaments.index') }}" style="color: white !important;">
                 <i class="fas fa-folder"></i> Tournament Directory

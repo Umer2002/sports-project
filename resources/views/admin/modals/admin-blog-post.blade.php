@@ -1,16 +1,66 @@
 
 <style>
+/* Modal Dark Theme Support for Admin System */
+[data-theme='dark'] .modal-content {
+    background-color: #0f172a !important;
+    color: #e5e7eb !important;
+    border: 1px solid #1f2937 !important;
+}
+
+[data-theme='dark'] .modal-header {
+    background-color: #0f172a !important;
+    color: #e5e7eb !important;
+    border-bottom: 1px solid #1f2937 !important;
+}
+
+[data-theme='dark'] .modal-body {
+    background-color: #0f172a !important;
+    color: #e5e7eb !important;
+}
+
+[data-theme='dark'] .modal-footer {
+    background-color: #0f172a !important;
+    color: #e5e7eb !important;
+    border-top: 1px solid #1f2937 !important;
+}
+
+[data-theme='dark'] .modal-title {
+    color: #e5e7eb !important;
+}
+
+[data-theme='dark'] .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%) !important;
+}
+
+/* Light theme modal styles */
+[data-theme='light'] .modal-content {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+[data-theme='light'] .modal-header {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+[data-theme='light'] .modal-body {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+[data-theme='light'] .modal-footer {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    border-top: 1px solid #e5e7eb !important;
+}
+
+/* Original blog post styles with theme support */
 body {
     background-color: #1e293b;
     color: #e2e8f0;
     font-family: 'Inter', sans-serif;
-}
-
-.modal-content {
-    background-color: #0f172a;
-    border: none;
-    border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
 .tag {
@@ -43,6 +93,11 @@ body {
     margin: 15px 0;
     border-radius: 8px;
     font-style: italic;
+}
+
+[data-theme='light'] .quote-box {
+    background-color: #f1f5f9;
+    color: #1f2937;
 }
 
 .gradient-box {
@@ -87,8 +142,17 @@ body {
     transition: 0.3s;
 }
 
+[data-theme='light'] .related-card {
+    background-color: #f8fafc;
+    color: #1f2937;
+}
+
 .related-card:hover {
     background-color: #334155;
+}
+
+[data-theme='light'] .related-card:hover {
+    background-color: #e2e8f0;
 }
 
 .nav-tags {
@@ -105,6 +169,12 @@ body {
     transition: 0.3s;
 }
 
+[data-theme='light'] .nav-tags button {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #1f2937;
+}
+
 .nav-tags button:hover {
     background-color: #3b82f6;
     color: white;
@@ -114,7 +184,6 @@ body {
 .blog-post-1-div{
     
 }
-
 </style>
 
 <!-- Modal -->
@@ -174,4 +243,43 @@ body {
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Ensure modal inherits current admin theme
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('createBlogPostModel');
+    
+    if (modal) {
+        modal.addEventListener('show.bs.modal', function() {
+            // Get current theme from the document root
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            
+            // Apply theme to modal
+            modal.setAttribute('data-theme', currentTheme);
+            
+            // Also apply to modal content specifically
+            const modalContent = modal.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.setAttribute('data-theme', currentTheme);
+            }
+        });
+        
+        // Set initial theme if modal is already visible
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        modal.setAttribute('data-theme', currentTheme);
+    }
+});
+
+// Listen for theme changes and update modal
+document.addEventListener('themeChange', function(e) {
+    const modal = document.getElementById('createBlogPostModel');
+    if (modal) {
+        modal.setAttribute('data-theme', e.detail.theme);
+        const modalContent = modal.querySelector('.modal-content');
+        if (modalContent) {
+            modalContent.setAttribute('data-theme', e.detail.theme);
+        }
+    }
+});
+</script>
 

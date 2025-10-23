@@ -58,6 +58,24 @@
 [data-theme='dark'] .form-control:focus,[data-theme='dark'] .form-select:focus{background-color:#0b1220;border-color:#60a5fa;color:#fff;box-shadow:none}
 [data-theme='dark'] label{color:#e5e7eb}
 
+/* Modals */
+[data-theme='dark'] .modal-content{background-color:#0f172a !important;color:#e5e7eb !important;border:1px solid #1f2937 !important}
+[data-theme='dark'] .modal-header{background-color:#0f172a !important;color:#e5e7eb !important;border-bottom:1px solid #1f2937 !important}
+[data-theme='dark'] .modal-body{background-color:#0f172a !important;color:#e5e7eb !important}
+[data-theme='dark'] .modal-footer{background-color:#0f172a !important;color:#e5e7eb !important;border-top:1px solid #1f2937 !important}
+[data-theme='dark'] .modal-title{color:#e5e7eb !important}
+[data-theme='dark'] .btn-close{filter:invert(1) grayscale(100%) brightness(200%) !important}
+[data-theme='dark'] .form-check-input{background-color:#111827 !important;border-color:#374151 !important}
+[data-theme='dark'] .form-check-input:checked{background-color:#3b82f6 !important;border-color:#3b82f6 !important}
+[data-theme='dark'] .form-check-label{color:#e5e7eb !important}
+[data-theme='dark'] .input-group-text{background-color:#111827 !important;border-color:#374151 !important;color:#e5e7eb !important}
+
+/* Light theme modals */
+[data-theme='light'] .modal-content{background-color:#ffffff !important;color:#1f2937 !important;border:1px solid #e5e7eb !important}
+[data-theme='light'] .modal-header{background-color:#ffffff !important;color:#1f2937 !important;border-bottom:1px solid #e5e7eb !important}
+[data-theme='light'] .modal-body{background-color:#ffffff !important;color:#1f2937 !important}
+[data-theme='light'] .modal-footer{background-color:#ffffff !important;color:#1f2937 !important;border-top:1px solid #e5e7eb !important}
+
 /* Navbars (basic) */
 </style>
 <button id="themeToggle" class="theme-toggle-fixed" aria-label="Toggle theme">
@@ -75,8 +93,25 @@
     const cur=root.getAttribute('data-theme')==='dark'?'dark':'light';
     const next=cur==='dark'?'light':'dark';
     setTheme(next);localStorage.setItem(STORAGE_KEY,next);updateBtn(next);
+    
+    // Dispatch theme change event for modals
+    document.dispatchEvent(new CustomEvent('themeChange', {
+      detail: { theme: next }
+    }));
   });
-  function setTheme(mode){ root.setAttribute('data-theme',mode); document.body.classList.toggle('dark', mode==='dark'); }
+  function setTheme(mode){ 
+    root.setAttribute('data-theme',mode); 
+    document.body.classList.toggle('dark', mode==='dark'); 
+    
+    // Update all existing modals
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.setAttribute('data-theme', mode);
+      const modalContent = modal.querySelector('.modal-content');
+      if (modalContent) {
+        modalContent.setAttribute('data-theme', mode);
+      }
+    });
+  }
   function updateBtn(mode){
     btn.classList.toggle('light', mode==='light');
     const icon=btn.querySelector('i');
