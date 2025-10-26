@@ -511,7 +511,7 @@
     
     .btn-cancel,
     .btn-save {
-        width: 100%;
+        width: 45%;
     }
     
     .tag-buttons {

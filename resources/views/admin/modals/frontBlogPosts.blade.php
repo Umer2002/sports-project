@@ -513,11 +513,11 @@
 }
 
 /* Landscape phone adjustments */
-@media (max-width: 896px) and (orientation: landscape) {
+/* @media (max-width: 896px) and (orientation: landscape) {
     .modal-body {
         max-height: calc(100vh - 150px) !important;
     }
-}
+} */
 
 /* Ensure proper spacing on all devices */
 @media (min-width: 576px) {
@@ -529,10 +529,17 @@
         margin-right: 1.5rem;
         margin-bottom: 0;
     }
+       .f-modal > .modal-dialog > .modal-content{
+        padding: 12px !important;
+
+    }
+}
+.f-modal > .modal-dialog > .modal-content{
+    padding: 24px;
 }
 </style>
 
-<div class="modal fade p-5" id="frontBlogPosts" tabindex="-1" aria-labelledby="frontBlogPostsLabel"
+<div class="f-modal modal fade" id="frontBlogPosts" tabindex="-1" aria-labelledby="frontBlogPostsLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content blog-builder-modal">

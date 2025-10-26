@@ -653,13 +653,19 @@
     .related-card p {
         font-size: 0.8rem;
     }
+    .f-modal > .modal-dialog > .modal-content{
+        padding: 12px !important;
+    }
+}
+.f-modal > .modal-dialog > .modal-content{
+    padding: 24px;
 }
 </style>
 
-<div class="modal fade p-5" id="createBlogPostModel" tabindex="-1" aria-labelledby="createBlogPostModelLabel"
+<div class="f-modal modal fade" id="createBlogPostModel" tabindex="-1" aria-labelledby="createBlogPostModelLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content p-5">
+        <div class="modal-content">
             <button type="button" class="btn-close position-absolute" style="top: 1.5rem; right: 1.5rem; z-index: 999999;" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-xmark"></i></button>
             
             <!-- Hero Section -->

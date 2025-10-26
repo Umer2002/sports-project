@@ -6,13 +6,13 @@
     $cities = collect();
 @endphp
 
-<div class="modal fade p-5" id="createTournamentModal" tabindex="-1" aria-labelledby="createTournamentModalLabel"
+<div class="modal fade" id="createTournamentModal" tabindex="-1" aria-labelledby="createTournamentModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content px-5" style="padding: 20px !important;">
             <div class="modal-header">
                 <h5 class="modal-title">Create Tournament</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="modal-body px-5">
 
